@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Search, Heart, Arrow, Logo, Logo2 } from './Paths';
+import { Search, Heart, Arrow, Logo, Logo2, LogoKnitty } from './Paths';
 import { StyledSvgIconProps } from './types';
 
 export const SvgChildren: React.FC<StyledSvgIconProps> = ({ type }) => {
@@ -15,6 +15,8 @@ export const SvgChildren: React.FC<StyledSvgIconProps> = ({ type }) => {
       return <Logo />;
     case 'logo-2':
       return <Logo2 />;
+    case 'logo-knitty':
+      return <LogoKnitty />;
 
     default:
       return null;

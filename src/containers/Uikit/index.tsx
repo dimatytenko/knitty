@@ -38,6 +38,14 @@ export const Uikit = () => {
         height="80"
         viewBox="0 0 280 306"
       />
+      <br />
+      <IconSvg
+        type="logo-knitty"
+        stroke="none"
+        width="170"
+        height="66"
+        viewBox="0 0 170 66"
+      />
 
       <div>Typography</div>
       <Heading2>Heading 2</Heading2>

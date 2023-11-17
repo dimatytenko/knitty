@@ -1,10 +1,4 @@
-export const colorOptions = <const>[
-  'primary',
-  'secondary',
-  'none',
-  'alert',
-  'blue',
-];
+export const colorOptions = <const>['primary', 'secondary', 'none', 'alert'];
 export type color = (typeof colorOptions)[number];
 
 export const iconOptions = <const>[
@@ -13,6 +7,7 @@ export const iconOptions = <const>[
   'arrow',
   'logo',
   'logo-2',
+  'logo-knitty',
 ];
 export type icon = (typeof iconOptions)[number];
 
