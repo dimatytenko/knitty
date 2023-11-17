@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { IconSvg } from '../../ui-kit/Icon';
+import { IconSvg } from '../../ui-kit/Icon/Svg';
+import { IconImage } from '../../ui-kit/Icon/Image';
 import {
   Heading2,
   Text1Bold,
@@ -46,6 +47,8 @@ export const Uikit = () => {
         height="66"
         viewBox="0 0 170 66"
       />
+      <br />
+      <IconImage type={'decor'} width={'30px'} height={'33px'} />
 
       <div>Typography</div>
       <Heading2>Heading 2</Heading2>
