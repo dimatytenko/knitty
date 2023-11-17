@@ -12,7 +12,11 @@ export const StyledLayout = styled.div`
 // need refactoring
 export const Container = styled.div`
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 16px;
+
+  ${Media.up.l} {
+    padding: 0 32px;
+  }
 
   ${Media.up.xxl} {
     width: 1440px;

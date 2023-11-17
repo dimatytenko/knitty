@@ -35,11 +35,18 @@ export const GlobalStyles = createGlobalStyle`
 
   #root {
     height: 100%;
+    background-color: #F4EFEB;
   }
 
   html,
   body {
     height: 100%;
+    font-family: Roboto Condensed;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1; 
+    color: #212121;
   }
 
   button {

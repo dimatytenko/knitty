@@ -20,6 +20,7 @@ export class Route<T extends anyObject> {
   }
 
   constructor(
+    // eslint-disable-next-line no-unused-vars
     private $path: string,
     searchKeys?: string[],
   ) {
