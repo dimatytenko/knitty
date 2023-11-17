@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { StyledLayout, Main, Container } from './styles';
+import { StyledLayout, Main } from './styles';
 import { IAppLayoutProps } from '../../types/layout';
 
 export const LayoutComponent: FC<IAppLayoutProps> = ({
@@ -21,9 +21,7 @@ export const LayoutComponent: FC<IAppLayoutProps> = ({
   return (
     <StyledLayout {...props}>
       {!hideHeader && header}
-      <Main>
-        <Container>{children}</Container>
-      </Main>
+      <Main>{children}</Main>
 
       {!hideFooter && footer}
     </StyledLayout>

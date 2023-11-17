@@ -1,3 +1,10 @@
+import { Benefits } from '../Benefits';
+
 export const Main = () => {
-  return <div>Main</div>;
+  return (
+    <div>
+      <br />
+      <Benefits />
+    </div>
+  );
 };
