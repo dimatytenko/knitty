@@ -21,21 +21,22 @@
   },
   "rules": {
     "linebreak-style": ["error", "windows"],
-    "no-unused-vars": [
-      "error",
-      {
-        "vars": "all",
-        "args": "after-used",
-        "ignoreRestSiblings": true,
-        "argsIgnorePattern": "^_"
-      }
-    ],
+    // "no-unused-vars": [
+    //   "error",
+    //   {
+    //     "vars": "all",
+    //     "args": "after-used",
+    //     "ignoreRestSiblings": true,
+    //     "argsIgnorePattern": "^_"
+    //   }
+    // ],
     "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-unused-vars": "error",
+    "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/ban-types": "error",
     "@typescript-eslint/no-explicit-any": "off",
-    "no-var": "error"
+    "no-var": "error",
+    "import/no-named-as-default": "off"
   }
 }
