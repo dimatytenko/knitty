@@ -8,7 +8,12 @@ import {
   Text3Bold,
   Text4Bold,
 } from '../../ui-kit/Typography';
-import { FooterLink, LinkWithArrow, NavigationLink } from '../../ui-kit/Links';
+import {
+  FooterLink,
+  LinkWithArrow,
+  MainLink,
+  NavigationLink,
+} from '../../ui-kit/Links';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -77,6 +82,7 @@ export const Uikit = () => {
       <NavigationLink to="/">Navigation Link</NavigationLink>
       <LinkWithArrow to="/">Link with arrow</LinkWithArrow>
       <FooterLink to="/">Footer Link</FooterLink>
+      <MainLink to="/">Main Link</MainLink>
     </div>
   );
 };

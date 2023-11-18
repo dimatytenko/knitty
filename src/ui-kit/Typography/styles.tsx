@@ -31,24 +31,28 @@ export const TextBody1 = styled(Text)``;
 
 export const TextBody1Bold = styled(Text)`
   ${styles};
+  display: inline-flex;
   font-size: 14px;
   font-weight: 500;
 `;
 
 export const TextBody2Bold = styled(Text)`
   ${styles};
+  display: inline-flex;
   font-size: 16px;
   font-weight: 500;
 `;
 
 export const TextBody3Bold = styled(Text)`
   ${styles};
+  display: inline-flex;
   font-weight: 500;
   line-height: 1.1;
 `;
 
 export const TextBody4Bold = styled(Text)`
   ${styles};
+  display: inline-flex;
   font-size: 20px;
   font-weight: 500;
 `;

@@ -1,9 +1,14 @@
-import { ILink } from './types';
+import { IProps } from './types';
 import { IconSvg } from '../Icon/Svg';
-import { StyledFooterLink, StyledLinkWithArrow, StyledNavLink } from './styles';
+import {
+  StyledFooterLink,
+  StyledLinkWithArrow,
+  StyledMainLink,
+  StyledNavLink,
+} from './styles';
 import { Text1Bold, Text2Bold, Text4Bold } from '../Typography';
 
-export const NavigationLink = ({ to, children }: ILink) => {
+export const NavigationLink = ({ to, children }: IProps) => {
   return (
     <StyledNavLink to={to}>
       <Text2Bold case="uppercase"> {children}</Text2Bold>
@@ -11,7 +16,7 @@ export const NavigationLink = ({ to, children }: ILink) => {
   );
 };
 
-export const LinkWithArrow = ({ to, children }: ILink) => {
+export const LinkWithArrow = ({ to, children }: IProps) => {
   return (
     <StyledLinkWithArrow to={to}>
       <Text4Bold case="uppercase"> {children}</Text4Bold>
@@ -20,7 +25,15 @@ export const LinkWithArrow = ({ to, children }: ILink) => {
   );
 };
 
-export const FooterLink = ({ to, children }: ILink) => {
+export const MainLink = ({ to, children }: IProps) => {
+  return (
+    <StyledMainLink to={to}>
+      <Text1Bold>{children}</Text1Bold>
+    </StyledMainLink>
+  );
+};
+
+export const FooterLink = ({ to, children }: IProps) => {
   return (
     <StyledFooterLink to={to}>
       <Text1Bold>{children}</Text1Bold>

@@ -26,3 +26,9 @@ export const StyledFooterLink = styled(Link)`
     color: ${({ theme }) => theme.palette.colors.grey};
   }
 `;
+
+export const StyledMainLink = styled(Link)`
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+`;
