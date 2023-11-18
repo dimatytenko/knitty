@@ -17,6 +17,7 @@ const fontCase = ({ case: _case }: StyledProps<TextBaseProps>) => {
 };
 
 const styles = css`
+  font-family: inherit;
   text-transform: ${fontCase};
   color: ${color};
 `;
@@ -36,6 +37,7 @@ export const TextBody1Bold = styled(Text)`
 
 export const TextBody2Bold = styled(Text)`
   ${styles};
+  font-size: 16px;
   font-weight: 500;
 `;
 
