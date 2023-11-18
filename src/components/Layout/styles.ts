@@ -15,7 +15,7 @@ export const Container = styled.div`
   padding: 0 16px;
 
   ${Media.up.l} {
-    padding: 0 32px;
+    /* padding: 0 32px; */
   }
 
   ${Media.up.xxl} {
