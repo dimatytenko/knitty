@@ -7,4 +7,15 @@ export const StyledLinkWithArrow = styled(Link)`
   display: flex;
   align-items: center;
   gap: 10px;
+
+  svg {
+    transition-property: transform;
+    transition: ${({ theme }) => theme.transitions.bounce};
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(5px);
+    }
+  }
 `;
