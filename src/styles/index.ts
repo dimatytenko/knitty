@@ -40,7 +40,6 @@ export const GlobalStyles = createGlobalStyle`
 
   html,
   body {
-    height: 100%;
     font-family: Roboto Condensed;
     font-size: 16px;
     font-style: normal;
