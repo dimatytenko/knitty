@@ -12,6 +12,13 @@ export const NavigationLink = ({ to, children }: IProps) => {
   return (
     <StyledNavLink to={to}>
       <Text2Bold case="uppercase"> {children}</Text2Bold>
+      <IconSvg
+        type="nav-stroke"
+        width="77"
+        height="30"
+        viewBox="0 0 77 30"
+        fill="none"
+      />
     </StyledNavLink>
   );
 };
