@@ -33,19 +33,20 @@ export const GlobalStyles = createGlobalStyle`
     font-size: inherit;
   }
 
-  #root {
-    height: 100%;
-    background-color: #F4EFEB;
-  }
-
-  html,
+    html,
   body {
+    height: 100%;
     font-family: Roboto Condensed;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 1; 
     color: #212121;
+    background-color: #F4EFEB;
+  }
+  
+  #root {
+    height: 100%;
   }
 
   button {
