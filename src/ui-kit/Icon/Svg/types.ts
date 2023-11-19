@@ -8,6 +8,7 @@ export const iconOptions = <const>[
   'logo',
   'logo-2',
   'logo-knitty',
+  'nav-stroke',
 ];
 export type icon = (typeof iconOptions)[number];
 

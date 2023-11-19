@@ -29,6 +29,13 @@ export const Uikit = () => {
       <IconSvg type="heart" fill="none" />
       <IconSvg type="heart" />
       <IconSvg type="arrow" width="24" height="24" viewBox="0 0 24 24" />
+      <IconSvg
+        type="nav-stroke"
+        width="77"
+        height="30"
+        viewBox="0 0 77 30"
+        fill="none"
+      />
       <br />
       <IconSvg
         type="logo"
