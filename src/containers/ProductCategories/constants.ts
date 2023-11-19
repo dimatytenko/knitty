@@ -1,4 +1,4 @@
-import { ILink } from '../Layout/Footer/types';
+import { ILink } from '../../components/Layout/types';
 
 export const categories: ILink[] = [
   { title: 'Sweaters', path: 'products/sweaters' },

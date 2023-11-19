@@ -1,3 +1,7 @@
+export interface ISocialLinks {
+  [key: string]: string;
+}
+
 export interface ILink {
   title: string;
   path: string;

@@ -31,12 +31,58 @@ export const Main = styled.main<{ $isMobile?: boolean }>`
 
 // Header
 export const StyledHeader = styled.header`
-  background-color: grey;
-  padding: 15px 0;
+  ${Container} {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding: 30px 0;
+  }
 `;
 
 // Footer
 export const StyledFooter = styled.footer`
-  background-color: grey;
-  padding: 15px 0;
+  ${Container} {
+    display: flex;
+    gap: 157px;
+    padding: 24px 0;
+  }
+`;
+
+export const LinksBlockWrapper = styled.div`
+  li {
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1;
+  }
+`;
+
+export const RightBlock = styled.div`
+  width: 100%;
+`;
+export const LeftBlock = styled.div`
+  width: fit-content;
+`;
+
+export const RightBlockTop = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  ul {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const RightBlockBottom = styled.div`
+  margin-top: 131px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`;
+
+export const StyledLogoWrapper = styled.div`
+  margin: 0 45px;
+  width: 170px;
 `;
