@@ -6,6 +6,7 @@ export const StyledHeaderTop = styled.div`
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   display: flex;
+  align-items: center;
   gap: 10px;
 `;
 
