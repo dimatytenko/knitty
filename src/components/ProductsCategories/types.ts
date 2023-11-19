@@ -1,4 +1,4 @@
-import { ILink } from '../../containers/Layout/Footer/types';
+import { ILink } from '../Layout/types';
 
 export interface IProps {
   list: ILink[];

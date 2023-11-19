@@ -1,6 +1,6 @@
-import { StyledHeaderBlock } from '../../containers/Layout/Header/styles';
 import { NavigationLink } from '../../ui-kit/Links';
 import { StyledHeaderTop } from '../HeaderBlocktLeft/styles';
+import { StyledHeaderBlock } from './styles';
 import { IProps } from './types';
 
 export const HeaderBlockComponent = ({ renderTop, navList }: IProps) => {
