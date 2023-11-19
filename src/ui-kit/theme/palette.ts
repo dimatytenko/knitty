@@ -5,6 +5,7 @@ const colors = {
   grey: 'rgba(58, 58, 58, 0.40)',
   background: '#F4EFEB',
   alert: '#D30000',
+  system: '#D9D9D9',
 };
 
 export const palette = {
