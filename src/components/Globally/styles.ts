@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import { Heading2, Text3Bold } from '../../ui-kit/Typography';
 
 export const GloballyWrapper = styled.div`
+  position: relative;
+  left: -120px;
   max-width: 1360px;
+  margin: 0 auto;
 `;
 
 export const ContentWrapper = styled.div`
