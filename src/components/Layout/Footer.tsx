@@ -1,8 +1,9 @@
-import { constatnts } from './constants';
+import React from 'react';
 
+import { constatnts } from './constants';
 import { IconSvg } from '../../ui-kit/Icon/Svg';
 import { FooterLink } from '../../ui-kit/Links';
-import { TextBody2Bold } from '../../ui-kit/Typography/styles';
+import { TextBody3Bold } from '../../ui-kit/Typography/styles';
 import {
   StyledFooter,
   Container,
@@ -12,25 +13,27 @@ import {
   RightBlock,
   RightBlockTop,
   RightBlockBottom,
+  FooterList,
 } from './styles';
 import { IProps } from './types';
+import { IFooterComponentProps } from '../../types/layout';
 
 export const LinksBlock = ({ header, list }: IProps) => {
   return (
     <LinksBlockWrapper>
-      <TextBody2Bold as="h3">{header}</TextBody2Bold>
-      <ul>
+      <TextBody3Bold as="h3">{header}</TextBody3Bold>
+      <FooterList>
         {list.map(({ title, path }) => (
           <li key={title}>
             <FooterLink to={path}>{title}</FooterLink>
           </li>
         ))}
-      </ul>
+      </FooterList>
     </LinksBlockWrapper>
   );
 };
 
-export const FooterComponent = () => {
+export const FooterComponent: React.FC<IFooterComponentProps> = ({ year }) => {
   return (
     <StyledFooter>
       <Container>
@@ -58,10 +61,12 @@ export const FooterComponent = () => {
               <LinksBlock header="Legal Note" list={constatnts['Legal Note']} />
             </RightBlockTop>
             <RightBlockBottom>
-              <TextBody2Bold as="p">© 2023 all rights reserved</TextBody2Bold>
-              <TextBody2Bold as="p">
+              <TextBody3Bold as="p">
+                © {year} all rights reserved
+              </TextBody3Bold>
+              <TextBody3Bold as="p">
                 [All photos are used for non-commercial purposes]
-              </TextBody2Bold>
+              </TextBody3Bold>
             </RightBlockBottom>
           </RightBlock>
         </FooterContent>

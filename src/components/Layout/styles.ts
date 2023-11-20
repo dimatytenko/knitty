@@ -84,3 +84,9 @@ export const StyledLogoWrapper = styled.div`
   margin: 0 45px;
   width: 170px;
 `;
+
+export const FooterList = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+`;

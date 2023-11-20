@@ -6,3 +6,7 @@ export interface IAppLayoutProps extends WithChildren {
   hideHeader?: boolean;
   hideFooter?: boolean;
 }
+
+export interface IFooterComponentProps {
+  year: number;
+}

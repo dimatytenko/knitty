@@ -23,6 +23,7 @@ const styles = css`
   font-size: inherit;
   text-transform: ${fontCase};
   color: ${color};
+  line-height: inherit;
 `;
 
 export const StyledHeading2 = styled(Text)`
