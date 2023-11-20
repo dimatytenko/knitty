@@ -6,6 +6,7 @@ import { TextBody2Bold } from '../../ui-kit/Typography/styles';
 import {
   StyledFooter,
   Container,
+  FooterContent,
   LinksBlockWrapper,
   LeftBlock,
   RightBlock,
@@ -33,35 +34,37 @@ export const FooterComponent = () => {
   return (
     <StyledFooter>
       <Container>
-        <LeftBlock>
-          <IconSvg
-            type="logo-2"
-            stroke="none"
-            width="280"
-            height="306"
-            viewBox="0 0 280 306"
-          />
-        </LeftBlock>
-        <RightBlock>
-          <RightBlockTop>
-            <LinksBlock header="SOCIAL" list={constatnts['SOCIAL']} />
-            <LinksBlock
-              header="The Fun Stuff"
-              list={constatnts['The Fun Stuff']}
+        <FooterContent>
+          <LeftBlock>
+            <IconSvg
+              type="logo-2"
+              stroke="none"
+              width="280"
+              height="306"
+              viewBox="0 0 280 306"
             />
-            <LinksBlock
-              header="Things to Know"
-              list={constatnts['Things to Know']}
-            />
-            <LinksBlock header="Legal Note" list={constatnts['Legal Note']} />
-          </RightBlockTop>
-          <RightBlockBottom>
-            <TextBody2Bold as="p">© 2023 all rights reserved</TextBody2Bold>
-            <TextBody2Bold as="p">
-              [All photos are used for non-commercial purposes]
-            </TextBody2Bold>
-          </RightBlockBottom>
-        </RightBlock>
+          </LeftBlock>
+          <RightBlock>
+            <RightBlockTop>
+              <LinksBlock header="SOCIAL" list={constatnts['SOCIAL']} />
+              <LinksBlock
+                header="The Fun Stuff"
+                list={constatnts['The Fun Stuff']}
+              />
+              <LinksBlock
+                header="Things to Know"
+                list={constatnts['Things to Know']}
+              />
+              <LinksBlock header="Legal Note" list={constatnts['Legal Note']} />
+            </RightBlockTop>
+            <RightBlockBottom>
+              <TextBody2Bold as="p">© 2023 all rights reserved</TextBody2Bold>
+              <TextBody2Bold as="p">
+                [All photos are used for non-commercial purposes]
+              </TextBody2Bold>
+            </RightBlockBottom>
+          </RightBlock>
+        </FooterContent>
       </Container>
     </StyledFooter>
   );

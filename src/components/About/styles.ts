@@ -1,0 +1,26 @@
+import styled from 'styled-components';
+
+import { Heading2, Text4Bold } from '../../ui-kit/Typography';
+
+export const AboutWrapper = styled.div``;
+
+export const AboutList = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const AboutTitle = styled(Heading2)`
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  max-width: 828px;
+  margin-bottom: 148px;
+`;
+
+export const AboutSubtitle = styled(Text4Bold)`
+  display: block;
+  text-align: center;
+  margin-bottom: 45px;
+`;

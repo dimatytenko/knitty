@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledProductsList = styled.ul`
-  margin-top: 120px;
-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 

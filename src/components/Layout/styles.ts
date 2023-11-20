@@ -13,13 +13,10 @@ export const StyledLayout = styled.div`
 export const Container = styled.div`
   margin: 0 auto;
   padding: 0 16px;
+  max-width: 1360px;
 
   ${Media.up.l} {
-    /* padding: 0 32px; */
-  }
-
-  ${Media.up.xxl} {
-    width: 1440px;
+    padding: 0 30px;
   }
 `;
 
@@ -31,22 +28,23 @@ export const Main = styled.main<{ $isMobile?: boolean }>`
 
 // Header
 export const StyledHeader = styled.header`
-  ${Container} {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+  padding: 30px 0;
+`;
 
-    padding: 30px 0;
-  }
+export const HeaderContent = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 `;
 
 // Footer
 export const StyledFooter = styled.footer`
-  ${Container} {
-    display: flex;
-    gap: 157px;
-    padding: 24px 0;
-  }
+  padding-bottom: 24px;
+`;
+
+export const FooterContent = styled.div`
+  display: flex;
+  gap: 157px;
 `;
 
 export const LinksBlockWrapper = styled.div`

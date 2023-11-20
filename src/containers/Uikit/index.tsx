@@ -14,10 +14,16 @@ import {
   MainLink,
   NavigationLink,
 } from '../../ui-kit/Links';
+import { AboutCard } from '../../ui-kit/Card/About';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
 `;
+
+const aboutCard = {
+  title: 'Alena Stotska',
+  subtitle: `Meet our visionary founder, a passionate advocate for preserving Ukrainian craftsmanship and traditions. With a deep love for knitting, brings a unique blend of creativity and cultural pride to our collection of Ukrainian knitwear, creating a bridge between heritage and contemporary fashion.`,
+};
 
 export const Uikit = () => {
   return (
@@ -90,6 +96,9 @@ export const Uikit = () => {
       <LinkWithArrow to="/">Link with arrow</LinkWithArrow>
       <FooterLink to="/">Footer Link</FooterLink>
       <MainLink to="/">Main Link</MainLink>
+      <br />
+      <div>AboutCard</div>
+      <AboutCard title={aboutCard.title} subtitle={aboutCard.subtitle} />
     </div>
   );
 };
