@@ -17,13 +17,12 @@ export const HeaderComponent = () => {
   const { pathname } = useLocation();
   const { palette } = useTheme();
   const refHeader = useRef(null);
-  const tl = useRef(gsap.timeline());
 
   useEffect(() => {
     if (!refHeader.current) return;
 
     if (pathname === '/') {
-      tl.current.to(refHeader.current, {
+      gsap.to(refHeader.current, {
         scrollTrigger: {
           scrub: 1,
           trigger: 'body',
