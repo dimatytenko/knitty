@@ -44,7 +44,7 @@ export const HeaderContent = styled.div`
   display: grid;
   grid-template-columns: 1fr auto 1fr;
 
-  & > ${StyledGSAPWrapper} > ${StyledMainLink} {
+  & > ${StyledMainLink} {
     padding: 0 45px;
   }
 
