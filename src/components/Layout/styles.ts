@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 import { Media } from '../../ui-kit/theme/breakpoints';
+import { StyledMainLink } from '../../ui-kit/Links/styles';
+import { StyledGSAPWrapper } from '../../ui-kit/GSAPWrapper/styles';
 
 export const StyledLayout = styled.div`
   min-height: 100%;
@@ -28,13 +30,27 @@ export const Main = styled.main<{ $isMobile?: boolean }>`
 
 // Header
 export const StyledHeader = styled.header`
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
   padding: 30px 0;
+  width: 100vw;
 `;
 
 export const HeaderContent = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+
+  & > ${StyledGSAPWrapper} > ${StyledMainLink} {
+    padding: 0 45px;
+  }
+
+  ${StyledGSAPWrapper} {
+    width: fit-content;
+  }
 `;
 
 // Footer
@@ -78,11 +94,6 @@ export const RightBlockBottom = styled.div`
   margin-top: 131px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-`;
-
-export const StyledLogoWrapper = styled.div`
-  margin: 0 45px;
-  width: 170px;
 `;
 
 export const FooterList = styled.ul`
