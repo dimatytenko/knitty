@@ -8,7 +8,6 @@ import { Container, StyledHeader, HeaderContent } from './styles';
 import gsap from 'gsap';
 import { MainLink } from '../../ui-kit/Links';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GSAPWrapper } from '../../ui-kit/GSAPWrapper';
 import { useTheme } from 'styled-components';
 import { useLocation } from 'react-router-dom';
 
@@ -18,7 +17,6 @@ export const HeaderComponent = () => {
   const { pathname } = useLocation();
   const { palette } = useTheme();
   const refHeader = useRef(null);
-  const refLogo = useRef(null);
   const tl = useRef(gsap.timeline());
 
   useEffect(() => {
@@ -51,17 +49,15 @@ export const HeaderComponent = () => {
             renderTop={<HeaderBlockLeft />}
             navList={listLeft}
           />
-          <GSAPWrapper ref={refLogo}>
-            <MainLink to="/">
-              <IconSvg
-                type="logo-knitty"
-                stroke="none"
-                width="170"
-                height="66"
-                viewBox="0 0 170 66"
-              />
-            </MainLink>
-          </GSAPWrapper>
+          <MainLink to="/">
+            <IconSvg
+              type="logo-knitty"
+              stroke="none"
+              width="170"
+              height="66"
+              viewBox="0 0 170 66"
+            />
+          </MainLink>
           <HeaderBlockComponent
             renderTop={<HeaderBlockRight />}
             navList={listRight}
