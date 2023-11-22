@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { constatnts } from './constants';
+import { constatnts, socialLinks } from './constants';
 import { IconSvg } from '../../ui-kit/Icon/Svg';
 import { FooterLink } from '../../ui-kit/Links';
 import { TextBody3Bold } from '../../ui-kit/Typography/styles';
@@ -23,9 +23,11 @@ export const LinksBlock = ({ header, list }: IProps) => {
     <LinksBlockWrapper>
       <TextBody3Bold as="h3">{header}</TextBody3Bold>
       <FooterList>
-        {list.map(({ title, path }) => (
+        {list.map(({ title, path, ...rest }) => (
           <li key={title}>
-            <FooterLink to={path}>{title}</FooterLink>
+            <FooterLink to={path} {...rest}>
+              {title}
+            </FooterLink>
           </li>
         ))}
       </FooterList>
@@ -49,7 +51,7 @@ export const FooterComponent: React.FC<IFooterComponentProps> = ({ year }) => {
           </LeftBlock>
           <RightBlock>
             <RightBlockTop>
-              <LinksBlock header="SOCIAL" list={constatnts['SOCIAL']} />
+              <LinksBlock header="SOCIAL" list={socialLinks} />
               <LinksBlock
                 header="The Fun Stuff"
                 list={constatnts['The Fun Stuff']}

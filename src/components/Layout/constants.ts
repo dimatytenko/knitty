@@ -1,13 +1,8 @@
 import { links } from '../../constants/links';
 import { route } from '../../constants/routes';
-import { IConstants, ILink } from './types';
+import { IConstants, ILink, ILinkSocial } from './types';
 
 export const constatnts: IConstants = {
-  SOCIAL: [
-    { title: 'INSTAGRAM', path: links.INSTAGRAMM },
-    { title: 'FACEBOOK', path: links.FACEBOOK },
-    { title: 'PINTEREST', path: links.PINTEREST },
-  ],
   'The Fun Stuff': [
     { title: 'Woman', path: route.woman.path },
     { title: 'Man', path: route.man.path },
@@ -32,6 +27,27 @@ export const constatnts: IConstants = {
     { title: 'Contact', path: route.contact.path },
   ],
 };
+
+export const socialLinks: ILinkSocial[] = [
+  {
+    title: 'INSTAGRAM',
+    path: links.INSTAGRAMM,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
+  {
+    title: 'FACEBOOK',
+    path: links.FACEBOOK,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
+  {
+    title: 'PINTEREST',
+    path: links.PINTEREST,
+    target: '_blank',
+    rel: 'noopener noreferrer',
+  },
+];
 
 export const listLeft: ILink[] = [
   { title: 'Woman', path: route.woman.path },
