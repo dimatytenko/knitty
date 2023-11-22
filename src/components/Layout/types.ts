@@ -7,8 +7,12 @@ export interface ILink {
   path: string;
 }
 
+export interface ILinkSocial extends ILink {
+  target: string;
+  rel: string;
+}
+
 export interface IConstants {
-  SOCIAL: ILink[];
   'The Fun Stuff': ILink[];
   'Things to Know': ILink[];
   'Legal Note': ILink[];

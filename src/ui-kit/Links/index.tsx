@@ -40,9 +40,9 @@ export const MainLink = ({ to, children }: IProps) => {
   );
 };
 
-export const FooterLink = ({ to, children }: IProps) => {
+export const FooterLink = ({ to, children, ...rest }: IProps) => {
   return (
-    <StyledFooterLink to={to}>
+    <StyledFooterLink to={to} {...rest}>
       <Text1Bold>{children}</Text1Bold>
     </StyledFooterLink>
   );
