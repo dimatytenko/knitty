@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const BenefitsWrapper = styled.div`
   padding: 36px 0;
@@ -10,11 +10,6 @@ export const BenefitsWrapper = styled.div`
   }
 `;
 
-const marquee = keyframes`
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-  `;
-
 export const BenefitsList = styled.ul`
   display: flex;
   align-items: center;
@@ -22,7 +17,6 @@ export const BenefitsList = styled.ul`
   gap: 60px;
   width: 100%;
   white-space: nowrap;
-  animation: ${marquee} 50s linear infinite;
 `;
 
 export const BenefitsItem = styled.li``;

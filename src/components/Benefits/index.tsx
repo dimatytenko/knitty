@@ -1,24 +1,25 @@
 import React from 'react';
+import Marquee from 'react-fast-marquee';
 
-import { Container } from '../Layout/styles';
+// import { Container } from '../Layout/styles';
 import { BenefitsWrapper, BenefitsList, BenefitsItem } from './styles';
 import { BenefitsProps } from './types';
 import { Text3Bold } from '../../ui-kit/Typography';
 
 export const BenefitsComponent: React.FC<BenefitsProps> = ({ benefits }) => {
-  const updatedBenefits = [...benefits, ...benefits, ...benefits];
-
   return (
     <BenefitsWrapper>
-      <Container>
+      {/* <Container> */}
+      <Marquee>
         <BenefitsList>
-          {updatedBenefits.map((benefit, ind) => (
-            <BenefitsItem key={benefit.id + ind}>
+          {benefits.map((benefit) => (
+            <BenefitsItem key={benefit.id}>
               <Text3Bold case="uppercase">{benefit.title}</Text3Bold>
             </BenefitsItem>
           ))}
         </BenefitsList>
-      </Container>
+      </Marquee>
+      {/* </Container> */}
     </BenefitsWrapper>
   );
 };
