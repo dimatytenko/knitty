@@ -40,13 +40,13 @@ export const StyledLinkWithArrow = styled(Link)`
   align-items: center;
   gap: 10px;
 
-  svg {
-    transition-property: transform;
+  ${StyledSvg} {
     transition: ${({ theme }) => theme.transitions.bounce};
+    transition-property: transform;
   }
 
   &:hover {
-    svg {
+    ${StyledSvg} {
       transform: translateX(5px);
     }
   }

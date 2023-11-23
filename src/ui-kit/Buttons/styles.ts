@@ -4,8 +4,10 @@ import { IFilterButton } from './types';
 import { Text2Bold } from '../Typography';
 
 export const StyledButtonText = styled(Text2Bold).attrs({
-  $case: 'uppercase',
-})``;
+  $case: 'uppercase', //dont't work
+})`
+  text-transform: uppercase;
+`;
 
 export const StyledMainButton = styled.button`
   width: 100%;
@@ -44,6 +46,22 @@ export const StyledFilterButton = styled.button<IFilterButton>`
     $active ? theme.palette.colors.black : 'transparent'};
 `;
 
-export const StyledrButtonWithArrow = styled(StyledMainButton)`
-  gap: 5px;
+export const StyledButtonWithArrow = styled(StyledMainButton)`
+  gap: 10px;
+
+  svg {
+    position: relative;
+    transition: ${({ theme }) => theme.transitions.bounce};
+    transition-property: transform;
+  }
+
+  &:hover svg {
+    transform: translateX(5px);
+  }
+`;
+
+export const StyledFavoriteButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `;
