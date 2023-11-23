@@ -6,7 +6,7 @@ import {
   Text1Bold,
   Text2Bold,
   Text3Bold,
-  Text4Bold,
+  Heading3,
 } from '../../ui-kit/Typography';
 import {
   FooterLink,
@@ -71,25 +71,25 @@ export const Uikit = () => {
       <div>Typography</div>
       <Heading2>Heading 2</Heading2>
       <Heading2 color="secondary">Heading 2</Heading2>
-      <Heading2 case="uppercase">Heading 2</Heading2>
-      <Heading2 case="uppercase">Heading 2</Heading2>
+      <Heading2 $case="uppercase">Heading 2</Heading2>
+      <Heading2 $case="uppercase">Heading 2</Heading2>
       <br />
       <Text1Bold>Text 1 Bold</Text1Bold>
       <Text1Bold color="secondary">Text 1 Bold</Text1Bold>
-      <Text1Bold case="uppercase">Text 1 Bold</Text1Bold>
-      <GreyText case="uppercase">Grey Text</GreyText>
+      <Text1Bold $case="uppercase">Text 1 Bold</Text1Bold>
+      <GreyText $case="uppercase">Grey Text</GreyText>
       <br />
       <Text2Bold>Text 2 Bold</Text2Bold>
       <Text2Bold color="secondary">Text 2 Bold</Text2Bold>
-      <Text2Bold case="uppercase">Text 2 Bold</Text2Bold>
+      <Text2Bold $case="uppercase">Text 2 Bold</Text2Bold>
       <br />
       <Text3Bold>Text 3 Bold</Text3Bold>
       <Text3Bold color="secondary">Text 3 Bold</Text3Bold>
-      <Text3Bold case="uppercase">Text 3 Bold</Text3Bold>
+      <Text3Bold $case="uppercase">Text 3 Bold</Text3Bold>
       <br />
-      <Text4Bold>Text 4 Bold</Text4Bold>
-      <Text4Bold color="secondary">Text 4 Bold</Text4Bold>
-      <Text4Bold case="uppercase">Text 4 Bold</Text4Bold>
+      <Heading3>Text 4 Bold</Heading3>
+      <Heading3 color="secondary">Text 4 Bold</Heading3>
+      <Heading3 $case="uppercase">Text 4 Bold</Heading3>
       <br />
 
       <NavigationLink to="/">Navigation Link</NavigationLink>

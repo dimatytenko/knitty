@@ -1,4 +1,4 @@
-import { StyledContent, StyledHeroWrapper } from './styled';
+import { StyledContent, StyledHeroWrapper } from './styles';
 
 export const HeroComponent = () => {
   return (

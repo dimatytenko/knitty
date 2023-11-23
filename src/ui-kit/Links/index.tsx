@@ -6,12 +6,12 @@ import {
   StyledMainLink,
   StyledNavLink,
 } from './styles';
-import { Text1Bold, Text2Bold, Text4Bold } from '../Typography';
+import { Text1Bold, Text2Bold, Heading3 } from '../Typography';
 
 export const NavigationLink = ({ to, children }: IProps) => {
   return (
     <StyledNavLink to={to}>
-      <Text2Bold case="uppercase"> {children}</Text2Bold>
+      <Text2Bold $case="uppercase"> {children}</Text2Bold>
       <IconSvg
         type="nav-stroke"
         width="77"
@@ -26,7 +26,7 @@ export const NavigationLink = ({ to, children }: IProps) => {
 export const LinkWithArrow = ({ to, children }: IProps) => {
   return (
     <StyledLinkWithArrow to={to}>
-      <Text4Bold case="uppercase"> {children}</Text4Bold>
+      <Heading3 $case="uppercase"> {children}</Heading3>
       <IconSvg type="arrow" viewBox="0 0 24 24" width="24" height="24" />
     </StyledLinkWithArrow>
   );

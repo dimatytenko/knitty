@@ -2,18 +2,15 @@
 // @ts-expect-error
 // eslint-disable-next-line import/named
 import styled, { css, StyledProps } from 'styled-components';
-import { Typography } from 'antd';
 
 import { TextBaseProps } from './types';
-
-const { Text } = Typography;
 
 const color = ({ color, theme }: StyledProps<TextBaseProps>) => {
   return color ? theme.palette.colors[color] : theme.palette.colors.primary;
 };
 
-const fontCase = ({ case: _case }: StyledProps<TextBaseProps>) => {
-  return _case ? _case : 'none';
+const fontCase = ({ $case }: StyledProps<TextBaseProps>) => {
+  return $case ? $case : 'none';
 };
 
 const styles = css`
@@ -26,32 +23,37 @@ const styles = css`
   line-height: inherit;
 `;
 
-export const StyledHeading2 = styled(Text)`
+export const StyledHeading1 = styled.h1`
   ${styles};
   font-size: 50px;
 `;
 
-export const TextBody1 = styled(Text)``;
+export const StyledHeading2 = styled.h2`
+  ${styles};
+  font-size: 50px;
+`;
 
-export const TextBody1Bold = styled(Text)`
+export const StyledHeading3 = styled.h3`
+  ${styles};
+  font-size: 20px;
+  font-weight: 500;
+`;
+
+export const TextBody1 = styled.p``;
+
+export const TextBody1Bold = styled.p`
   ${styles};
   font-size: 14px;
   font-weight: 500;
 `;
 
-export const TextBody2Bold = styled(Text)`
+export const TextBody2Bold = styled.p`
   ${styles};
   font-weight: 500;
 `;
 
-export const TextBody3Bold = styled(Text)`
+export const TextBody3Bold = styled.p`
   ${styles};
   font-weight: 500;
   line-height: 1.1;
-`;
-
-export const TextBody4Bold = styled(Text)`
-  ${styles};
-  font-size: 20px;
-  font-weight: 500;
 `;

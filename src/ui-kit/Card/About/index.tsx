@@ -20,7 +20,7 @@ export const AboutCard: React.FC<AboutCardProps> = ({ title, subtitle }) => {
       <BackWrapper>
         <BackContent>
           <Heading2>{title}</Heading2>
-          <Subtitle case="uppercase">{subtitle}</Subtitle>
+          <Subtitle $case="uppercase">{subtitle}</Subtitle>
         </BackContent>
       </BackWrapper>
     </CardWrapper>

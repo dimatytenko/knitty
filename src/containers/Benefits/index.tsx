@@ -25,10 +25,6 @@ const benefits = [
     id: '6',
     title: 'versatile fashion',
   },
-  {
-    id: '7',
-    title: 'original patterns',
-  },
 ];
 
 export const Benefits = () => {

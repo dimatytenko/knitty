@@ -7,6 +7,6 @@ export const colorOptions = <const>['primary', 'secondary'];
 export type TextColor = (typeof colorOptions)[number];
 
 export type TextBaseProps = WithChildren & {
-  case?: caseType;
+  $case?: caseType;
   color?: TextColor;
 };

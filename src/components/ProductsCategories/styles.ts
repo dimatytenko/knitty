@@ -10,14 +10,14 @@ export const StyledProductsList = styled.ul`
     justify-content: center;
 
     height: 84px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid ${({ theme }) => theme.palette.colors.line};
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: ${({ theme }) => theme.palette.colors.lightHover};
     }
   }
 
   li:not(:nth-child(-n + 4)) {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid ${({ theme }) => theme.palette.colors.line};
   }
 `;

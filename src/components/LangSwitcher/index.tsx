@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Text1Bold } from '../../ui-kit/Typography';
-import { StyledLangSwitcherWrapper } from './styled';
+import { StyledLangSwitcherWrapper } from './styles';
 
 export const LangSwitcherComponent = () => {
   const [activeLang, setActiveLang] = useState<number>(1);

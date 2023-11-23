@@ -36,7 +36,7 @@ export const Title = styled(Heading2)`
 `;
 
 export const Subtitle = styled(Text3Bold).attrs({
-  case: 'uppercase',
+  $case: 'uppercase',
 })`
   text-align: center;
 `;

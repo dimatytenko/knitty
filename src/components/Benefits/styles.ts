@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const BenefitsWrapper = styled.div`
   padding: 36px 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid ${({ theme }) => theme.palette.colors.line};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.colors.line};
   cursor: pointer;
   &:hover ul {
     animation-play-state: paused;
