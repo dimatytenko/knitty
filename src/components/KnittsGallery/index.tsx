@@ -21,4 +21,3 @@ export const KnittsGalleryComponent = () => {
     </GloballyWrapper>
   );
 };
-console.log("hello")
