@@ -1,11 +1,6 @@
 import styled from 'styled-components';
 
-// import { Heading2, Text3Bold } from '../../ui-kit/Typography';
-
-export const GloballyWrapper = styled.div`
-  max-width: 1360px;
-  margin: 0 auto;
-`;
+export const GloballyWrapper = styled.div``;
 
 export const ContentWrapper = styled.div`
   display: flex;
@@ -14,9 +9,15 @@ export const ContentWrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  width: 37%;
+  max-width: 536px;
 `;
-export const ImageDecorWrapper = styled.div``;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 export const KnittsButton = styled.button`
   display: flex;
   font-family: inherit;

@@ -18,6 +18,7 @@ export const route = {
   privacyPolicy: Route.of({ path: '/privacy-policy' }),
   termsOfService: Route.of({ path: '/terms-of-service' }),
   registredCompany: Route.of({ path: '/registered-company' }),
+  gallery: Route.of({ path: '/gallery' }),
 
   uikit: Route.of({ path: '/ui-kit' }),
 };
