@@ -6,7 +6,7 @@ import {
   StyledMainLink,
   StyledNavLink,
 } from './styles';
-import { Text1Bold, Text2Bold, Heading3 } from '../Typography';
+import { Text1Bold, Text2Bold } from '../Typography';
 
 export const NavigationLink = ({ to, children }: IProps) => {
   return (
@@ -26,7 +26,7 @@ export const NavigationLink = ({ to, children }: IProps) => {
 export const LinkWithArrow = ({ to, children }: IProps) => {
   return (
     <StyledLinkWithArrow to={to}>
-      <Heading3 $case="uppercase"> {children}</Heading3>
+      <Text2Bold $case="uppercase"> {children}</Text2Bold>
       <IconSvg type="arrow" viewBox="0 0 24 24" width="24" height="24" />
     </StyledLinkWithArrow>
   );

@@ -4,8 +4,10 @@ import { IFilterButton } from './types';
 import { Text2Bold } from '../Typography';
 
 export const StyledButtonText = styled(Text2Bold).attrs({
-  $case: 'uppercase',
-})``;
+  $case: 'uppercase', //dont't work
+})`
+  text-transform: uppercase;
+`;
 
 export const StyledMainButton = styled.button`
   width: 100%;
@@ -16,7 +18,7 @@ export const StyledMainButton = styled.button`
 
   padding: 17px;
 
-  background-color: ${({ theme }) => theme.palette.colors.black};
+  background-color: ${({ theme }) => theme.palette.colors.primary};
 
   ${StyledButtonText} {
     color: ${({ theme }) => theme.palette.colors.background};
@@ -37,13 +39,29 @@ export const StyledFilterButton = styled.button<IFilterButton>`
   }
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.palette.colors.black};
+    border: 1px solid ${({ theme }) => theme.palette.colors.primary};
   }
 
   background-color: ${({ $active, theme }) =>
-    $active ? theme.palette.colors.black : 'transparent'};
+    $active ? theme.palette.colors.primary : 'transparent'};
 `;
 
-export const StyledrButtonWithArrow = styled(StyledMainButton)`
-  gap: 5px;
+export const StyledButtonWithArrow = styled(StyledMainButton)`
+  gap: 10px;
+
+  svg {
+    position: relative;
+    transition: ${({ theme }) => theme.transitions.bounce};
+    transition-property: transform;
+  }
+
+  &:hover svg {
+    transform: translateX(5px);
+  }
+`;
+
+export const StyledFavoriteButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 `;
