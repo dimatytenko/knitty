@@ -4,8 +4,10 @@ import { StyledInputField, StyledSearchBar } from './styles';
 import { TextBody1Bold } from '../../ui-kit/Typography/styles';
 import { GSAPWrapper } from '../../ui-kit/GSAPWrapper';
 import { gsap } from 'gsap';
+import { useTheme } from 'styled-components';
 
 export const SearchBarComponent = () => {
+  const { palette } = useTheme();
   const refText = useRef(null);
   const refInput = useRef(null);
   const refIcon = useRef(null);
@@ -14,18 +16,14 @@ export const SearchBarComponent = () => {
   useEffect(() => {
     if (!value) return;
 
-    gsap.to(refInput.current, { borderColor: 'black' });
-    gsap.to(refIcon.current, { fill: 'black' });
+    gsap.to(refInput.current, { borderColor: palette.colors.primary });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [value]);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.value) {
       gsap.to(refInput.current, {
         left: -gsap.getProperty(refText.current, 'offsetWidth'),
-        borderBottom: '1px solid red',
-      });
-      gsap.to(refIcon.current, {
-        fill: 'red',
       });
     }
 
@@ -41,10 +39,7 @@ export const SearchBarComponent = () => {
     });
     gsap.to(refInput.current, {
       left: -gsap.getProperty(refText.current, 'offsetWidth'),
-      borderBottom: '1px solid red',
-    });
-    gsap.to(refIcon.current, {
-      fill: 'red',
+      borderBottom: `1px solid ${palette.colors.primary}`,
     });
   };
 

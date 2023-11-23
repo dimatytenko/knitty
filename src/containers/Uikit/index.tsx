@@ -20,6 +20,7 @@ import {
   FilterButton,
   MainButton,
 } from '../../ui-kit/Buttons';
+import { ProductCard } from '../../components/ProductCard';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -38,7 +39,6 @@ export const Uikit = () => {
       <IconSvg type="search" stroke="none" />
       <IconSvg type="search" fill="alert" stroke="none" />
       <IconSvg type="search" fill="back" stroke="none" />
-
       <IconSvg type="heart" fill="none" />
       <IconSvg type="heart" />
       <IconSvg type="arrow" width="24" height="24" viewBox="0 0 24 24" />
@@ -91,7 +91,6 @@ export const Uikit = () => {
       <Text2Bold $case="uppercase">Text 2 Bold</Text2Bold>
       <Text2Bold $decor="underline">Text 2 Bold</Text2Bold>
       <Text2Bold $decor="line-through">Text 2 Bold</Text2Bold>
-
       <br />
       <Text3Bold>Text 3 Bold</Text3Bold>
       <Text3Bold color="secondary">Text 3 Bold</Text3Bold>
@@ -113,12 +112,24 @@ export const Uikit = () => {
       </div>
       <FilterButton title="Filter" onClick={() => {}} />
       <FilterButton title="Filter ACTIVE" onClick={() => {}} active={true} />
-
       <div style={{ width: '300px' }}>
         <ButtonWithArrow title="Button with arrow" onClick={() => {}} />
       </div>
+
       <div>AboutCard</div>
       <AboutCard title={aboutCard.title} subtitle={aboutCard.subtitle} />
+      <div>ProductCard</div>
+      <div style={{ width: '320px', height: '450px' }}>
+        <ProductCard
+          title="Wool sweater"
+          price={150}
+          id="id-15"
+          handleAddToCart={(id) => console.log(`add to cart ${id}`)}
+          handleAddToFavourites={(id) => console.log(`add to favourites ${id}`)}
+        />
+      </div>
+      <br />
+      <br />
     </div>
   );
 };

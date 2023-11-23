@@ -12,7 +12,7 @@ export const StyledLangSwitcherWrapper = styled.div`
 
   button.active {
     ${TextBody1Bold} {
-      color: ${({ theme }) => theme.palette.colors.black};
+      color: ${({ theme }) => theme.palette.colors.primary};
     }
   }
 `;
