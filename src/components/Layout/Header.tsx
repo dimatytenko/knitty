@@ -22,6 +22,8 @@ export const HeaderComponent = () => {
     if (!refHeader.current) return;
 
     if (pathname === '/') {
+      gsap.set(refHeader.current, { position: 'fixed' });
+
       gsap.to(refHeader.current, {
         scrollTrigger: {
           scrub: 1,
@@ -36,6 +38,8 @@ export const HeaderComponent = () => {
         borderBottomRightRadius: 30,
         boxShadow: `0px 10px 15px -3px rgba(0,0,0,0.1)`,
       });
+    } else {
+      gsap.set(refHeader.current, { position: 'relative' });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
