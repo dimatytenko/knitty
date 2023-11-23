@@ -15,6 +15,11 @@ import {
   NavigationLink,
 } from '../../ui-kit/Links';
 import { AboutCard } from '../../ui-kit/Card/About';
+import {
+  ButtonWithArrow,
+  FilterButton,
+  MainButton,
+} from '../../ui-kit/Buttons';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -91,12 +96,22 @@ export const Uikit = () => {
       <Text4Bold color="secondary">Text 4 Bold</Text4Bold>
       <Text4Bold case="uppercase">Text 4 Bold</Text4Bold>
       <br />
-
+      <div>Links</div>
       <NavigationLink to="/">Navigation Link</NavigationLink>
       <LinkWithArrow to="/">Link with arrow</LinkWithArrow>
       <FooterLink to="/">Footer Link</FooterLink>
       <MainLink to="/">Main Link</MainLink>
       <br />
+      <div>Buttons</div>
+      <div style={{ width: '300px' }}>
+        <MainButton title="Main Button" onClick={() => {}} />
+      </div>
+      <FilterButton title="Filter" onClick={() => {}} />
+      <FilterButton title="Filter ACTIVE" onClick={() => {}} active={true} />
+
+      <div style={{ width: '300px' }}>
+        <ButtonWithArrow title="Button with arrow" onClick={() => {}} />
+      </div>
       <div>AboutCard</div>
       <AboutCard title={aboutCard.title} subtitle={aboutCard.subtitle} />
     </div>
