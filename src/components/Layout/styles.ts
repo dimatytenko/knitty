@@ -9,6 +9,7 @@ export const StyledLayout = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background-color: ${({ theme }) => theme.palette.colors.background};
 `;
 
 // need refactoring

@@ -42,7 +42,6 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     line-height: 1; 
     color: #212121;
-    background-color: #F4EFEB;
   }
   
   #root {

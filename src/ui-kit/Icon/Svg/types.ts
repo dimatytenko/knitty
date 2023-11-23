@@ -1,4 +1,10 @@
-export const colorOptions = <const>['primary', 'secondary', 'none', 'alert'];
+export const colorOptions = <const>[
+  'primary',
+  'secondary',
+  'back',
+  'none',
+  'alert',
+];
 export type color = (typeof colorOptions)[number];
 
 export const iconOptions = <const>[

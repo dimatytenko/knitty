@@ -15,6 +15,11 @@ import {
   NavigationLink,
 } from '../../ui-kit/Links';
 import { AboutCard } from '../../ui-kit/Card/About';
+import {
+  ButtonWithArrow,
+  FilterButton,
+  MainButton,
+} from '../../ui-kit/Buttons';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -32,6 +37,8 @@ export const Uikit = () => {
       <div>icons</div>
       <IconSvg type="search" stroke="none" />
       <IconSvg type="search" fill="alert" stroke="none" />
+      <IconSvg type="search" fill="back" stroke="none" />
+
       <IconSvg type="heart" fill="none" />
       <IconSvg type="heart" />
       <IconSvg type="arrow" width="24" height="24" viewBox="0 0 24 24" />
@@ -82,6 +89,9 @@ export const Uikit = () => {
       <Text2Bold>Text 2 Bold</Text2Bold>
       <Text2Bold color="secondary">Text 2 Bold</Text2Bold>
       <Text2Bold $case="uppercase">Text 2 Bold</Text2Bold>
+      <Text2Bold $decor="underline">Text 2 Bold</Text2Bold>
+      <Text2Bold $decor="line-through">Text 2 Bold</Text2Bold>
+
       <br />
       <Text3Bold>Text 3 Bold</Text3Bold>
       <Text3Bold color="secondary">Text 3 Bold</Text3Bold>
@@ -91,12 +101,22 @@ export const Uikit = () => {
       <Heading3 color="secondary">Text 4 Bold</Heading3>
       <Heading3 $case="uppercase">Text 4 Bold</Heading3>
       <br />
-
+      <div>Links</div>
       <NavigationLink to="/">Navigation Link</NavigationLink>
       <LinkWithArrow to="/">Link with arrow</LinkWithArrow>
       <FooterLink to="/">Footer Link</FooterLink>
       <MainLink to="/">Main Link</MainLink>
       <br />
+      <div>Buttons</div>
+      <div style={{ width: '300px' }}>
+        <MainButton title="Main Button" onClick={() => {}} />
+      </div>
+      <FilterButton title="Filter" onClick={() => {}} />
+      <FilterButton title="Filter ACTIVE" onClick={() => {}} active={true} />
+
+      <div style={{ width: '300px' }}>
+        <ButtonWithArrow title="Button with arrow" onClick={() => {}} />
+      </div>
       <div>AboutCard</div>
       <AboutCard title={aboutCard.title} subtitle={aboutCard.subtitle} />
     </div>

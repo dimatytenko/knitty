@@ -4,6 +4,7 @@
 import styled, { css, StyledProps } from 'styled-components';
 
 import { StyledSvgIconProps } from './types';
+
 const getColor = ({
   theme,
   color,
@@ -18,6 +19,8 @@ const getColor = ({
       return theme.palette.colors.primary;
     case 'alert':
       return theme.palette.colors.alert;
+    case 'back':
+      return theme.palette.colors.background;
     case 'none':
       return 'none';
 
