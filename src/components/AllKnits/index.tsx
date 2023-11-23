@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
-import { GloballyWrapper, ContentWrapper, ImageWrapper, Image } from './styles';
+import {
+  GloballyWrapper,
+  ContentWrapper,
+  ImageWrapper,
+  Image,
+  ButtonWrapper,
+} from './styles';
 import woman from './assets/woman.jpg';
 import man from './assets/man.jpg';
 import { LinkWithArrow } from '../../ui-kit/Links';
@@ -11,17 +17,19 @@ export const AllKnitsComponent = () => {
     <GloballyWrapper>
       <Container>
         <ContentWrapper>
-          <Link to={route.woman.path}>
-            <ImageWrapper>
+          <ImageWrapper>
+            <Link to={route.woman.path}>
               <Image src={woman} alt="woman" />
-            </ImageWrapper>
-          </Link>
-          <Link to={route.man.path}>
-            <ImageWrapper>
+            </Link>
+          </ImageWrapper>
+          <ImageWrapper>
+            <Link to={route.man.path}>
               <Image src={man} alt="man" />
-            </ImageWrapper>
-          </Link>
-          <LinkWithArrow to={route.gallery.path}>see all knits</LinkWithArrow>
+            </Link>
+          </ImageWrapper>
+          <ButtonWrapper>
+            <LinkWithArrow to={route.gallery.path}>see all knits</LinkWithArrow>
+          </ButtonWrapper>
         </ContentWrapper>
       </Container>
     </GloballyWrapper>
