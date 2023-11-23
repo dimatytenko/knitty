@@ -18,7 +18,7 @@ export const StyledMainButton = styled.button`
 
   padding: 17px;
 
-  background-color: ${({ theme }) => theme.palette.colors.black};
+  background-color: ${({ theme }) => theme.palette.colors.primary};
 
   ${StyledButtonText} {
     color: ${({ theme }) => theme.palette.colors.background};
@@ -39,11 +39,11 @@ export const StyledFilterButton = styled.button<IFilterButton>`
   }
 
   &:hover {
-    border: 1px solid ${({ theme }) => theme.palette.colors.black};
+    border: 1px solid ${({ theme }) => theme.palette.colors.primary};
   }
 
   background-color: ${({ $active, theme }) =>
-    $active ? theme.palette.colors.black : 'transparent'};
+    $active ? theme.palette.colors.primary : 'transparent'};
 `;
 
 export const StyledButtonWithArrow = styled(StyledMainButton)`
