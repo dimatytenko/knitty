@@ -1,0 +1,14 @@
+.ant-dropdown .ant-dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #efebe9;
+  border-radius: 0;
+  padding: 15px 20px;
+  margin-top: 30px;
+}
+
+.ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item {
+  padding: 5px 0;
+  width: 100%;
+  text-align: end;
+}

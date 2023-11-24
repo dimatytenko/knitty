@@ -23,6 +23,7 @@ import {
 import { Container } from '../../components/Layout/styles';
 import { Pagination } from '../../ui-kit/Pagination';
 import { ProductCard } from '../../components/ProductCard';
+import { Sort } from '../../ui-kit/Sort';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -38,6 +39,12 @@ export const Uikit = () => {
     <div>
       <Container>
         <div>Uikit</div>
+        <div>Sort by</div>
+        <br />
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Sort />
+        </div>
+        <br />
         <div>icons</div>
         <IconSvg type="search" stroke="none" />
         <IconSvg type="search" fill="alert" stroke="none" />
@@ -138,7 +145,6 @@ export const Uikit = () => {
             }
           />
         </div>
-
         <br />
       </Container>
     </div>

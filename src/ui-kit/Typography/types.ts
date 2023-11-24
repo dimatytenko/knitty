@@ -6,7 +6,7 @@ export type caseType = (typeof caseOptions)[number];
 export const decorOptions = ['underline', 'line-through', 'overline'];
 export type decorType = (typeof decorOptions)[number];
 
-export const colorOptions = <const>['primary', 'secondary'];
+export const colorOptions = <const>['primary', 'secondary', 'unfocus'];
 export type TextColor = (typeof colorOptions)[number];
 
 export type TextBaseProps = WithChildren & {

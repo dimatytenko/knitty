@@ -63,5 +63,5 @@ export const TextBody2Bold = styled.p`
 export const TextBody3Bold = styled.p`
   ${styles};
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.2;
 `;

@@ -6,6 +6,7 @@ import { GlobalStyles } from './styles';
 import { Layout } from './containers/Layout';
 import { defaultTheme } from './ui-kit/theme/theme';
 import './ui-kit/fonts/fonts.css';
+import './ui-kit/MenuMore/styles.css';
 
 function App() {
   return (

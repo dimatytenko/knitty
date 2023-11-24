@@ -11,6 +11,7 @@ export const iconOptions = <const>[
   'search',
   'heart',
   'arrow',
+  'arrow-light',
   'logo',
   'logo-2',
   'logo-knitty',
