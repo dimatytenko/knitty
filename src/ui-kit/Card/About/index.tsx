@@ -7,15 +7,22 @@ import {
   BackWrapper,
   BackContent,
   Subtitle,
+  Image,
 } from './styles';
 import { Heading2 } from '../../Typography';
 import { AboutCardProps } from './types';
 
-export const AboutCard: React.FC<AboutCardProps> = ({ title, subtitle }) => {
+export const AboutCard: React.FC<AboutCardProps> = ({
+  title,
+  subtitle,
+  img,
+}) => {
   return (
     <CardWrapper>
       <FrontWrapper>
-        <FrontContent></FrontContent>
+        <FrontContent>
+          <Image src={img} alt={title} />
+        </FrontContent>
       </FrontWrapper>
       <BackWrapper>
         <BackContent>

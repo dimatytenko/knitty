@@ -25,6 +25,7 @@ export const AboutComponent: React.FC<AboutComponentProps> = ({ data }) => {
               key={item.id}
               title={item.title}
               subtitle={item.subtitle}
+              img={item.img}
             />
           ))}
         </AboutList>

@@ -16,8 +16,13 @@ export const ContentWrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   width: 60%;
-  height: 700px;
   background-color: ${({ theme }) => theme.palette.colors.system};
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 export const Content = styled.div`

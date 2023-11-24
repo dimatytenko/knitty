@@ -6,13 +6,17 @@ import {
   Title,
   Subtitle,
   SubtitlesWrapper,
+  Image,
 } from './styles';
+import globally from './assets/globally.jpg';
 
 export const GloballyComponent = () => {
   return (
     <GloballyWrapper>
       <ContentWrapper>
-        <ImageWrapper></ImageWrapper>
+        <ImageWrapper>
+          <Image src={globally} alt="globally" />
+        </ImageWrapper>
         <Content>
           <Title>Knitti for Globally</Title>
           <SubtitlesWrapper>
