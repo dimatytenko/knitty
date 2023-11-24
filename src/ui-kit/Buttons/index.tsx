@@ -6,15 +6,16 @@ import {
   StyledButtonWithArrow,
   StyledFavoriteButton,
 } from './styles';
-import { IFilterButton, IProps } from './types';
+import { IFilterButton, IProps, IPropsFavorites } from './types';
 
 export const MainButton = ({
   title,
   onClick = () => {},
   type = 'button',
+  isInCart,
 }: IProps) => {
   return (
-    <StyledMainButton type={type} onClick={onClick}>
+    <StyledMainButton $isincart={isInCart} type={type} onClick={onClick}>
       <StyledButtonText>{title}</StyledButtonText>
     </StyledMainButton>
   );
@@ -53,11 +54,7 @@ export const ButtonWithArrow = ({
   );
 };
 
-export const FavouriteButton = ({
-  onClick,
-}: {
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-}) => {
+export const FavouriteButton = ({ onClick, isFavourite }: IPropsFavorites) => {
   return (
     <StyledFavoriteButton type="button" onClick={onClick}>
       <IconSvg
@@ -65,7 +62,7 @@ export const FavouriteButton = ({
         height="24"
         viewBox="0 0 24 24"
         type="heart"
-        fill="none"
+        fill={isFavourite ? 'alert' : 'none'}
       />
     </StyledFavoriteButton>
   );

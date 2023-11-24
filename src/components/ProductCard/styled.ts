@@ -5,8 +5,8 @@ import {
 } from '../../ui-kit/Buttons/styles';
 
 export const StyledProductCard = styled.div`
-  width: 100%;
-  height: 100%;
+  /* width: 100%;
+  height: 100%; */
 `;
 
 const rotation = keyframes`
@@ -23,7 +23,7 @@ const rotation = keyframes`
 export const StyledImageContent = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 420px;
 
   overflow: hidden;
 
@@ -66,7 +66,7 @@ export const StyledImageContent = styled.div`
 
 export const StyledImageWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 420px;
 
   background-color: ${({ theme }) => theme.palette.colors.grey};
 `;
