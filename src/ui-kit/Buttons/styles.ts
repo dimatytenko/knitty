@@ -18,7 +18,8 @@ export const StyledMainButton = styled.button`
 
   padding: 17px;
 
-  background-color: ${({ theme }) => theme.palette.colors.primary};
+  background-color: ${({ $isincart, theme }) =>
+    $isincart ? theme.palette.colors.alert : theme.palette.colors.primary};
 
   ${StyledButtonText} {
     color: ${({ theme }) => theme.palette.colors.background};

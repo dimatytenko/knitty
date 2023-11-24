@@ -12,18 +12,45 @@ export const ProductCard = ({
   title,
   price,
   id,
-  handleAddToCart,
-  handleAddToFavourites,
+  isFavourite,
+  isInCart,
+  setData,
 }: IProps) => {
+  const handleAddToCart = (id: string) => {
+    setData((prev) =>
+      prev.map((product) => {
+        return product.id === id
+          ? { ...product, isInCart: !product.isInCart }
+          : product;
+      }),
+    );
+  };
+
+  const handleAddToFavourites = (id: string) => {
+    setData((prev) =>
+      prev.map((product) => {
+        return product.id === id
+          ? { ...product, isFavourite: !product.isFavourite }
+          : product;
+      }),
+    );
+  };
   return (
-    <StyledProductCard>
+    <StyledProductCard as="li">
       <StyledImageContent>
-        <FavouriteButton onClick={() => handleAddToFavourites(id)} />
+        <FavouriteButton
+          isFavourite={isFavourite}
+          onClick={() => handleAddToFavourites(id)}
+        />
         <StyledImageWrapper></StyledImageWrapper>
-        <MainButton title="Add to cart" onClick={() => handleAddToCart(id)} />
+        <MainButton
+          isInCart={isInCart}
+          title={isInCart ? 'In cart' : 'Add to cart'}
+          onClick={() => handleAddToCart(id)}
+        />
       </StyledImageContent>
       <StyledInfoContent>
-        <Text2Bold>{title}</Text2Bold>
+        <Text2Bold $case="uppercase">{title}</Text2Bold>
         <Text2Bold>€{price}</Text2Bold>
       </StyledInfoContent>
     </StyledProductCard>
