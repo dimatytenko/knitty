@@ -1,21 +1,12 @@
-import { NavigationLink } from '../../ui-kit/Links';
-import { StyledHeaderTop } from '../HeaderBlocktLeft/styles';
-import { StyledHeaderBlock } from './styles';
+import { StyledHeaderTop } from './HeaderBlockToptLeft/styles';
+import { StyledHeaderBlock, StyledHeaderBottom } from './styles';
 import { IProps } from './types';
 
-export const HeaderBlockComponent = ({ renderTop, navList }: IProps) => {
+export const HeaderBlockComponent = ({ renderTop, renderBottom }: IProps) => {
   return (
     <StyledHeaderBlock>
       <StyledHeaderTop>{renderTop}</StyledHeaderTop>
-      <nav>
-        <ul>
-          {navList.map(({ title, path }) => (
-            <li key={title}>
-              <NavigationLink to={path}>{title}</NavigationLink>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <StyledHeaderBottom>{renderBottom}</StyledHeaderBottom>
     </StyledHeaderBlock>
   );
 };

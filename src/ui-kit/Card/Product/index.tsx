@@ -1,5 +1,5 @@
-import { FavouriteButton, MainButton } from '../../ui-kit/Buttons';
-import { Text2Bold } from '../../ui-kit/Typography';
+import { FavouriteButton, MainButton } from '../../Buttons';
+import { Text2Bold } from '../../Typography';
 import {
   StyledImageContent,
   StyledImageWrapper,
@@ -36,7 +36,7 @@ export const ProductCard = ({
     );
   };
   return (
-    <StyledProductCard as="li">
+    <StyledProductCard as="article">
       <StyledImageContent>
         <FavouriteButton
           isFavourite={isFavourite}

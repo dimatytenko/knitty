@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { StyledHeaderTop } from '../HeaderBlocktLeft/styles';
+import { StyledHeaderTop } from './HeaderBlockToptLeft/styles';
 
 export const StyledHeaderBlock = styled.div`
   position: relative;
@@ -16,13 +16,12 @@ export const StyledHeaderBlock = styled.div`
       justify-content: flex-end;
     }
   }
+`;
 
-  nav {
-    margin-top: 20px;
+export const StyledHeaderBottom = styled.div`
+  margin-top: 20px;
 
-    ul {
-      display: flex;
-      gap: 30px;
-    }
-  }
+  display: flex;
+  align-items: center;
+  gap: 30px;
 `;

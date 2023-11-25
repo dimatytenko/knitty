@@ -10,6 +10,7 @@ const colors = {
   hover: '#BDBDBD',
   lightHover: 'rgba(255, 255, 255, 0.3)',
   line: 'rgba(33, 33, 33, 0.10)',
+  backdrop: 'rgba(33, 33, 33, 0.5)',
 };
 
 export const palette = {

@@ -22,7 +22,7 @@ import {
 } from '../../ui-kit/Buttons';
 import { Container } from '../../components/Layout/styles';
 import { Pagination } from '../../ui-kit/Pagination';
-import { ProductCard } from '../../components/ProductCard';
+import { ProductCard } from '../../ui-kit/Card/Product';
 import { Sort } from '../../ui-kit/Sort';
 
 const GreyText = styled(Text1Bold)`

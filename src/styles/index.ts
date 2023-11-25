@@ -48,6 +48,17 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
   }
 
+  #modal{
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 10;
+    pointer-events: none;
+  }
+
   button {
     cursor: pointer;
     color: inherit;
