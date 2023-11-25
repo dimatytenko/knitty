@@ -6,3 +6,9 @@ export const StyledGalleryWrapper = styled.ul`
   row-gap: 35px;
   column-gap: 10px;
 `;
+
+export const StyledCartGalleryWrapper = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;

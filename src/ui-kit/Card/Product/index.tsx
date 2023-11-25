@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { CartContext } from '../../../context/Cart';
 import { FavouriteButton, MainButton } from '../../Buttons';
 import { Text2Bold } from '../../Typography';
 import {
@@ -7,6 +9,7 @@ import {
   StyledProductCard,
 } from './styled';
 import { IProps } from './types';
+import { IProduct } from '../../../types/api';
 
 export const ProductCard = ({
   title,
@@ -16,10 +19,10 @@ export const ProductCard = ({
   isInCart,
   setData,
 }: IProps) => {
-  const handleAddToCart = (id: string) => {
+  const handleAddToCart = (item: IProduct) => {
     setData((prev) =>
       prev.map((product) => {
-        return product.id === id
+        return product.id === item.id
           ? { ...product, isInCart: !product.isInCart }
           : product;
       }),
@@ -46,7 +49,9 @@ export const ProductCard = ({
         <MainButton
           isInCart={isInCart}
           title={isInCart ? 'In cart' : 'Add to cart'}
-          onClick={() => handleAddToCart(id)}
+          onClick={() =>
+            handleAddToCart({ title, price, id, isFavourite, isInCart })
+          }
         />
       </StyledImageContent>
       <StyledInfoContent>

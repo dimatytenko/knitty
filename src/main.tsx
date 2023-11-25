@@ -11,8 +11,8 @@ document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    {/* <React.StrictMode> */}
+    <App />
+    {/* </React.StrictMode> */}
   </BrowserRouter>,
 );

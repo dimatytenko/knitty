@@ -7,15 +7,18 @@ import { Layout } from './containers/Layout';
 import { defaultTheme } from './ui-kit/theme/theme';
 import './ui-kit/fonts/fonts.css';
 import './ui-kit/MenuMore/styles.css';
+import { CartProvider } from './context/Cart';
 
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Layout>
-        <RoutesSwitch />
-      </Layout>
-      <Normalize />
-      <GlobalStyles />
+      <CartProvider>
+        <Layout>
+          <RoutesSwitch />
+        </Layout>
+        <Normalize />
+        <GlobalStyles />
+      </CartProvider>
     </ThemeProvider>
   );
 }

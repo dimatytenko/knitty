@@ -1,3 +1,6 @@
+import store from 'store';
+import { useState } from 'react';
+
 import { GalleryComponent } from '../../components/Gallery';
 import { Container } from '../../components/Layout/styles';
 import { ProductCard } from '../../ui-kit/Card/Product';
@@ -5,12 +8,27 @@ import { TagsRowComponent } from '../../components/TagsRow';
 import { useFetch } from '../../hooks/useFetch';
 import { useFilters } from '../../hooks/useFilters';
 import { StyledGalleryWrapper } from '../../styles/container';
+import { useCart } from '../../hooks/useCart/useCart';
+import { useStorageObserver } from '../../hooks/useStorageObserver';
+import { IProduct } from '../../types/api';
 
 export const Sale = () => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { data, error, loading, setData } = useFetch({
-    endpoint: 'baseURL/api/sale',
+  const [data, setData] = useState<IProduct[] | []>(store.get('sale') || []);
+
+  useStorageObserver({
+    storageKey: 'sale',
+    data,
+    setData,
   });
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { error, loading } = useFetch({
+    endpoint: 'baseURL/api/sale',
+    setData,
+    noFetching: data.length > 0,
+  });
+
+  useCart({ data });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { filters, setFilters } = useFilters();
