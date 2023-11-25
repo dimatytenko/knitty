@@ -4,5 +4,5 @@ export interface IGalleryComponentProps {
   data: IProduct[];
   wrapper: any;
   renderItem: (el: any) => React.ReactElement;
-  loading: boolean;
+  loading?: boolean;
 }

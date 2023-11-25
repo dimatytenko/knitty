@@ -1,17 +1,22 @@
-import { useRef, useEffect } from 'react';
-import { StyledModalCart } from './styles';
+import { useRef, useEffect, useContext } from 'react';
+import { StyledModalCart, StyledModalHeader } from './styles';
 import gsap from 'gsap';
-import { Heading2 } from '../../../../ui-kit/Typography';
+import { Heading3 } from '../../../../ui-kit/Typography';
 import { IProps } from './types';
 import { IconSvg } from '../../../../ui-kit/Icon/Svg';
+import { HorizontalSeparator } from '../../../../ui-kit/HorizontalSeparator';
+import { CartContext } from '../../../../context/Cart';
+import { GalleryComponent } from '../../../Gallery';
+import { CartCard } from '../../../../ui-kit/Card/Cart';
+import { StyledCartGalleryWrapper } from '../../../../styles/container';
 
 const ModalHeader = ({ setIsVisible }: IProps) => {
   const onClick = () => {
     setIsVisible(false);
   };
   return (
-    <div>
-      <Heading2 $case="uppercase">Cart (1 items)</Heading2>
+    <StyledModalHeader>
+      <Heading3 $case="uppercase">Cart (1 items)</Heading3>
       <button type="button" onClick={onClick}>
         <IconSvg
           type="close"
@@ -20,12 +25,13 @@ const ModalHeader = ({ setIsVisible }: IProps) => {
           viewBox="0 0 24 24"
         ></IconSvg>
       </button>
-    </div>
+    </StyledModalHeader>
   );
 };
 
 export const ModalCart = ({ setIsVisible }: IProps) => {
   const refModal = useRef(null);
+  const { cartList } = useContext(CartContext);
 
   useEffect(() => {
     if (!refModal) return;
@@ -33,8 +39,15 @@ export const ModalCart = ({ setIsVisible }: IProps) => {
   }, []);
 
   return (
-    <StyledModalCart ref={refModal}>
+    <StyledModalCart ref={refModal} as="aside">
       <ModalHeader setIsVisible={setIsVisible} />
+      <HorizontalSeparator />
+      <GalleryComponent
+        data={cartList}
+        wrapper={StyledCartGalleryWrapper}
+        renderItem={(el) => <CartCard {...el} />}
+      />
+      <HorizontalSeparator />
     </StyledModalCart>
   );
 };

@@ -3,17 +3,16 @@ import { IProps } from './types';
 import { dataList } from '../../helpers/listsData';
 import { IProduct } from '../../types/api';
 
-export const useFetch = ({ endpoint }: IProps) => {
-  const [data, setData] = useState<IProduct[] | []>([]);
+export const useFetch = ({ endpoint, setData, noFetching }: IProps) => {
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    // if (!data.length) return;
+    if (noFetching) return;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const fakeFetch = (endpoint: string): Promise<IProduct[]> => {
       return new Promise((resolve) => {
         setTimeout(() => {
-          console.log(`fetch ${endpoint} endpoint`, endpoint);
           resolve(dataList);
         }, 1500);
       });
@@ -22,8 +21,8 @@ export const useFetch = ({ endpoint }: IProps) => {
     const getData = async () => {
       setLoading(true);
       try {
-        const data = await fakeFetch(endpoint); //{endpoint:"baseURL/api/woman"}
-        if (data) setData(data);
+        const data = await fakeFetch(endpoint);
+        if (data) setData((prev) => [...prev, ...data]);
       } catch (error) {
         if (error instanceof Error) {
           setError(error.message);
@@ -33,7 +32,6 @@ export const useFetch = ({ endpoint }: IProps) => {
       }
     };
     getData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-  return { data, error, loading, setData };
+  }, [endpoint, setData, noFetching]);
+  return { error, loading };
 };

@@ -1,7 +1,7 @@
 import { IProduct } from '../../types/api';
 
 export interface IProps {
-  endpoint: string;
+  storageKey: string;
+  data: IProduct[];
   setData: React.Dispatch<React.SetStateAction<IProduct[]>>;
-  noFetching: boolean;
 }

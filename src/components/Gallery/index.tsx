@@ -1,3 +1,4 @@
+import { useContext, useEffect } from 'react';
 import { IGalleryComponentProps } from './types';
 
 export const GalleryComponent = ({
@@ -7,6 +8,7 @@ export const GalleryComponent = ({
   loading,
 }: IGalleryComponentProps) => {
   if (loading) return <div>Loading...</div>;
+  if (!data.length) return <div>No items...</div>;
 
   return (
     <Wrapper>
