@@ -7,6 +7,7 @@ export const StyledModalCart = styled.div`
 
   width: 450px;
   height: 100%;
+  padding: 30px;
 
   background-color: ${({ theme }) => theme.palette.colors.background};
 `;
