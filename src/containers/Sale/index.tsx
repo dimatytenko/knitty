@@ -1,6 +1,6 @@
 import { GalleryComponent } from '../../components/Gallery';
 import { Container } from '../../components/Layout/styles';
-import { ProductCard } from '../../components/ProductCard';
+import { ProductCard } from '../../ui-kit/Card/Product';
 import { TagsRowComponent } from '../../components/TagsRow';
 import { useFetch } from '../../hooks/useFetch';
 import { useFilters } from '../../hooks/useFilters';
@@ -21,9 +21,7 @@ export const Sale = () => {
         loading={loading}
         data={data}
         wrapper={StyledGalleryWrapper}
-        renderItem={(el) => (
-          <ProductCard {...el} key={el.id} setData={setData} />
-        )}
+        renderItem={(el) => <ProductCard {...el} setData={setData} />}
       />
     </Container>
   );

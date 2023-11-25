@@ -1,15 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { IconSvg } from '../../ui-kit/Icon/Svg';
 import { HeaderBlockComponent } from '../HeaderBlock';
-import { HeaderBlockLeft } from '../HeaderBlocktLeft';
-import { HeaderBlockRight } from '../HeaderBlocktRight';
-import { listLeft, listRight } from './constants';
+import { HeaderBlockTopLeft } from '../HeaderBlock/HeaderBlockToptLeft';
+import { HeaderBlockTopRight } from '../HeaderBlock/HeaderBlocktTopRight';
 import { Container, StyledHeader, HeaderContent } from './styles';
 import gsap from 'gsap';
 import { MainLink } from '../../ui-kit/Links';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTheme } from 'styled-components';
 import { useLocation } from 'react-router-dom';
+import { HeaderBlockBottomLeft } from '../HeaderBlock/HeaderBlockBottomLeft';
+import { HeaderBlockBottomRight } from '../HeaderBlock/HeaderBlockBottomRight';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,9 +39,14 @@ export const HeaderComponent = () => {
         borderBottomRightRadius: 30,
         boxShadow: `0px 10px 15px -3px rgba(0,0,0,0.1)`,
       });
-    } else {
-      gsap.set(refHeader.current, { position: 'relative' });
+      return;
     }
+    gsap.registerPlugin();
+    gsap.set(refHeader.current, {
+      scrollTrigger: undefined,
+      position: 'relative',
+    });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
@@ -49,8 +55,8 @@ export const HeaderComponent = () => {
       <Container>
         <HeaderContent>
           <HeaderBlockComponent
-            renderTop={<HeaderBlockLeft />}
-            navList={listLeft}
+            renderTop={<HeaderBlockTopLeft />}
+            renderBottom={<HeaderBlockBottomLeft />}
           />
           <MainLink to="/">
             <IconSvg
@@ -62,8 +68,8 @@ export const HeaderComponent = () => {
             />
           </MainLink>
           <HeaderBlockComponent
-            renderTop={<HeaderBlockRight />}
-            navList={listRight}
+            renderTop={<HeaderBlockTopRight />}
+            renderBottom={<HeaderBlockBottomRight />}
           />
         </HeaderContent>
       </Container>

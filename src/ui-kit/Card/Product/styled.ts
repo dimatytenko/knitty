@@ -1,8 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import {
-  StyledFavoriteButton,
-  StyledMainButton,
-} from '../../ui-kit/Buttons/styles';
+import { StyledFavoriteButton, StyledMainButton } from '../../Buttons/styles';
 
 export const StyledProductCard = styled.div`
   /* width: 100%;

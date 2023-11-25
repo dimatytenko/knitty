@@ -5,6 +5,7 @@ import { Br } from '../../ui-kit/Br';
 import { About } from '../About';
 import { Hero } from '../Hero/Hero';
 import { AllKnits } from '../AllKnits';
+import { Portal } from '../../components/Portal';
 
 export const Main = () => {
   return (
@@ -22,6 +23,10 @@ export const Main = () => {
       <Br desktop={120} mobile={60} />
       <Globally />
       <Br desktop={120} mobile={60} />
+
+      <Portal>
+        <div>Hello</div>
+      </Portal>
     </div>
   );
 };
