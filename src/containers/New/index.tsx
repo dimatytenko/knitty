@@ -26,7 +26,8 @@ export const New = () => {
     setData,
     noFetching: data.length > 0,
   });
-  useCart({ data });
+
+  // useCart({ data });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { filters, setFilters } = useFilters();
