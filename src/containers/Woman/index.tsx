@@ -15,9 +15,8 @@ export const Woman = () => {
   const [data, setData] = useState<IProduct[] | []>(store.get('woman') || []);
 
   useStorageObserver({
-    storageKey: 'womans',
+    storageKey: 'woman',
     data,
-    setData,
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -27,7 +26,7 @@ export const Woman = () => {
     noFetching: data.length > 0,
   });
 
-  // useCart({ data });
+  useCart({ data });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { filters, setFilters } = useFilters();
