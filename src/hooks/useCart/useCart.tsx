@@ -7,7 +7,6 @@ export const useCart = ({ data }: { data: IProduct[] }) => {
 
   useEffect(() => {
     setCartList(data);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data]);
+  }, [data, setCartList]);
   return;
 };

@@ -8,6 +8,7 @@ export const useFetch = ({ endpoint, setData, noFetching }: IProps) => {
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
+    console.log(noFetching);
     if (noFetching) return;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const fakeFetch = (endpoint: string): Promise<IProduct[]> => {
