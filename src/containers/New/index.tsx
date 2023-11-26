@@ -17,7 +17,6 @@ export const New = () => {
   useStorageObserver({
     storageKey: 'new',
     data,
-    setData,
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -27,14 +26,14 @@ export const New = () => {
     noFetching: data.length > 0,
   });
 
-  // useCart({ data });
+  useCart({ data });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { filters, setFilters } = useFilters();
 
   return (
     <Container>
-      <TagsRowComponent setFilters={setFilters} />;
+      <TagsRowComponent setFilters={setFilters} />
       <GalleryComponent
         loading={loading}
         data={data}

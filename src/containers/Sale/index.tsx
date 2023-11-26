@@ -18,7 +18,6 @@ export const Sale = () => {
   useStorageObserver({
     storageKey: 'sale',
     data,
-    setData,
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -28,7 +27,7 @@ export const Sale = () => {
     noFetching: data.length > 0,
   });
 
-  // useCart({ data });
+  useCart({ data });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { filters, setFilters } = useFilters();
