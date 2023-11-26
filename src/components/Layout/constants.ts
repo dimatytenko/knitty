@@ -59,5 +59,4 @@ export const listLeft: ILink[] = [
 export const listRight: ILink[] = [
   { title: 'Souvenirs', path: route.souvenirs.path },
   { title: 'New', path: route.new.path },
-  { title: 'Contact', path: route.contact.path },
 ];

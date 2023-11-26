@@ -17,6 +17,8 @@ export const iconOptions = <const>[
   'logo-knitty',
   'nav-stroke',
   'close',
+  'plus',
+  'minus',
 ];
 export type icon = (typeof iconOptions)[number];
 

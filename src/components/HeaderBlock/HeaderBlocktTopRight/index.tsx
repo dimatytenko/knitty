@@ -1,4 +1,3 @@
-import { IconSvg } from '../../../ui-kit/Icon/Svg';
 import { MainLink } from '../../../ui-kit/Links';
 import { VerticalSeparator } from '../../../ui-kit/VerticalSeparator';
 import { LangSwitcherComponent } from '../../LangSwitcher';
@@ -6,10 +5,6 @@ import { LangSwitcherComponent } from '../../LangSwitcher';
 export const HeaderBlockTopRight = () => {
   return (
     <>
-      <MainLink to="/favorites">
-        <IconSvg type="heart" fill="none" />
-      </MainLink>
-
       <VerticalSeparator>
         <LangSwitcherComponent />
       </VerticalSeparator>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledModalCart = styled.div`
+export const StyledModalCart = styled.aside`
   position: absolute;
   right: -100%;
   top: 0;
