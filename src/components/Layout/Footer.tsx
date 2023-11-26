@@ -17,11 +17,12 @@ import {
 } from './styles';
 import { IProps } from './types';
 import { IFooterComponentProps } from '../../types/layout';
+import { Text3Bold } from '../../ui-kit/Typography';
 
 export const LinksBlock = ({ header, list }: IProps) => {
   return (
     <LinksBlockWrapper>
-      <TextBody3Bold as="h3">{header}</TextBody3Bold>
+      <Text3Bold $case="uppercase">{header}</Text3Bold>
       <FooterList>
         {list.map(({ title, path, ...rest }) => (
           <li key={title}>

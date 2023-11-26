@@ -8,6 +8,8 @@ export const StyledGalleryWrapper = styled.ul`
 `;
 
 export const StyledCartGalleryWrapper = styled.ul`
+  margin-top: 30px;
+
   display: flex;
   flex-direction: column;
   gap: 10px;

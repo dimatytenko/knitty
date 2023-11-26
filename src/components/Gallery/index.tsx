@@ -1,4 +1,3 @@
-import { useContext, useEffect } from 'react';
 import { IGalleryComponentProps } from './types';
 
 export const GalleryComponent = ({

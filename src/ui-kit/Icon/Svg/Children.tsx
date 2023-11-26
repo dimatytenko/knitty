@@ -9,7 +9,9 @@ import {
   LogoKnitty,
   NavStroke,
   ArrowLight,
-  Close
+  Close,
+  Plus,
+  Minus,
 } from './Paths';
 import { StyledSvgIconProps } from './types';
 
@@ -31,8 +33,12 @@ export const SvgChildren: React.FC<StyledSvgIconProps> = ({ type }) => {
       return <LogoKnitty />;
     case 'nav-stroke':
       return <NavStroke />;
-      case "close":
-        return <Close/>;
+    case 'close':
+      return <Close />;
+    case 'plus':
+      return <Plus />;
+    case 'minus':
+      return <Minus />;
 
     default:
       return null;

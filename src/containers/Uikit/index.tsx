@@ -52,6 +52,9 @@ export const Uikit = () => {
         <IconSvg type="heart" fill="none" />
         <IconSvg type="heart" />
         <IconSvg type="arrow" width="24" height="24" viewBox="0 0 24 24" />
+        <IconSvg type="close" width="24" height="24" viewBox="0 0 24 24" />
+        <IconSvg type="plus" width="24" height="24" viewBox="0 0 24 24" />
+        <IconSvg type="minus" width="24" height="24" viewBox="0 0 24 24" />
         <IconSvg
           type="nav-stroke"
           width="77"
@@ -139,10 +142,9 @@ export const Uikit = () => {
             title="Wool sweater"
             price={150}
             id="id-15"
-            handleAddToCart={(id) => console.log(`add to cart ${id}`)}
-            handleAddToFavourites={(id) =>
-              console.log(`add to favourites ${id}`)
-            }
+            setData={() => console.log('use state setter')}
+            isFavourite={false}
+            isInCart={false}
           />
         </div>
         <br />

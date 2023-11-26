@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { CartContext } from '../../../context/Cart';
 import { FavouriteButton, MainButton } from '../../Buttons';
 import { Text2Bold } from '../../Typography';
 import {
@@ -23,7 +21,11 @@ export const ProductCard = ({
     setData((prev) =>
       prev.map((product) => {
         return product.id === item.id
-          ? { ...product, isInCart: !product.isInCart }
+          ? {
+              ...product,
+              isInCart: !product.isInCart,
+              quantity: 1,
+            }
           : product;
       }),
     );
