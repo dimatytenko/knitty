@@ -1,17 +1,15 @@
-import { useRef, useEffect, useContext } from 'react';
+import { useRef, useEffect } from 'react';
 import { StyledModalCart } from './styles';
 import gsap from 'gsap';
 import { IProps } from './types';
 import { HorizontalSeparator } from '../../../../ui-kit/HorizontalSeparator';
-import { CartContext } from '../../../../context/Cart';
 import { GalleryComponent } from '../../../Gallery';
 import { CartCard } from '../../../../ui-kit/Card/Cart';
 import { StyledCartGalleryWrapper } from '../../../../styles/container';
 import { ModalHeader } from './ModalHeader';
 
-export const ModalCart = ({ setIsVisible }: IProps) => {
+export const ModalCart = ({ cartList, setIsVisible }: IProps) => {
   const refModal = useRef(null);
-  const { cartList } = useContext(CartContext)!;
 
   useEffect(() => {
     if (!refModal) return;

@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import { IProduct } from '../../types/api';
 
-export const useCart = ({ data }: { data: IProduct[] }) => {
-  const [cartList, setCartList] = useState<IProduct[]>([]);
+export const useFavourites = ({ data }: { data: IProduct[] }) => {
+  const [favList, setFavList] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    setCartList((prev: IProduct[]) => {
+    setFavList((prev: IProduct[]) => {
       const set = new Set();
       prev.forEach((el) => {
         set.add(JSON.stringify(el));
       });
 
       data
-        .filter(({ isInCart }) => isInCart)
+        .filter(({ isFavourite }) => isFavourite)
         .forEach((el) => {
           set.add(JSON.stringify(el));
         });
@@ -22,5 +22,5 @@ export const useCart = ({ data }: { data: IProduct[] }) => {
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
-  return { cartList, setCartList };
+  return { favList, setFavList };
 };
