@@ -1,3 +1,4 @@
+import store from 'store';
 import { createContext, useState } from 'react';
 import { IProduct } from '../../types/api';
 import { IProps } from './types';
@@ -16,7 +17,9 @@ export const GlobalStore = createContext<{
 } | null>(null);
 
 const useGlobalStore = () => {
-  const [data, setData] = useState<IProduct[] | []>([]);
+  const [data, setData] = useState<IProduct[] | []>(
+    store.get('products') || [],
+  );
 
   const { error, loading } = useFetch({
     endpoint: 'baseURL/api/products',
