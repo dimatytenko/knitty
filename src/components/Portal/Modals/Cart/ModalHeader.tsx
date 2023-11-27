@@ -1,12 +1,13 @@
 import { IconSvg } from '../../../../ui-kit/Icon/Svg';
 import { Heading3 } from '../../../../ui-kit/Typography';
 import { StyledModalHeader } from './styles';
-import { IProps } from './types';
+import { IModalHeaderProps } from './types';
 
-export const ModalHeader = ({ setIsVisible, cartList }: IProps) => {
+export const ModalHeader = ({ setIsVisible, cartList }: IModalHeaderProps) => {
   const onClick = () => {
     setIsVisible(false);
   };
+
   return (
     <StyledModalHeader>
       <Heading3 $case="uppercase">{`Cart (${cartList.length} items)`}</Heading3>

@@ -5,22 +5,10 @@ export const useCart = ({ data }: { data: IProduct[] }) => {
   const [cartList, setCartList] = useState<IProduct[]>([]);
 
   useEffect(() => {
-    setCartList((prev: IProduct[]) => {
-      const set = new Set();
-      prev.forEach((el) => {
-        set.add(JSON.stringify(el));
-      });
-
-      data
-        .filter(({ isInCart }) => isInCart)
-        .forEach((el) => {
-          set.add(JSON.stringify(el));
-        });
-
-      const normalizeList: IProduct[] = [...set].map(JSON.parse);
-      return [...normalizeList];
-    });
+    setCartList(data.filter(({ isInCart }) => isInCart));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
+
+  // console.log(cartList);
   return { cartList, setCartList };
 };
