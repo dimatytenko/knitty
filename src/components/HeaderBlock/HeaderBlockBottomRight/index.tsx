@@ -9,7 +9,7 @@ import { GlobalStore } from '../../../context/GlobalStore';
 
 export const HeaderBlockBottomRight = () => {
   const [visible, setIsVisible] = useState<boolean>(false);
-  const { cartList, favList } = useContext(GlobalStore)!;
+  const { cartList, favList, setData } = useContext(GlobalStore)!;
 
   const onClick = () => {
     setIsVisible(true);
@@ -20,7 +20,7 @@ export const HeaderBlockBottomRight = () => {
       <NavList list={listRight} />
       <StyledFavLink to="/favorites">
         <Text2Bold $case="uppercase">Favorits</Text2Bold>
-        {!cartList.length ? null : <span>{favList.length}</span>}
+        {!favList.length ? null : <span>{favList.length}</span>}
       </StyledFavLink>
 
       <StyledCartBtn type="button" onClick={onClick}>
@@ -28,7 +28,7 @@ export const HeaderBlockBottomRight = () => {
         {!cartList.length ? null : <span>{cartList.length}</span>}
       </StyledCartBtn>
       <Portal visible={visible} setIsVisible={setIsVisible}>
-        <ModalCart cartList={cartList} setIsVisible={setIsVisible} />
+        <ModalCart cartList={cartList} setData={setData} />
       </Portal>
     </>
   );

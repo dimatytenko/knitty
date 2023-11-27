@@ -13,7 +13,7 @@ export const useFetch = ({ endpoint, setData, noFetching }: IProps) => {
     const fakeFetch = (endpoint: string): Promise<IProduct[]> => {
       return new Promise((resolve) => {
         setTimeout(() => {
-          resolve(dataList);
+          resolve(dataList.splice(0, 30));
         }, 1500);
       });
     };

@@ -9,7 +9,7 @@ export const Buttons = ({ quantity, id, setData }: TypeButtonsProps) => {
       prev.map((product) => {
         if (product.id === id) {
           if (product.quantity && !(product.quantity <= 1))
-            return { ...product, quantity: product.quantity-- };
+            return { ...product, quantity: (product.quantity -= 1) };
         }
         return product;
       }),
@@ -21,7 +21,7 @@ export const Buttons = ({ quantity, id, setData }: TypeButtonsProps) => {
       prev.map((product) => {
         if (product.id === id) {
           if (product.quantity)
-            return { ...product, quantity: product.quantity++ };
+            return { ...product, quantity: (product.quantity += 1) };
         }
         return product;
       }),
@@ -29,8 +29,18 @@ export const Buttons = ({ quantity, id, setData }: TypeButtonsProps) => {
   };
 
   const handleRemove = (id: string | number) => {
-    console.log(id);
+    setData((prev) =>
+      prev.map((product) => {
+        if (product.id === id) {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { quantity, ...rest } = product;
+          return { ...rest, isInCart: false };
+        }
+        return product;
+      }),
+    );
   };
+
   return (
     <StyledButtonsWrapper>
       <StyledIncrementButtons>

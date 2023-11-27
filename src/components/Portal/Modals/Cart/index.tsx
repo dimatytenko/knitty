@@ -8,7 +8,7 @@ import { CartCard } from '../../../../ui-kit/Card/Cart';
 import { StyledCartGalleryWrapper } from '../../../../styles/container';
 import { ModalHeader } from './ModalHeader';
 
-export const ModalCart = ({ cartList, setIsVisible }: IProps) => {
+export const ModalCart = ({ cartList, setIsVisible, setData }: IProps) => {
   const refModal = useRef(null);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export const ModalCart = ({ cartList, setIsVisible }: IProps) => {
       <GalleryComponent
         data={cartList}
         wrapper={StyledCartGalleryWrapper}
-        renderItem={(el) => <CartCard {...el} />}
+        renderItem={(el) => <CartCard {...el} setData={setData} />}
       />
       <HorizontalSeparator />
     </StyledModalCart>
