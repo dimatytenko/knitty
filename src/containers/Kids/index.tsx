@@ -1,34 +1,15 @@
-import store from 'store';
-import { useState } from 'react';
+import { useContext } from 'react';
 import { GalleryComponent } from '../../components/Gallery';
 import { Container } from '../../components/Layout/styles';
 import { ProductCard } from '../../ui-kit/Card/Product';
 import { TagsRowComponent } from '../../components/TagsRow';
-import { useFetch } from '../../hooks/useFetch';
 import { useFilters } from '../../hooks/useFilters';
 import { StyledGalleryWrapper } from '../../styles/container';
-import { useCart } from '../../hooks/useCart/useCart';
-import { useStorageObserver } from '../../hooks/useStorageObserver';
-import { IProduct } from '../../types/api';
+import { GlobalStore } from '../../context/GlobalStore';
 
 export const Kids = () => {
-  const [data, setData] = useState<IProduct[] | []>(store.get('kids') || []);
+  const { data, setData, loading } = useContext(GlobalStore)!;
 
-  useStorageObserver({
-    storageKey: 'kids',
-    data,
-  });
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { error, loading } = useFetch({
-    endpoint: 'baseURL/api/kids',
-    setData,
-    noFetching: data.length > 0,
-  });
-
-  useCart({ data });
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { filters, setFilters } = useFilters();
 
   return (
