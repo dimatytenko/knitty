@@ -1,15 +1,18 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import { Text2Bold } from '../../../ui-kit/Typography';
 import { listRight } from '../../Layout/constants';
 import { Portal } from '../../Portal';
 import { NavList } from '../NavList';
 import { ModalCart } from '../../Portal/Modals/Cart';
 import { StyledCartBtn, StyledFavLink } from '../styles';
-import { GlobalStore } from '../../../context/GlobalStore';
+import { IProps } from './types';
 
-export const HeaderBlockBottomRight = () => {
+export const HeaderBlockBottomRight = ({
+  favList,
+  cartList,
+  setData,
+}: IProps) => {
   const [visible, setIsVisible] = useState<boolean>(false);
-  const { cartList, favList, setData } = useContext(GlobalStore)!;
 
   const onClick = () => {
     setIsVisible(true);

@@ -5,7 +5,7 @@ import { IProps } from './types';
 
 export const CartCard = ({ title, id, setData, price, quantity }: IProps) => {
   return (
-    <StyledCartCard>
+    <StyledCartCard id="cart-card">
       <StyledImageWrapper></StyledImageWrapper>
       <StyledInfoBlock>
         <Heading3 $case="uppercase">{title}</Heading3>
