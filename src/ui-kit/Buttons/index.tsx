@@ -32,7 +32,9 @@ export const FilterButton = ({
 }: IFilterButton) => {
   return (
     <StyledFilterButton $active={active} type={type} onClick={onClick}>
-      <Text2Bold $case="uppercase">{title}</Text2Bold>
+      <Text2Bold $case="uppercase" color={active ? 'background' : 'primary'}>
+        {title}
+      </Text2Bold>
     </StyledFilterButton>
   );
 };
