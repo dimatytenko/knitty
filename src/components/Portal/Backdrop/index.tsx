@@ -14,6 +14,7 @@ export const BackDrop = ({ children, setIsVisible }: IProps) => {
 
   useEffect(() => {
     if (!refModal) return;
+
     gsap.to(refModal.current, { opacity: 1 });
   }, []);
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 import { IconSvg } from '../../ui-kit/Icon/Svg';
 import { HeaderBlockComponent } from '../HeaderBlock';
 import { HeaderBlockTopLeft } from '../HeaderBlock/HeaderBlockToptLeft';
@@ -11,6 +11,7 @@ import { useTheme } from 'styled-components';
 import { useLocation } from 'react-router-dom';
 import { HeaderBlockBottomLeft } from '../HeaderBlock/HeaderBlockBottomLeft';
 import { HeaderBlockBottomRight } from '../HeaderBlock/HeaderBlockBottomRight';
+import { GlobalStore } from '../../context/GlobalStore';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,6 +19,7 @@ export const HeaderComponent = () => {
   const { pathname } = useLocation();
   const { palette } = useTheme();
   const refHeader = useRef(null);
+  const { cartList, favList, setData } = useContext(GlobalStore)!;
 
   useEffect(() => {
     if (!refHeader.current) return;
@@ -69,7 +71,13 @@ export const HeaderComponent = () => {
           </MainLink>
           <HeaderBlockComponent
             renderTop={<HeaderBlockTopRight />}
-            renderBottom={<HeaderBlockBottomRight />}
+            renderBottom={
+              <HeaderBlockBottomRight
+                cartList={cartList}
+                favList={favList}
+                setData={setData}
+              />
+            }
           />
         </HeaderContent>
       </Container>
