@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledCartCard = styled.article`
+  position: relative;
+
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 20px;
