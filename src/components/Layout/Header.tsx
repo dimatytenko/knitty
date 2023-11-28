@@ -21,6 +21,7 @@ export const HeaderComponent = () => {
 
   useEffect(() => {
     if (!refHeader.current) return;
+    ScrollTrigger.enable();
 
     if (pathname === '/') {
       gsap.set(refHeader.current, { position: 'fixed' });
@@ -41,11 +42,10 @@ export const HeaderComponent = () => {
       });
       return;
     }
-    gsap.registerPlugin();
     gsap.set(refHeader.current, {
-      scrollTrigger: undefined,
       position: 'relative',
     });
+    ScrollTrigger.disable();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
