@@ -4,6 +4,7 @@ export interface IProps {
   type?: 'button' | 'submit';
   active?: boolean;
   isInCart?: boolean;
+  children?: React.ReactElement;
 }
 
 export interface IFilterButton extends IProps {

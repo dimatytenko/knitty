@@ -1,8 +1,8 @@
 import { IconSvg } from '../Icon/Svg';
+import { Text2Bold } from '../Typography';
 import {
   StyledFilterButton,
   StyledMainButton,
-  StyledButtonText,
   StyledButtonWithArrow,
   StyledFavoriteButton,
 } from './styles';
@@ -16,7 +16,10 @@ export const MainButton = ({
 }: IProps) => {
   return (
     <StyledMainButton $isincart={isInCart} type={type} onClick={onClick}>
-      <StyledButtonText>{title}</StyledButtonText>
+      <Text2Bold $case="uppercase" color="primary">
+        {title}
+      </Text2Bold>
+      <span></span>
     </StyledMainButton>
   );
 };
@@ -29,7 +32,7 @@ export const FilterButton = ({
 }: IFilterButton) => {
   return (
     <StyledFilterButton $active={active} type={type} onClick={onClick}>
-      <StyledButtonText>{title}</StyledButtonText>
+      <Text2Bold $case="uppercase">{title}</Text2Bold>
     </StyledFilterButton>
   );
 };
@@ -38,18 +41,23 @@ export const ButtonWithArrow = ({
   title,
   onClick = () => {},
   type = 'button',
+  children,
 }: IProps) => {
   return (
     <StyledButtonWithArrow type={type} onClick={onClick}>
-      <StyledButtonText>{title}</StyledButtonText>
+      <Text2Bold $case="uppercase" color="primary">
+        {title}
+      </Text2Bold>
+      {children}
       <IconSvg
         type="arrow"
         viewBox="0 0 24 24"
         width="24"
         height="24"
-        fill="back"
-        stroke="back"
+        fill="primary"
+        stroke="primary"
       />
+      <span></span>
     </StyledButtonWithArrow>
   );
 };
