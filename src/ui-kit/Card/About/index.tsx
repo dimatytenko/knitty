@@ -2,14 +2,13 @@ import React from 'react';
 
 import {
   CardWrapper,
-  FrontWrapper,
-  FrontContent,
-  BackWrapper,
+  CardContent,
+  ImageWrapper,
   BackContent,
+  Title,
   Subtitle,
   Image,
 } from './styles';
-import { Heading2 } from '../../Typography';
 import { AboutCardProps } from './types';
 
 export const AboutCard: React.FC<AboutCardProps> = ({
@@ -19,17 +18,15 @@ export const AboutCard: React.FC<AboutCardProps> = ({
 }) => {
   return (
     <CardWrapper>
-      <FrontWrapper>
-        <FrontContent>
+      <CardContent>
+        <ImageWrapper>
           <Image src={img} alt={title} />
-        </FrontContent>
-      </FrontWrapper>
-      <BackWrapper>
+        </ImageWrapper>
         <BackContent>
-          <Heading2>{title}</Heading2>
-          <Subtitle $case="uppercase">{subtitle}</Subtitle>
+          <Title color="background">{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
         </BackContent>
-      </BackWrapper>
+      </CardContent>
     </CardWrapper>
   );
 };

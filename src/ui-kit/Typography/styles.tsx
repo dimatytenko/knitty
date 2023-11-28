@@ -22,9 +22,9 @@ const styles = css`
   font-style: inherit;
   font-weight: inherit;
   font-size: inherit;
+  line-height: inherit;
   text-transform: ${fontCase};
   color: ${color};
-  line-height: inherit;
   text-decoration: ${decorCase};
 `;
 
