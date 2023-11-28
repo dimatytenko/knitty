@@ -1,9 +1,15 @@
+import gsap from 'gsap';
 import { IconSvg } from '../../Icon/Svg';
 import { Text2Bold } from '../../Typography';
 import { StyledButtonsWrapper, StyledIncrementButtons } from './styles';
 import { TypeButtonsProps } from './types';
 
-export const Buttons = ({ quantity, id, setData }: TypeButtonsProps) => {
+export const Buttons = ({
+  quantity,
+  id,
+  setData,
+  refCard,
+}: TypeButtonsProps) => {
   const habdleDecrement = (id: string | number) => {
     setData((prev) =>
       prev.map((product) => {
@@ -29,16 +35,22 @@ export const Buttons = ({ quantity, id, setData }: TypeButtonsProps) => {
   };
 
   const handleRemove = (id: string | number) => {
-    setData((prev) =>
-      prev.map((product) => {
-        if (product.id === id) {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          const { quantity, ...rest } = product;
-          return { ...rest, isInCart: false };
-        }
-        return product;
-      }),
-    );
+    gsap.to(refCard.current, {
+      opacity: 0,
+      left: '-100%',
+      onComplete: () => {
+        setData((prev) =>
+          prev.map((product) => {
+            if (product.id === id) {
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              const { quantity, ...rest } = product;
+              return { ...rest, isInCart: false };
+            }
+            return product;
+          }),
+        );
+      },
+    });
   };
 
   return (
