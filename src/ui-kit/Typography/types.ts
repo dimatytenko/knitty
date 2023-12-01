@@ -6,6 +6,9 @@ export type caseType = (typeof caseOptions)[number];
 export const decorOptions = ['underline', 'line-through', 'overline'];
 export type decorType = (typeof decorOptions)[number];
 
+export const justifyOptions = ['center', 'left', 'right'];
+export type justifyType = (typeof decorOptions)[number];
+
 export const colorOptions = <const>[
   'primary',
   'secondary',
@@ -18,4 +21,5 @@ export type TextBaseProps = WithChildren & {
   $case?: caseType;
   color?: TextColor;
   $decor?: decorType;
+  $justify?: justifyType;
 };
