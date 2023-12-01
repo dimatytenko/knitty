@@ -10,6 +10,7 @@ import { Souvenirs } from './containers/Souvenirs';
 import { New } from './containers/New';
 import { Man } from './containers/Man';
 import { Sale } from './containers/Sale';
+import Faq from './containers/FAQ';
 
 const NotFound = lazy(() => import('./containers/NotFound'));
 
@@ -21,6 +22,7 @@ const PublicRoutes = [
   <Route key="kids" path={route.sale.path} element={<Sale />} />,
   <Route key="souvenirs" path={route.souvenirs.path} element={<Souvenirs />} />,
   <Route key="souvenirs" path={route.new.path} element={<New />} />,
+  <Route key="faq" path={route.faq.path} element={<Faq />} />,
 ];
 
 // only for development

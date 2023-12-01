@@ -12,6 +12,7 @@ import { useLocation } from 'react-router-dom';
 import { HeaderBlockBottomLeft } from '../HeaderBlock/HeaderBlockBottomLeft';
 import { HeaderBlockBottomRight } from '../HeaderBlock/HeaderBlockBottomRight';
 import { GlobalStore } from '../../context/GlobalStore';
+import { route } from '../../constants/routes';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +26,7 @@ export const HeaderComponent = () => {
     if (!refHeader.current) return;
     ScrollTrigger.enable();
 
-    if (pathname === '/') {
+    if (pathname === route.main.path) {
       gsap.set(refHeader.current, { position: 'fixed' });
 
       gsap.to(refHeader.current, {

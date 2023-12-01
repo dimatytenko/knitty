@@ -17,6 +17,10 @@ const decorCase = ({ $decor }: StyledProps<TextBaseProps>) => {
   return $decor ? $decor : 'none';
 };
 
+const justifyCase = ({ $justify }: StyledProps<TextBaseProps>) => {
+  return $justify ? $justify : 'unset';
+};
+
 const styles = css`
   font-family: inherit;
   font-style: inherit;
@@ -26,6 +30,7 @@ const styles = css`
   text-transform: ${fontCase};
   color: ${color};
   text-decoration: ${decorCase};
+  text-align: ${justifyCase};
 `;
 
 export const StyledHeading1 = styled.h1`
