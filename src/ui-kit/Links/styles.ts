@@ -2,6 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 import { TextBody1Bold } from '../Typography/styles';
 import { StyledSvg } from '../Icon/Svg/styles';
+import { StyledCircle } from '../HoverCircle/styles';
 
 const draw = keyframes`
  100% { stroke-dashoffset: 0 }`;
@@ -49,6 +50,22 @@ export const StyledLinkWithArrow = styled(Link)`
     ${StyledSvg} {
       transform: translateX(5px);
     }
+  }
+`;
+
+export const StyledHeroLink = styled(StyledLinkWithArrow)`
+  margin-top: 40px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  padding: 14px 30px;
+  border: 1px solid ${({ theme }) => theme.palette.colors.background};
+
+  min-width: 278px;
+  overflow: hidden;
+
+  &:hover ${StyledCircle} {
+    transform: scale(4);
   }
 `;
 

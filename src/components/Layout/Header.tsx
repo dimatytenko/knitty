@@ -3,7 +3,7 @@ import { IconSvg } from '../../ui-kit/Icon/Svg';
 import { HeaderBlockComponent } from '../HeaderBlock';
 import { HeaderBlockTopLeft } from '../HeaderBlock/HeaderBlockToptLeft';
 import { HeaderBlockTopRight } from '../HeaderBlock/HeaderBlocktTopRight';
-import { Container, StyledHeader, HeaderContent } from './styles';
+import { Container, StyledHeader, StyledHeaderContent } from './styles';
 import gsap from 'gsap';
 import { MainLink } from '../../ui-kit/Links';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -27,7 +27,11 @@ export const HeaderComponent = () => {
     ScrollTrigger.enable();
 
     if (pathname === route.main.path) {
-      gsap.set(refHeader.current, { position: 'fixed' });
+      gsap.set(refHeader.current, {
+        position: 'fixed',
+        backgroundColor: 'transparent',
+        backdropFilter: 'blur(20px) brightness(130%)',
+      });
 
       gsap.to(refHeader.current, {
         scrollTrigger: {
@@ -48,6 +52,7 @@ export const HeaderComponent = () => {
     gsap.set(refHeader.current, {
       position: 'relative',
       width: '100%',
+      backdropFilter: 'unset',
     });
     ScrollTrigger.disable();
 
@@ -57,7 +62,7 @@ export const HeaderComponent = () => {
   return (
     <StyledHeader ref={refHeader}>
       <Container>
-        <HeaderContent>
+        <StyledHeaderContent>
           <HeaderBlockComponent
             renderTop={<HeaderBlockTopLeft />}
             renderBottom={<HeaderBlockBottomLeft />}
@@ -81,7 +86,7 @@ export const HeaderComponent = () => {
               />
             }
           />
-        </HeaderContent>
+        </StyledHeaderContent>
       </Container>
     </StyledHeader>
   );

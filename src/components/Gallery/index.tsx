@@ -1,3 +1,4 @@
+import { NoItems } from './NoItems';
 import { IGalleryComponentProps } from './types';
 
 export const GalleryComponent = ({
@@ -7,7 +8,7 @@ export const GalleryComponent = ({
   loading,
 }: IGalleryComponentProps) => {
   if (loading) return <div>Loading...</div>;
-  if (!data.length) return <div>No items...</div>;
+  if (!data.length) return <NoItems />;
 
   return (
     <Wrapper>

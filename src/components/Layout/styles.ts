@@ -39,11 +39,9 @@ export const StyledHeader = styled.header`
 
   padding: 30px 0;
   width: 100vw;
-
-  background-color: ${({ theme }) => theme.palette.colors.background};
 `;
 
-export const HeaderContent = styled.div`
+export const StyledHeaderContent = styled.div`
   display: grid;
   grid-template-columns: 1fr auto 1fr;
 
