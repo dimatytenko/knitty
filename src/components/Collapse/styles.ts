@@ -3,23 +3,29 @@ import styled from 'styled-components';
 export const StyledCollaps = styled.div``;
 
 export const StyledTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   padding: 20px 0;
   cursor: pointer;
 `;
 
 export const StyledText = styled.div`
+  width: 95%;
   padding: 0;
   height: 0;
 `;
 
 export const StyledLeftBlock = styled.div`
+  border-bottom: 1px solid ${({ theme }) => theme.palette.colors.line};
+
   position: relative;
   overflow: hidden;
 `;
 
-export const StyledRightBlock = styled.div`
+export const StyledPlusMinusCircle = styled.div`
   & > div {
-    margin-top: 10px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -43,7 +49,4 @@ export const StyledRightBlock = styled.div`
   }
 `;
 
-export const Wrapper = styled.div`
-  display: flex;
-  border-bottom: 1px solid ${({ theme }) => theme.palette.colors.line};
-`;
+export const Wrapper = styled.div``;
