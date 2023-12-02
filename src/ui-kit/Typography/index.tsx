@@ -4,11 +4,12 @@ import {
   TextBody2Bold,
   TextBody3Bold,
   StyledHeading3,
+  StyledHeading1,
 } from './styles';
 import { TextBaseProps } from './types';
 
 export const Heading1: React.FC<TextBaseProps> = (props) => (
-  <StyledHeading2 {...props} />
+  <StyledHeading1 {...props} />
 );
 export const Heading2: React.FC<TextBaseProps> = (props) => (
   <StyledHeading2 {...props} />

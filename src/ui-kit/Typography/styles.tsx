@@ -35,7 +35,13 @@ const styles = css`
 
 export const StyledHeading1 = styled.h1`
   ${styles};
-  font-size: 50px;
+  margin: 0;
+  margin-top: 30px;
+  width: 750px;
+  font-size: 100px;
+  font-weight: 300;
+  line-height: calc(90 / 100); //90%
+  text-align: center;
 `;
 
 export const StyledHeading2 = styled.h2`

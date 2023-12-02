@@ -2,11 +2,13 @@ import { IProps } from './types';
 import { IconSvg } from '../Icon/Svg';
 import {
   StyledFooterLink,
+  StyledHeroLink,
   StyledLinkWithArrow,
   StyledMainLink,
   StyledNavLink,
 } from './styles';
 import { Text1Bold, Text2Bold } from '../Typography';
+import { HoverCircle } from '../HoverCircle';
 
 export const NavigationLink = ({ to, children }: IProps) => {
   return (
@@ -29,6 +31,25 @@ export const LinkWithArrow = ({ to, children }: IProps) => {
       <Text2Bold $case="uppercase"> {children}</Text2Bold>
       <IconSvg type="arrow" viewBox="0 0 24 24" width="24" height="24" />
     </StyledLinkWithArrow>
+  );
+};
+
+export const HeroLink = ({ to, children }: IProps) => {
+  return (
+    <StyledHeroLink to={to}>
+      <Text2Bold $case="uppercase" color="background">
+        {children}
+      </Text2Bold>
+      <IconSvg
+        fill="back"
+        stroke="back"
+        type="arrow"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+      />
+      <HoverCircle />
+    </StyledHeroLink>
   );
 };
 

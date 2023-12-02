@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 import { StyledModalCart, StyledTextBlock } from './styles';
 import gsap from 'gsap';
 import { IProps } from './types';
@@ -18,10 +18,12 @@ export const ModalCart = ({ cartList, setIsVisible, setData }: IProps) => {
     gsap.to(refModal.current, { right: 0 });
   }, []);
 
-  const summ = cartList.reduce(
-    (acc, { quantity, price }) => (acc += price * quantity!),
-    0,
-  );
+  const summ = useMemo(() => {
+    return cartList.reduce(
+      (acc, { quantity, price }) => (acc += price * quantity!),
+      0,
+    );
+  }, [cartList]);
 
   return (
     <StyledModalCart ref={refModal}>

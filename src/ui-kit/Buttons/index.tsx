@@ -1,3 +1,4 @@
+import { HoverCircle } from '../HoverCircle';
 import { IconSvg } from '../Icon/Svg';
 import { Text2Bold } from '../Typography';
 import {
@@ -19,7 +20,7 @@ export const MainButton = ({
       <Text2Bold $case="uppercase" color="primary">
         {title}
       </Text2Bold>
-      <span></span>
+      <HoverCircle />
     </StyledMainButton>
   );
 };
@@ -46,7 +47,7 @@ export const ButtonWithArrow = ({
   children,
 }: IProps) => {
   return (
-    <StyledButtonWithArrow type={type} onClick={onClick}>
+    <StyledButtonWithArrow color="background" type={type} onClick={onClick}>
       <Text2Bold $case="uppercase" color="primary">
         {title}
       </Text2Bold>
@@ -59,7 +60,7 @@ export const ButtonWithArrow = ({
         fill="primary"
         stroke="primary"
       />
-      <span></span>
+      <HoverCircle />
     </StyledButtonWithArrow>
   );
 };
