@@ -8,6 +8,7 @@ const draw = keyframes`
  100% { stroke-dashoffset: 0 }`;
 
 export const StyledNavLink = styled(NavLink)`
+  display: inline-flex;
   position: relative;
 
   ${StyledSvg} {

@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import {
   StyledLeftBlock,
-  StyledRightBlock,
+  StyledPlusMinusCircle,
   StyledText,
   StyledTitle,
-  Wrapper,
 } from './styles';
 import gsap from 'gsap';
 import { IPanelProps } from './types';
@@ -38,17 +37,17 @@ export const Panel = ({ label, text }: IPanelProps) => {
   }, [active]);
 
   return (
-    <Wrapper>
-      <StyledLeftBlock onClick={() => setActive((prev) => !prev)}>
-        <StyledTitle>{label}</StyledTitle>
-        <StyledText ref={refText}>{text}</StyledText>
-      </StyledLeftBlock>
-      <StyledRightBlock>
-        <div>
-          <span ref={refHor}></span>
-          <span ref={refVert}></span>
-        </div>
-      </StyledRightBlock>
-    </Wrapper>
+    <StyledLeftBlock onClick={() => setActive((prev) => !prev)}>
+      <StyledTitle>
+        {label}
+        <StyledPlusMinusCircle>
+          <div>
+            <span ref={refHor}></span>
+            <span ref={refVert}></span>
+          </div>
+        </StyledPlusMinusCircle>
+      </StyledTitle>
+      <StyledText ref={refText}>{text}</StyledText>
+    </StyledLeftBlock>
   );
 };
