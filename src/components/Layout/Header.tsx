@@ -47,6 +47,7 @@ export const HeaderComponent = () => {
     }
     gsap.set(refHeader.current, {
       position: 'relative',
+      width: '100%',
     });
     ScrollTrigger.disable();
 
@@ -61,7 +62,7 @@ export const HeaderComponent = () => {
             renderTop={<HeaderBlockTopLeft />}
             renderBottom={<HeaderBlockBottomLeft />}
           />
-          <MainLink to="/">
+          <MainLink to={route.main.path}>
             <IconSvg
               type="logo-knitty"
               stroke="none"
