@@ -21,6 +21,10 @@ const justifyCase = ({ $justify }: StyledProps<TextBaseProps>) => {
   return $justify ? $justify : 'unset';
 };
 
+const widthCase = ({ $width }: StyledProps<TextBaseProps>) => {
+  return $width ? $width + 'px' : 'unset';
+};
+
 const styles = css`
   font-family: inherit;
   font-style: inherit;
@@ -31,6 +35,7 @@ const styles = css`
   color: ${color};
   text-decoration: ${decorCase};
   text-align: ${justifyCase};
+  width: ${widthCase};
 `;
 
 export const StyledHeading1 = styled.h1`

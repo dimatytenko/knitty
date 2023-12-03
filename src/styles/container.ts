@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledGalleryWrapper = styled.ul`
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(317px, 1fr));
   row-gap: 35px;
