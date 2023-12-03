@@ -1,20 +1,20 @@
 import { useContext } from 'react';
 import { GalleryComponent } from '../../components/Gallery';
 import { Container } from '../../components/Layout/styles';
-import { ProductCard } from '../../ui-kit/Card/Product';
 import { TagsRowComponent } from '../../components/TagsRow';
+import { GlobalStore } from '../../context/GlobalStore';
 import { useFilters } from '../../hooks/useFilters';
 import { StyledGalleryWrapper } from '../../styles/container';
-import { GlobalStore } from '../../context/GlobalStore';
+import { ProductCard } from '../../ui-kit/Card/Product';
 import { Br } from '../../ui-kit/Br';
 import { PageTitle } from '../../components/PageTitle';
 import { Text2Bold } from '../../ui-kit/Typography';
 
-export const Sale = () => {
+export const Gallery = () => {
   const { data, setData, loading } = useContext(GlobalStore)!;
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { filters, setFilters } = useFilters();
+
   return (
     <Container>
       <Br desktop={120} mobile={60} />

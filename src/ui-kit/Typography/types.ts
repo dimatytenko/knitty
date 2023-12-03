@@ -22,4 +22,5 @@ export type TextBaseProps = WithChildren & {
   color?: TextColor;
   $decor?: decorType;
   $justify?: justifyType;
+  $width?: number;
 };
