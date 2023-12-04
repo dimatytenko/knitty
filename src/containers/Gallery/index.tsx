@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { GalleryComponent } from '../../components/Gallery';
 import { Container } from '../../components/Layout/styles';
-import { TagsRowComponent } from '../../components/TagsRow';
 import { GlobalStore } from '../../context/GlobalStore';
 import { useFilters } from '../../hooks/useFilters';
 import { StyledGalleryWrapper } from '../../styles/container';
@@ -9,11 +8,12 @@ import { ProductCard } from '../../ui-kit/Card/Product';
 import { Br } from '../../ui-kit/Br';
 import { PageTitle } from '../../components/PageTitle';
 import { Text2Bold } from '../../ui-kit/Typography';
+import { GalleryController } from '../../components/GalleryController';
 
 export const Gallery = () => {
   const { data, setData, loading } = useContext(GlobalStore)!;
-
   const { filters, setFilters } = useFilters();
+  console.log('filter', filters);
 
   return (
     <Container>
@@ -29,7 +29,8 @@ export const Gallery = () => {
         }
         list={data}
       />
-      <TagsRowComponent setFilters={setFilters} />
+      <GalleryController setFilters={setFilters} />
+
       <GalleryComponent
         loading={loading}
         data={data}

@@ -1,19 +1,20 @@
 import { useState } from 'react';
 import { FilterButton } from '../../ui-kit/Buttons';
-import { GloballyWrapper } from './style';
+import { StyledWrapper } from './styles';
 import { IProps } from './types';
 
+const categories = [
+  'sweaters',
+  'sale',
+  'blanket',
+  'gloves',
+  'socks',
+  'woman',
+  'man',
+  'new',
+];
+
 export const TagsRowComponent = ({ setFilters }: IProps) => {
-  const categories = [
-    'Sweaters',
-    'sale',
-    'blanket',
-    'Gloves',
-    'Socks',
-    'woman',
-    'man',
-    'New',
-  ];
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
   const handleClick = ({ title, idx }: { title: string; idx: number }) => {
@@ -22,7 +23,7 @@ export const TagsRowComponent = ({ setFilters }: IProps) => {
   };
 
   return (
-    <GloballyWrapper>
+    <StyledWrapper>
       {categories.map((title, idx) => (
         <FilterButton
           active={activeIdx === idx ? true : false}
@@ -31,6 +32,6 @@ export const TagsRowComponent = ({ setFilters }: IProps) => {
           onClick={() => handleClick({ title, idx })}
         />
       ))}
-    </GloballyWrapper>
+    </StyledWrapper>
   );
 };
