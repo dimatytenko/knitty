@@ -27,7 +27,9 @@ export const Pagination: React.FC<StyledPaginationProps> = ({
 
   return (
     <StyledPagination
-      defaultCurrent={Number(searchParams.get('page')) ?? 1}
+      defaultCurrent={
+        searchParams.get('page') ? Number(searchParams.get('page')) : 1
+      }
       total={total}
       defaultPageSize={defaultPageSize}
       showLessItems={true}
