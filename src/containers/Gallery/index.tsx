@@ -12,8 +12,8 @@ export const Gallery = () => {
   const { tag } = useParams();
   const { data, setData, loading } = useContext(GlobalStore)!;
   const { filters, setFilters } = useFilters();
-  console.log('filter', filters);
 
+  console.log('gallery');
   return (
     <>
       <Br desktop={120} mobile={60} />
@@ -25,6 +25,7 @@ export const Gallery = () => {
         renderItem={(el) => <ProductCard {...el} setData={setData} />}
         setFilters={setFilters}
         tag={tag}
+        filters={filters}
       />
 
       <Br desktop={100} mobile={60} />

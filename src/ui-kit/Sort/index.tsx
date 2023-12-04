@@ -4,6 +4,7 @@ import type { MenuProps } from 'antd';
 import { Wrapper, ArrowIcon, ItemWrapper } from './styles';
 import { Text3Bold } from '../Typography';
 import { MenuMore } from '../MenuMore';
+import { IProps } from './types';
 
 enum SORT_iTEMS {
   FEATURED = 'featured',
@@ -11,12 +12,15 @@ enum SORT_iTEMS {
   PRICE_LOW_HIGH = 'рrice: low–high',
 }
 
-export const Sort = () => {
+export const Sort = ({ setFilters }: IProps) => {
   const [sort, setSort] = useState<SORT_iTEMS | null>(null);
   const [open, setOpen] = useState(false);
 
   const handleSort = (sort: SORT_iTEMS | null) => {
     setSort(sort);
+
+    // price can be "ASC" | "DESC" | "ALL"
+    setFilters((prev) => ({ ...prev, sort: { price: 'ASC' } }));
   };
 
   const onOpenChange = (open: boolean) => {

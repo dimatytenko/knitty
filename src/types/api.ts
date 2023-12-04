@@ -5,4 +5,5 @@ export interface IProduct {
   isFavourite: boolean;
   isInCart: boolean;
   quantity?: number;
+  category?: string;
 }

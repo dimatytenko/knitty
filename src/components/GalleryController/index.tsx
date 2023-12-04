@@ -15,7 +15,7 @@ export const GalleryController: React.FC<IGalleryController> = ({
   return (
     <StyledWrapper>
       <TagsRowComponent setFilters={setFilters} />
-      <Sort />
+      <Sort setFilters={setFilters} />
     </StyledWrapper>
   );
 };

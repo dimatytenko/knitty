@@ -8,6 +8,7 @@ import { Text2Bold } from '../../ui-kit/Typography';
 import { Pagination } from '../../ui-kit/Pagination';
 import { PaginationWrapper } from './styles';
 import { GalleryComponent } from '../Gallery';
+import { pagination } from '../../constants/pagination';
 
 export const Goods: React.FC<IGoodsComponentProps> = ({
   data,
@@ -16,7 +17,9 @@ export const Goods: React.FC<IGoodsComponentProps> = ({
   loading,
   setFilters,
   tag,
+  filters,
 }) => {
+  console.log('goods');
   return (
     <Container>
       <PageTitle
@@ -37,10 +40,15 @@ export const Goods: React.FC<IGoodsComponentProps> = ({
         wrapper={Wrapper}
         renderItem={renderItem}
         loading={loading}
+        filters={filters}
       />
 
       <PaginationWrapper>
-        <Pagination total={data.length} defaultPageSize={8} />
+        <Pagination
+          total={data.length}
+          defaultPageSize={pagination.perPage}
+          setFilters={setFilters}
+        />
       </PaginationWrapper>
     </Container>
   );
