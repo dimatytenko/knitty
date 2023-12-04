@@ -1,4 +1,6 @@
 import { useContext } from 'react';
+import { useParams } from 'react-router-dom';
+
 import { GalleryComponent } from '../../components/Gallery';
 import { Container } from '../../components/Layout/styles';
 import { GlobalStore } from '../../context/GlobalStore';
@@ -11,6 +13,7 @@ import { Text2Bold } from '../../ui-kit/Typography';
 import { GalleryController } from '../../components/GalleryController';
 
 export const Gallery = () => {
+  const { tag } = useParams();
   const { data, setData, loading } = useContext(GlobalStore)!;
   const { filters, setFilters } = useFilters();
   console.log('filter', filters);
@@ -19,7 +22,7 @@ export const Gallery = () => {
     <Container>
       <Br desktop={120} mobile={60} />
       <PageTitle
-        title="Shop all"
+        title={`Shop ${tag}`}
         text={
           <Text2Bold $case="uppercase" color="unfocus" $width={488}>
             Explore our curated collection of artisanal knitwear from around the

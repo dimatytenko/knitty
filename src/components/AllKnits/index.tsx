@@ -10,7 +10,7 @@ import woman from './assets/woman.jpg';
 import man from './assets/man.jpg';
 import { LinkWithArrow } from '../../ui-kit/Links';
 import { Container } from '../../components/Layout/styles';
-import { route } from '../../constants/routes';
+import { route, paths } from '../../constants/routes';
 
 export const AllKnitsComponent = () => {
   return (
@@ -18,17 +18,19 @@ export const AllKnitsComponent = () => {
       <Container>
         <ContentWrapper>
           <ImageWrapper>
-            <Link to={route.woman.path}>
+            <Link to={route.gallery.get({ tag: paths.woman })}>
               <Image src={woman} alt="woman" />
             </Link>
           </ImageWrapper>
           <ImageWrapper>
-            <Link to={route.man.path}>
+            <Link to={route.gallery.get({ tag: paths.man })}>
               <Image src={man} alt="man" />
             </Link>
           </ImageWrapper>
           <ButtonWrapper>
-            <LinkWithArrow to={route.gallery.path}>see all knits</LinkWithArrow>
+            <LinkWithArrow to={route.gallery.get({ tag: paths.all })}>
+              see all knits
+            </LinkWithArrow>
           </ButtonWrapper>
         </ContentWrapper>
       </Container>

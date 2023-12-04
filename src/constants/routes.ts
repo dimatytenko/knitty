@@ -2,12 +2,7 @@ import { Route } from '../helpers/Route';
 
 export const route = {
   main: Route.of({ path: '/' }),
-  woman: Route.of({ path: '/woman' }),
-  man: Route.of({ path: '/man' }),
-  kids: Route.of({ path: '/kids' }),
-  sale: Route.of({ path: '/sale' }),
-  souvenirs: Route.of({ path: '/souvenirs' }),
-  new: Route.of({ path: '/new' }),
+  gallery: Route.of<{ tag?: string }>({ path: '/gallery/:tag' }),
   contact: Route.of({ path: '/contact' }),
   myAccount: Route.of({ path: '/my-account' }),
   myOrders: Route.of({ path: '/my-orders' }),
@@ -18,7 +13,28 @@ export const route = {
   privacyPolicy: Route.of({ path: '/privacy-policy' }),
   termsOfService: Route.of({ path: '/terms-of-service' }),
   registredCompany: Route.of({ path: '/registered-company' }),
-  gallery: Route.of({ path: '/gallery' }),
 
   uikit: Route.of({ path: '/ui-kit' }),
+};
+
+export const paths = {
+  main: '',
+  gallery: 'gallery',
+  all: 'all',
+  woman: 'woman',
+  man: 'man',
+  kids: 'kids',
+  sale: 'sale',
+  souvenirs: 'souvenirs',
+  new: 'new',
+  contact: 'contact',
+  myAccount: 'my-account',
+  myOrders: 'my-orders',
+  requestAReturn: 'request-a-return',
+  shippingPolicy: 'shipping-policy',
+  returnPolicy: 'return-policy',
+  faq: 'faq',
+  privacyPolicy: 'privacy-policy',
+  termsOfService: 'terms-of-service',
+  registredCompany: 'registered-company',
 };
