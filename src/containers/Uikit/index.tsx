@@ -14,7 +14,6 @@ import {
   MainLink,
   NavigationLink,
 } from '../../ui-kit/Links';
-import { AboutCard } from '../../ui-kit/Card/About';
 import {
   ButtonWithArrow,
   FilterButton,
@@ -28,11 +27,6 @@ import { Sort } from '../../ui-kit/Sort';
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
 `;
-
-const aboutCard = {
-  title: 'Alena Stotska',
-  subtitle: `Meet our visionary founder, a passionate advocate for preserving Ukrainian craftsmanship and traditions. With a deep love for knitting, brings a unique blend of creativity and cultural pride to our collection of Ukrainian knitwear, creating a bridge between heritage and contemporary fashion.`,
-};
 
 export const Uikit = () => {
   return (
@@ -129,8 +123,6 @@ export const Uikit = () => {
           <ButtonWithArrow title="Button with arrow" onClick={() => {}} />
         </div>
 
-        <div>AboutCard</div>
-        <AboutCard title={aboutCard.title} subtitle={aboutCard.subtitle} />
         <br />
         <div style={{ width: '700px' }}>
           <Pagination total={40} defaultPageSize={8} />
