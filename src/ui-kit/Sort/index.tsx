@@ -1,5 +1,7 @@
-import { useState } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from 'react';
 import type { MenuProps } from 'antd';
+import { useSearchParams } from 'react-router-dom';
 
 import { Wrapper, ArrowIcon, ItemWrapper } from './styles';
 import { Text3Bold } from '../Typography';
@@ -12,12 +14,27 @@ enum SORT_iTEMS {
 }
 
 export const Sort = () => {
-  const [sort, setSort] = useState<SORT_iTEMS | null>(null);
+  const [sort, setSort] = useState<SORT_iTEMS>(SORT_iTEMS.FEATURED);
   const [open, setOpen] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const handleSort = (sort: SORT_iTEMS | null) => {
+  const handleSort = (sort: SORT_iTEMS) => {
     setSort(sort);
   };
+
+  useEffect(() => {
+    const newSearchParams: {
+      [key: string]: string;
+    } = {};
+    searchParams.forEach((value, key) => {
+      newSearchParams[key] = value;
+    });
+
+    setSearchParams({
+      ...newSearchParams,
+      sort: sort,
+    });
+  }, [sort, searchParams, setSearchParams]);
 
   const onOpenChange = (open: boolean) => {
     setOpen(open);
@@ -40,25 +57,7 @@ export const Sort = () => {
   }));
 
   return (
-    <MenuMore
-      items={[
-        {
-          key: 'all',
-          label: (
-            <ItemWrapper onClick={() => handleSort(null)}>
-              <Text3Bold
-                $case="uppercase"
-                color={!sort ? 'unfocus' : 'primary'}
-              >
-                all
-              </Text3Bold>
-            </ItemWrapper>
-          ),
-        },
-        ...items,
-      ]}
-      onOpenChange={onOpenChange}
-    >
+    <MenuMore items={items} onOpenChange={onOpenChange}>
       <Wrapper>
         <Text3Bold $case="uppercase">sort by:</Text3Bold>
         {sort && (
