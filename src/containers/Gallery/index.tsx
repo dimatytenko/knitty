@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { GalleryComponent } from '../../components/Gallery';
+import { Goods } from '../../components/Goods';
 import { GlobalStore } from '../../context/GlobalStore';
 import { useFilters } from '../../hooks/useFilters';
 import { StyledGalleryWrapper } from '../../styles/container';
@@ -18,7 +18,7 @@ export const Gallery = () => {
     <>
       <Br desktop={120} mobile={60} />
 
-      <GalleryComponent
+      <Goods
         loading={loading}
         data={data}
         wrapper={StyledGalleryWrapper}
