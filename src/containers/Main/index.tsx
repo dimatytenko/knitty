@@ -5,6 +5,7 @@ import { Br } from '../../ui-kit/Br';
 import { About } from '../About';
 import { Hero } from '../Hero/Hero';
 import { AllKnits } from '../AllKnits';
+import { ScrollButton } from '../../ui-kit/ScrollButton';
 
 export const Main = () => {
   return (
@@ -21,6 +22,7 @@ export const Main = () => {
       <Br desktop={120} mobile={80} />
       <Globally />
       <Br desktop={120} mobile={80} />
+      <ScrollButton />
     </div>
   );
 };
