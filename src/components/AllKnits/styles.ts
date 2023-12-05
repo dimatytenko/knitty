@@ -1,8 +1,21 @@
 import styled from 'styled-components';
 
+import { Media } from '../../ui-kit/theme/breakpoints';
+
 export const GloballyWrapper = styled.div``;
 
 export const ContentWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+
+  ${Media.down.m} {
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+  }
+`;
+
+export const ImagesWrapper = styled.div`
   display: flex;
   gap: 10px;
 `;
@@ -31,4 +44,8 @@ export const ImageWrapper = styled.div`
 
 export const ButtonWrapper = styled.div`
   align-self: end;
+
+  ${Media.down.m} {
+    align-self: center;
+  }
 `;

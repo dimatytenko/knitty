@@ -4,6 +4,7 @@
 import styled, { css, StyledProps } from 'styled-components';
 
 import { TextBaseProps } from './types';
+import { Media } from '../theme/breakpoints';
 
 const color = ({ color, theme }: StyledProps<TextBaseProps>) => {
   return color ? theme.palette.colors[color] : theme.palette.colors.primary;
@@ -47,11 +48,24 @@ export const StyledHeading1 = styled.h1`
   font-weight: 300;
   line-height: calc(90 / 100); //90%
   text-align: center;
+
+  ${Media.down.m} {
+    font-size: 56px;
+    width: 378px;
+  }
+  ${Media.down.xxs} {
+    width: 100%;
+    max-width: 378px;
+  }
 `;
 
 export const StyledHeading2 = styled.h2`
   ${styles};
   font-size: 50px;
+
+  ${Media.down.m} {
+    font-size: 32px;
+  }
 `;
 
 export const StyledHeading3 = styled.h3`

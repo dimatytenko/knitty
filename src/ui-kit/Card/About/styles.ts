@@ -45,7 +45,6 @@ export const Snip = styled.div`
 export const CardWrapper = styled.div`
   position: relative;
   width: 426px;
-  height: 540px;
   cursor: pointer;
   ${common};
 

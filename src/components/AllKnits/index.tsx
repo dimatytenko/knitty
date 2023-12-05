@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import {
   GloballyWrapper,
   ContentWrapper,
+  ImagesWrapper,
   ImageWrapper,
   Image,
   ButtonWrapper,
@@ -17,16 +18,18 @@ export const AllKnitsComponent = () => {
     <GloballyWrapper>
       <Container>
         <ContentWrapper>
-          <ImageWrapper>
-            <Link to={route.gallery.get({ tag: paths.woman })}>
-              <Image src={woman} alt="woman" />
-            </Link>
-          </ImageWrapper>
-          <ImageWrapper>
-            <Link to={route.gallery.get({ tag: paths.man })}>
-              <Image src={man} alt="man" />
-            </Link>
-          </ImageWrapper>
+          <ImagesWrapper>
+            <ImageWrapper>
+              <Link to={route.gallery.get({ tag: paths.woman })}>
+                <Image src={woman} alt="woman" />
+              </Link>
+            </ImageWrapper>
+            <ImageWrapper>
+              <Link to={route.gallery.get({ tag: paths.man })}>
+                <Image src={man} alt="man" />
+              </Link>
+            </ImageWrapper>
+          </ImagesWrapper>
           <ButtonWrapper>
             <LinkWithArrow to={route.gallery.get({ tag: paths.all })}>
               see all knits

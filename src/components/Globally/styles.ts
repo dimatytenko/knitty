@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 
 import { Heading2, Text3Bold } from '../../ui-kit/Typography';
+import { Media } from '../../ui-kit/theme/breakpoints';
 
 export const GloballyWrapper = styled.div`
   position: relative;
   left: -120px;
   max-width: 1360px;
   margin: 0 auto;
+
+  ${Media.down.m} {
+    left: 0;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -17,6 +22,10 @@ export const ContentWrapper = styled.div`
 export const ImageWrapper = styled.div`
   width: 60%;
   background-color: ${({ theme }) => theme.palette.colors.system};
+
+  ${Media.down.m} {
+    width: 100%;
+  }
 `;
 
 export const Image = styled.img`
@@ -32,6 +41,10 @@ export const Content = styled.div`
   width: 40%;
   height: 700px;
   padding: 120px 16px 50px 0;
+
+  ${Media.down.m} {
+    display: none;
+  }
 `;
 
 export const Title = styled(Heading2)`
