@@ -29,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
   h4,
   h5,
   h6 {
+    margin: 0px;
     font-weight: inherit;
     font-size: inherit;
   }

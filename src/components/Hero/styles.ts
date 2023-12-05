@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+import { Heading1 } from '../../ui-kit/Typography';
+import { Media } from '../../ui-kit/theme/breakpoints';
+
 export const StyledHeroWrapper = styled.div`
   position: relative;
   width: 100vw;
@@ -23,4 +26,19 @@ export const StyledMainBlock = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+export const StyledTitle = styled(Heading1)`
+  margin: 0;
+  margin-top: 30px;
+  width: 750px;
+  text-align: center;
+
+  ${Media.down.m} {
+    width: 378px;
+  }
+  ${Media.down.xxs} {
+    width: 100%;
+    max-width: 378px;
+  }
 `;

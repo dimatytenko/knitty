@@ -21,6 +21,10 @@ const getColor = ({
       return theme.palette.colors.alert;
     case 'back':
       return theme.palette.colors.background;
+    case 'secondary':
+      return theme.palette.colors.secondary;
+    case 'black':
+      return theme.palette.colors.black;
     case 'none':
       return 'none';
 

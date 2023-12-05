@@ -41,21 +41,12 @@ const styles = css`
 
 export const StyledHeading1 = styled.h1`
   ${styles};
-  margin: 0;
-  margin-top: 30px;
-  width: 750px;
   font-size: 100px;
   font-weight: 300;
-  line-height: calc(90 / 100); //90%
-  text-align: center;
+  line-height: 0.9;
 
   ${Media.down.m} {
     font-size: 56px;
-    width: 378px;
-  }
-  ${Media.down.xxs} {
-    width: 100%;
-    max-width: 378px;
   }
 `;
 
@@ -94,4 +85,8 @@ export const TextBody3Bold = styled.p`
   ${styles};
   font-weight: 500;
   line-height: 1.2;
+`;
+
+export const StyledSpan = styled.span`
+  ${styles};
 `;

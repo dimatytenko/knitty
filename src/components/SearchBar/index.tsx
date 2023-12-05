@@ -5,8 +5,13 @@ import { TextBody1Bold } from '../../ui-kit/Typography/styles';
 import { GSAPWrapper } from '../../ui-kit/GSAPWrapper';
 import { gsap } from 'gsap';
 import { useTheme } from 'styled-components';
+import { TextColor } from '../../ui-kit/Typography/types';
 
-export const SearchBarComponent = () => {
+interface IProps {
+  color: TextColor;
+}
+
+export const SearchBarComponent: React.FC<IProps> = ({ color }) => {
   const { palette } = useTheme();
   const refText = useRef(null);
   const refInput = useRef(null);
@@ -55,7 +60,7 @@ export const SearchBarComponent = () => {
   return (
     <StyledSearchBar>
       <GSAPWrapper ref={refText}>
-        <TextBody1Bold>Search</TextBody1Bold>
+        <TextBody1Bold color={color}>Search</TextBody1Bold>
       </GSAPWrapper>
       <GSAPWrapper ref={refInput}>
         <StyledInputField>

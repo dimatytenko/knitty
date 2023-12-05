@@ -1,18 +1,27 @@
 import { MainLink } from '../../../ui-kit/Links';
 import { VerticalSeparator } from '../../../ui-kit/VerticalSeparator';
 import { LangSwitcherComponent } from '../../LangSwitcher';
+import { TextColor } from '../../../ui-kit/Typography/types';
 
-export const HeaderBlockTopRight = () => {
+interface IProps {
+  color: TextColor;
+}
+
+export const HeaderBlockTopRight: React.FC<IProps> = ({ color }) => {
   return (
     <>
-      <VerticalSeparator>
-        <LangSwitcherComponent />
+      <VerticalSeparator color={color}>
+        <LangSwitcherComponent color={color} />
       </VerticalSeparator>
-      <VerticalSeparator>
-        <MainLink to="/sign-up">Sign Up</MainLink>
+      <VerticalSeparator color={color}>
+        <MainLink to="/sign-up" color={color}>
+          Sign Up
+        </MainLink>
       </VerticalSeparator>
-      <VerticalSeparator>
-        <MainLink to="/sign-in">Sign In</MainLink>
+      <VerticalSeparator color={color}>
+        <MainLink to="/sign-in" color={color}>
+          Sign In
+        </MainLink>
       </VerticalSeparator>
     </>
   );

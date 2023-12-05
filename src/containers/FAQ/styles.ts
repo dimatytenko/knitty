@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { StyledHeading3, TextBody2Bold } from '../../ui-kit/Typography/styles';
 
 export const StyledTextFaq = styled(TextBody2Bold)`

@@ -14,6 +14,7 @@ export const colorOptions = <const>[
   'secondary',
   'unfocus',
   'background',
+  'grey',
 ];
 export type TextColor = (typeof colorOptions)[number];
 

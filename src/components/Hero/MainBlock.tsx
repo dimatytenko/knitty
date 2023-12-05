@@ -1,7 +1,7 @@
 import { route } from '../../constants/routes';
 import { HeroLink } from '../../ui-kit/Links';
-import { Heading1, Text2Bold } from '../../ui-kit/Typography';
-import { StyledMainBlock } from './styles';
+import { Text2Bold } from '../../ui-kit/Typography';
+import { StyledMainBlock, StyledTitle } from './styles';
 
 export const MainBlock = () => {
   return (
@@ -9,9 +9,9 @@ export const MainBlock = () => {
       <Text2Bold $case="uppercase" color="background">
         ETHICALLY MADE IN UKRAINE
       </Text2Bold>
-      <Heading1 $case="uppercase" color="background">
+      <StyledTitle $case="uppercase" color="background">
         PURE NATURAL KNITWEAR
-      </Heading1>
+      </StyledTitle>
       <HeroLink to={route.gallery.path}> see all knits</HeroLink>
     </StyledMainBlock>
   );

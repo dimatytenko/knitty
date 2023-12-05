@@ -10,10 +10,13 @@ import {
 import { Text1Bold, Text2Bold } from '../Typography';
 import { HoverCircle } from '../HoverCircle';
 
-export const NavigationLink = ({ to, children }: IProps) => {
+export const NavigationLink = ({ to, children, color }: IProps) => {
   return (
     <StyledNavLink to={to}>
-      <Text2Bold $case="uppercase"> {children}</Text2Bold>
+      <Text2Bold $case="uppercase" color={color}>
+        {' '}
+        {children}
+      </Text2Bold>
       <IconSvg
         type="nav-stroke"
         width="77"
@@ -53,18 +56,18 @@ export const HeroLink = ({ to, children }: IProps) => {
   );
 };
 
-export const MainLink = ({ to, children }: IProps) => {
+export const MainLink = ({ to, color, children }: IProps) => {
   return (
     <StyledMainLink to={to}>
-      <Text1Bold>{children}</Text1Bold>
+      <Text1Bold color={color}>{children}</Text1Bold>
     </StyledMainLink>
   );
 };
 
-export const FooterLink = ({ to, children, ...rest }: IProps) => {
+export const FooterLink = ({ to, color, children, ...rest }: IProps) => {
   return (
     <StyledFooterLink to={to} {...rest}>
-      <Text1Bold>{children}</Text1Bold>
+      <Text1Bold color={color || 'grey'}>{children}</Text1Bold>
     </StyledFooterLink>
   );
 };

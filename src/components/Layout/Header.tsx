@@ -22,8 +22,12 @@ export const HeaderComponent = () => {
   const refHeader = useRef(null);
   const { cartList, favList, setData } = useContext(GlobalStore)!;
 
+  const isFixed = pathname === route.contact.path;
+  const color = pathname === route.contact.path ? 'background' : 'secondary';
+
   useEffect(() => {
     if (!refHeader.current) return;
+
     ScrollTrigger.enable();
 
     if (pathname === route.main.path) {
@@ -49,11 +53,20 @@ export const HeaderComponent = () => {
       });
       return;
     }
-    gsap.set(refHeader.current, {
-      position: 'relative',
-      width: '100%',
-      backdropFilter: 'unset',
-    });
+    if (!isFixed) {
+      gsap.set(refHeader.current, {
+        position: 'relative',
+        width: '100%',
+        backdropFilter: 'unset',
+      });
+    } else {
+      gsap.set(refHeader.current, {
+        position: 'absolute',
+        width: '100%',
+        backdropFilter: 'unset',
+      });
+    }
+
     ScrollTrigger.disable();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -64,25 +77,29 @@ export const HeaderComponent = () => {
       <Container>
         <StyledHeaderContent>
           <HeaderBlockComponent
-            renderTop={<HeaderBlockTopLeft />}
-            renderBottom={<HeaderBlockBottomLeft />}
+            renderTop={<HeaderBlockTopLeft color={color} />}
+            renderBottom={<HeaderBlockBottomLeft color={color} />}
+            color={color}
           />
           <MainLink to={route.main.path}>
             <IconSvg
               type="logo-knitty"
-              stroke="none"
+              stroke={color === 'background' ? 'back' : 'none'}
+              fill={color === 'background' ? 'back' : 'black'}
               width="170"
               height="66"
               viewBox="0 0 170 66"
             />
           </MainLink>
           <HeaderBlockComponent
-            renderTop={<HeaderBlockTopRight />}
+            color={color}
+            renderTop={<HeaderBlockTopRight color={color} />}
             renderBottom={
               <HeaderBlockBottomRight
                 cartList={cartList}
                 favList={favList}
                 setData={setData}
+                color={color}
               />
             }
           />

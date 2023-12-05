@@ -5,7 +5,7 @@ import { Br } from '../../ui-kit/Br';
 import { Heading2 } from '../../ui-kit/Typography';
 import { SubHeading, Text } from './Typografy';
 
-export default function Faq() {
+export function Faq() {
   return (
     <Container>
       <Br desktop={120} mobile={60} />

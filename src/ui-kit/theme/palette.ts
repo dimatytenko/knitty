@@ -11,6 +11,7 @@ const colors = {
   lightHover: 'rgba(255, 255, 255, 0.3)',
   line: 'rgba(33, 33, 33, 0.10)',
   backdrop: 'rgba(33, 33, 33, 0.5)',
+  backdropLight: 'rgba(217, 217, 217, 0.02)',
 };
 
 export const palette = {

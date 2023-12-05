@@ -38,3 +38,6 @@ export const paths = {
   termsOfService: 'terms-of-service',
   registredCompany: 'registered-company',
 };
+
+export const excludePathsFooter = [paths.contact];
+export const excludePathsHeader = [];

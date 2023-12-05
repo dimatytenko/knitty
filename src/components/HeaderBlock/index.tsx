@@ -2,10 +2,14 @@ import { StyledHeaderTop } from './HeaderBlockToptLeft/styles';
 import { StyledHeaderBlock, StyledHeaderBottom } from './styles';
 import { IProps } from './types';
 
-export const HeaderBlockComponent = ({ renderTop, renderBottom }: IProps) => {
+export const HeaderBlockComponent = ({
+  renderTop,
+  renderBottom,
+  color,
+}: IProps) => {
   return (
     <StyledHeaderBlock>
-      <StyledHeaderTop>{renderTop}</StyledHeaderTop>
+      <StyledHeaderTop color={color}>{renderTop}</StyledHeaderTop>
       <StyledHeaderBottom>{renderBottom}</StyledHeaderBottom>
     </StyledHeaderBlock>
   );

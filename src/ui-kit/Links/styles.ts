@@ -71,10 +71,6 @@ export const StyledHeroLink = styled(StyledLinkWithArrow)`
 `;
 
 export const StyledFooterLink = styled(Link)`
-  ${TextBody1Bold} {
-    color: ${({ theme }) => theme.palette.colors.grey};
-  }
-
   &:hover ${TextBody1Bold} {
     color: ${({ theme }) => theme.palette.colors.hover};
   }

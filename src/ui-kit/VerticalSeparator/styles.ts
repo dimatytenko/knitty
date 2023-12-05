@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledVerticalSeparator = styled.span`
+export const StyledVerticalSeparator = styled.span<{ color?: string }>`
   &::after {
     content: '';
     display: inline-block;
@@ -9,6 +9,9 @@ export const StyledVerticalSeparator = styled.span`
     width: 1px;
     margin-left: 10px;
 
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: ${({ color, theme }) =>
+      color === 'background'
+        ? theme.palette.colors[color]
+        : 'rgba(0, 0, 0, 0.1)'};
   }
 `;

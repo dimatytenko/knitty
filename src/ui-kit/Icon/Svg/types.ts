@@ -2,6 +2,7 @@ export const colorOptions = <const>[
   'primary',
   'secondary',
   'back',
+  'black',
   'none',
   'alert',
 ];
