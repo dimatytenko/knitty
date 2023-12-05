@@ -60,8 +60,14 @@ export const StyledFooter = styled.footer`
 `;
 
 export const FooterContent = styled.div`
-  display: flex;
-  gap: 157px;
+  ${Media.up.m} {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  ${Media.up.l} {
+    gap: 157px;
+  }
 `;
 
 export const LinksBlockWrapper = styled.div`
@@ -73,7 +79,14 @@ export const LinksBlockWrapper = styled.div`
 `;
 
 export const RightBlock = styled.div`
-  width: 100%;
+  margin-top: 50px;
+
+  ${Media.up.m} {
+    margin-top: unset;
+  }
+  ${Media.up.l} {
+    width: 100%;
+  }
 `;
 export const LeftBlock = styled.div`
   width: fit-content;
@@ -81,7 +94,13 @@ export const LeftBlock = styled.div`
 
 export const RightBlockTop = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  ${Media.up.m} {
+    grid-template-columns: repeat(4, 1fr);
+    gap: unset;
+  }
 
   ul {
     margin-top: 20px;
@@ -92,9 +111,16 @@ export const RightBlockTop = styled.div`
 `;
 
 export const RightBlockBottom = styled.div`
-  margin-top: 131px;
+  margin-top: 80px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  ${Media.up.m} {
+    margin-top: 131px;
+    grid-template-columns: 1fr 1fr;
+    gap: unset;
+  }
 `;
 
 export const FooterList = styled.ul`
