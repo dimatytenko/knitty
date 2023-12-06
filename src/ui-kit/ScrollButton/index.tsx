@@ -1,11 +1,10 @@
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { StyledScrollButton } from './styles';
-import gsap from 'gsap';
 import { ArrowIcon } from '../Sort/styles';
 import { useEffect, useRef, useState } from 'react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap';
+
 gsap.registerPlugin(ScrollToPlugin);
-gsap.registerPlugin(ScrollTrigger);
 
 export const ScrollButton = () => {
   const refButton = useRef(null);
@@ -25,7 +24,11 @@ export const ScrollButton = () => {
           opacity: 0,
           scale: 3,
         },
-        { opacity: 1, scale: 1, ease: 'bounce.out' },
+        {
+          opacity: 1,
+          scale: 1,
+          ease: 'bounce.out',
+        },
       );
     } else {
       gsap.to(refButton.current, {

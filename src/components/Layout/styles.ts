@@ -38,7 +38,8 @@ export const StyledHeader = styled.header`
   z-index: 10;
 
   padding: 30px 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
 `;
 
 export const StyledHeaderContent = styled.div`
