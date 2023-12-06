@@ -95,12 +95,7 @@ export const HeaderComponent = () => {
             color={color}
             renderTop={<HeaderBlockTopRight color={color} />}
             renderBottom={
-              <HeaderBlockBottomRight
-                cartList={cartList}
-                favList={favList}
-                setData={setData}
-                color={color}
-              />
+              <HeaderBlockBottomRight favList={favList} color={color} />
             }
           />
         </StyledHeaderContent>

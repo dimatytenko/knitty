@@ -129,3 +129,21 @@ export const FooterList = styled.ul`
   flex-direction: column;
   gap: 14px;
 `;
+
+export const StyledMobileHeader = styled.header`
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: transparent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 30px 20px 30px 10px;
+
+  backdrop-filter: blur(20px) brightness(130%);
+`;

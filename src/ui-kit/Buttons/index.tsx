@@ -1,13 +1,23 @@
+import { useContext, useState } from 'react';
 import { HoverCircle } from '../HoverCircle';
 import { IconSvg } from '../Icon/Svg';
-import { Text2Bold } from '../Typography';
+import { Span, Text2Bold } from '../Typography';
 import {
   StyledFilterButton,
   StyledMainButton,
   StyledButtonWithArrow,
   StyledFavoriteButton,
+  StyledCartBtn,
 } from './styles';
-import { IFilterButton, IProps, IPropsFavorites } from './types';
+import {
+  IFilterButton,
+  IProps,
+  IPropsCartButton,
+  IPropsFavorites,
+} from './types';
+import { Portal } from '../../components/Portal';
+import { ModalCart } from '../../components/Portal/Modals/Cart';
+import { GlobalStore } from '../../context/GlobalStore';
 
 export const MainButton = ({
   title,
@@ -76,5 +86,27 @@ export const FavouriteButton = ({ onClick, isFavourite }: IPropsFavorites) => {
         fill={isFavourite ? 'alert' : 'none'}
       />
     </StyledFavoriteButton>
+  );
+};
+
+export const CartButton = ({ color = 'primary' }: IPropsCartButton) => {
+  const [visible, setIsVisible] = useState<boolean>(false);
+  const { cartList, setData } = useContext(GlobalStore)!;
+
+  const onClick = () => {
+    setIsVisible(true);
+  };
+  return (
+    <>
+      <StyledCartBtn type="button" onClick={onClick}>
+        <Text2Bold $case="uppercase" color={color}>
+          cart
+        </Text2Bold>
+        {!cartList.length ? null : <Span color={color}>{cartList.length}</Span>}
+      </StyledCartBtn>
+      <Portal visible={visible} setIsVisible={setIsVisible}>
+        <ModalCart cartList={cartList} setData={setData} />
+      </Portal>
+    </>
   );
 };

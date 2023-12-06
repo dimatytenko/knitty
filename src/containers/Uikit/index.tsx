@@ -16,6 +16,7 @@ import {
 } from '../../ui-kit/Links';
 import {
   ButtonWithArrow,
+  CartButton,
   FilterButton,
   MainButton,
 } from '../../ui-kit/Buttons';
@@ -23,6 +24,7 @@ import { Container } from '../../components/Layout/styles';
 import { Pagination } from '../../ui-kit/Pagination';
 import { ProductCard } from '../../ui-kit/Card/Product';
 import { Sort } from '../../ui-kit/Sort';
+import { ScrollButton } from '../../ui-kit/ScrollButton';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -122,6 +124,8 @@ export const Uikit = () => {
         <div style={{ width: '300px' }}>
           <ButtonWithArrow title="Button with arrow" onClick={() => {}} />
         </div>
+        <ScrollButton />
+        <CartButton />
 
         <br />
         <div style={{ width: '700px' }}>

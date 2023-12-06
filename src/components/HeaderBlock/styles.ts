@@ -38,15 +38,3 @@ export const StyledFavLink = styled(Link)`
     right: -10px;
   }
 `;
-
-export const StyledCartBtn = styled.button`
-  position: relative;
-
-  span {
-    font-size: 14px;
-
-    position: absolute;
-    top: -10px;
-    right: -10px;
-  }
-`;

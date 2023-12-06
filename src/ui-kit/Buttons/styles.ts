@@ -80,3 +80,15 @@ export const StyledFavoriteButton = styled.button`
   align-items: center;
   justify-content: center;
 `;
+
+export const StyledCartBtn = styled.button`
+  position: relative;
+
+  span {
+    font-size: 14px;
+
+    position: absolute;
+    top: -10px;
+    right: -10px;
+  }
+`;
