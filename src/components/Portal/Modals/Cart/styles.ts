@@ -5,7 +5,8 @@ export const StyledModalCart = styled.aside`
   right: -100%;
   top: 0;
 
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   height: 100%;
   padding: 30px;
 

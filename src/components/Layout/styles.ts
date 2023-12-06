@@ -38,7 +38,8 @@ export const StyledHeader = styled.header`
   z-index: 10;
 
   padding: 30px 0;
-  width: 100vw;
+  width: 100%;
+  max-width: 100vw;
 `;
 
 export const StyledHeaderContent = styled.div`
@@ -127,4 +128,22 @@ export const FooterList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 14px;
+`;
+
+export const StyledMobileHeader = styled.header`
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: transparent;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 30px 20px 30px 10px;
+
+  backdrop-filter: blur(20px) brightness(130%);
 `;

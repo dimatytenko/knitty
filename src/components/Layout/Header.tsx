@@ -44,7 +44,7 @@ export const HeaderComponent = () => {
           start: 200,
           end: 800,
         },
-        width: 950,
+        maxWidth: 950,
         backgroundColor: palette.colors.background,
         padding: '15px 0',
         borderBottomLeftRadius: 30,
@@ -56,13 +56,13 @@ export const HeaderComponent = () => {
     if (!isFixed) {
       gsap.set(refHeader.current, {
         position: 'relative',
-        width: '100%',
+        // maxWidth: '100%',
         backdropFilter: 'unset',
       });
     } else {
       gsap.set(refHeader.current, {
         position: 'absolute',
-        width: '100%',
+        // maxWwidth: '100%',
         backdropFilter: 'unset',
       });
     }
@@ -95,12 +95,7 @@ export const HeaderComponent = () => {
             color={color}
             renderTop={<HeaderBlockTopRight color={color} />}
             renderBottom={
-              <HeaderBlockBottomRight
-                cartList={cartList}
-                favList={favList}
-                setData={setData}
-                color={color}
-              />
+              <HeaderBlockBottomRight favList={favList} color={color} />
             }
           />
         </StyledHeaderContent>
