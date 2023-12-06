@@ -31,38 +31,48 @@ export const HeaderComponent = () => {
     ScrollTrigger.enable();
 
     if (pathname === route.main.path) {
-      gsap.set(refHeader.current, {
-        position: 'fixed',
-        backgroundColor: 'transparent',
-        backdropFilter: 'blur(20px) brightness(130%)',
-      });
+      // gsap.set(refHeader.current, {
+      //   position: 'fixed',
+      //   backgroundColor: 'transparent',
+      //   backdropFilter: 'blur(20px) brightness(130%)',
+      //   width: '100%',
+      // });
 
-      gsap.to(refHeader.current, {
-        scrollTrigger: {
-          scrub: 1,
-          trigger: 'body',
-          start: 200,
-          end: 800,
+      gsap.fromTo(
+        refHeader.current,
+        {
+          position: 'fixed',
+          backgroundColor: 'transparent',
+          backdropFilter: 'blur(20px) brightness(130%)',
+          width: '100%',
         },
-        maxWidth: 950,
-        backgroundColor: palette.colors.background,
-        padding: '15px 0',
-        borderBottomLeftRadius: 30,
-        borderBottomRightRadius: 30,
-        boxShadow: `0px 10px 15px -3px rgba(0,0,0,0.1)`,
-      });
+        {
+          scrollTrigger: {
+            scrub: 1,
+            trigger: 'body',
+            start: 200,
+            end: 800,
+          },
+          backgroundColor: palette.colors.background,
+          padding: '15px 0',
+          borderBottomLeftRadius: 30,
+          borderBottomRightRadius: 30,
+          boxShadow: `0px 10px 15px -3px rgba(0,0,0,0.1)`,
+          width: 950,
+        },
+      );
       return;
     }
     if (!isFixed) {
       gsap.set(refHeader.current, {
         position: 'relative',
-        // maxWidth: '100%',
+        maxWidth: '100%',
         backdropFilter: 'unset',
       });
     } else {
       gsap.set(refHeader.current, {
         position: 'absolute',
-        // maxWwidth: '100%',
+        maxWwidth: '100%',
         backdropFilter: 'unset',
       });
     }
