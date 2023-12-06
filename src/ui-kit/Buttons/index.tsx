@@ -8,6 +8,7 @@ import {
   StyledButtonWithArrow,
   StyledFavoriteButton,
   StyledCartBtn,
+  StyledBurgerButton,
 } from './styles';
 import {
   IFilterButton,
@@ -18,6 +19,7 @@ import {
 import { Portal } from '../../components/Portal';
 import { ModalCart } from '../../components/Portal/Modals/Cart';
 import { GlobalStore } from '../../context/GlobalStore';
+import { ModalBurger } from '../../components/Portal/Modals/Burger';
 
 export const MainButton = ({
   title,
@@ -106,6 +108,27 @@ export const CartButton = ({ color = 'primary' }: IPropsCartButton) => {
       </StyledCartBtn>
       <Portal visible={visible} setIsVisible={setIsVisible}>
         <ModalCart cartList={cartList} setData={setData} />
+      </Portal>
+    </>
+  );
+};
+
+export const BurgerButton = () => {
+  const [visible, setIsVisible] = useState<boolean>(false);
+
+  const onClick = () => {
+    setIsVisible(true);
+  };
+
+  return (
+    <>
+      <StyledBurgerButton onClick={onClick}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </StyledBurgerButton>
+      <Portal visible={visible} setIsVisible={setIsVisible}>
+        <ModalBurger />
       </Portal>
     </>
   );

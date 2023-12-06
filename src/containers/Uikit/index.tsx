@@ -15,6 +15,7 @@ import {
   NavigationLink,
 } from '../../ui-kit/Links';
 import {
+  BurgerButton,
   ButtonWithArrow,
   CartButton,
   FilterButton,
@@ -126,6 +127,7 @@ export const Uikit = () => {
         </div>
         <ScrollButton />
         <CartButton />
+        <BurgerButton />
 
         <br />
         <div style={{ width: '700px' }}>

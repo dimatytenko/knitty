@@ -92,3 +92,31 @@ export const StyledCartBtn = styled.button`
     right: -10px;
   }
 `;
+
+export const StyledBurgerButton = styled.button`
+  width: 24px;
+  height: 16px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    position: absolute;
+    height: 1px;
+    width: 100%;
+
+    left: 0;
+
+    background-color: ${({ theme }) => theme.palette.colors.primary};
+
+    &:first-of-type {
+      top: 0;
+    }
+
+    &:last-of-type {
+      bottom: 0;
+    }
+  }
+`;
