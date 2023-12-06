@@ -39,7 +39,7 @@ export const StyledHeader = styled.header`
 
   padding: 30px 0;
   width: 100%;
-  max-width: 100vw;
+  /* max-width: 100vw; */
 `;
 
 export const StyledHeaderContent = styled.div`

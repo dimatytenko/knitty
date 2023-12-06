@@ -83,6 +83,8 @@ export const StyledFavoriteButton = styled.button`
 
 export const StyledCartBtn = styled.button`
   position: relative;
+  display: inline-flex;
+  justify-content: flex-end;
 
   span {
     font-size: 14px;
