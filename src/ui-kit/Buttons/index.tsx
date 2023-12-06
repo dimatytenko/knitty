@@ -120,6 +120,8 @@ export const BurgerButton = () => {
     setIsVisible(true);
   };
 
+  console.log(visible);
+
   return (
     <>
       <StyledBurgerButton onClick={onClick}>
@@ -128,7 +130,7 @@ export const BurgerButton = () => {
         <span></span>
       </StyledBurgerButton>
       <Portal visible={visible} setIsVisible={setIsVisible}>
-        <ModalBurger />
+        <ModalBurger setIsVisible={setIsVisible} />
       </Portal>
     </>
   );
