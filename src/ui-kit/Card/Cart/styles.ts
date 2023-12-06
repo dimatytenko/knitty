@@ -12,6 +12,13 @@ export const StyledImageWrapper = styled.div`
   width: 140px;
   height: 140px;
   background-color: gray;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 `;
 
 export const StyledInfoBlock = styled.div`

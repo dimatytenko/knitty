@@ -6,6 +6,7 @@ export interface IProps {
   id: string;
   isFavourite: boolean;
   isInCart: boolean;
+  image: string;
 
   setData: React.Dispatch<React.SetStateAction<IProduct[]>>;
 }
