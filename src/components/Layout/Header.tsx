@@ -20,7 +20,7 @@ export const HeaderComponent = () => {
   const { pathname } = useLocation();
   const { palette } = useTheme();
   const refHeader = useRef(null);
-  const { cartList, favList, setData } = useContext(GlobalStore)!;
+  const { favList } = useContext(GlobalStore)!;
 
   const isFixed = pathname === route.contact.path;
   const color = pathname === route.contact.path ? 'background' : 'secondary';

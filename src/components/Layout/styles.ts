@@ -139,11 +139,17 @@ export const StyledMobileHeader = styled.header`
 
   background-color: transparent;
 
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
 
-  padding: 30px 20px 30px 10px;
+  padding: 30px 20px 30px 20px;
 
   backdrop-filter: blur(20px) brightness(130%);
+`;
+
+export const StyledMobileLogo = styled.div`
+  a {
+    transform: scale(0.7);
+  }
 `;

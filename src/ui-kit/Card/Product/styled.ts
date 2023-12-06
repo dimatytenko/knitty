@@ -66,6 +66,13 @@ export const StyledImageWrapper = styled.div`
   height: 420px;
 
   background-color: ${({ theme }) => theme.palette.colors.grey};
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
 `;
 
 export const StyledInfoContent = styled.div`

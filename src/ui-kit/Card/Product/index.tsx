@@ -15,12 +15,13 @@ export const ProductCard = ({
   id,
   isFavourite,
   isInCart,
+  image,
   setData,
 }: IProps) => {
-  const handleAddToCart = (item: IProduct) => {
+  const handleAddToCart = (id: string) => {
     setData((prev) =>
       prev.map((product) => {
-        return product.id === item.id
+        return product.id === id
           ? {
               ...product,
               isInCart: !product.isInCart,
@@ -40,6 +41,7 @@ export const ProductCard = ({
       }),
     );
   };
+
   return (
     <StyledProductCard as="article">
       <StyledImageContent>
@@ -47,13 +49,13 @@ export const ProductCard = ({
           isFavourite={isFavourite}
           onClick={() => handleAddToFavourites(id)}
         />
-        <StyledImageWrapper></StyledImageWrapper>
+        <StyledImageWrapper>
+          <img src={image} alt={title} />
+        </StyledImageWrapper>
         <MainButton
           isInCart={isInCart}
           title={isInCart ? 'In cart' : 'Add to cart'}
-          onClick={() =>
-            handleAddToCart({ title, price, id, isFavourite, isInCart })
-          }
+          onClick={() => handleAddToCart(id)}
         />
       </StyledImageContent>
       <StyledInfoContent>
