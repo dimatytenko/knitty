@@ -120,8 +120,6 @@ export const BurgerButton = () => {
     setIsVisible(true);
   };
 
-  console.log(visible);
-
   return (
     <>
       <StyledBurgerButton onClick={onClick}>
