@@ -13,11 +13,11 @@ export const ContactsWrapper = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  padding: 260px 0 60px;
+  padding: 170px 0 40px;
 `;
 
 export const StyledTitle = styled(Heading1)`
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 `;
 
 // Contact
@@ -50,11 +50,11 @@ export const CenterBlock = styled.div`
 export const LinksWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 `;
 
 export const SocialWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 `;
