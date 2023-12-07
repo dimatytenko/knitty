@@ -20,13 +20,13 @@ export const AllKnitsComponent = () => {
         <ContentWrapper>
           <ImagesWrapper>
             <ImageWrapper>
-              <Link to={route.gallery.get({ tag: paths.woman })}>
-                <Image src={woman} alt="woman" />
+              <Link to={route.gallery.get({ tag: paths.man })}>
+                <Image src={man} alt="man" />
               </Link>
             </ImageWrapper>
             <ImageWrapper>
-              <Link to={route.gallery.get({ tag: paths.man })}>
-                <Image src={man} alt="man" />
+              <Link to={route.gallery.get({ tag: paths.woman })}>
+                <Image src={woman} alt="woman" />
               </Link>
             </ImageWrapper>
           </ImagesWrapper>

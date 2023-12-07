@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { Heading2, Text3Bold } from '../../Typography';
+import { Media } from '../../theme/breakpoints';
 
 const common = css`
   transition: ${({ theme }) => theme.transitions.main};
@@ -11,6 +12,10 @@ export const Title = styled(Heading2).attrs({
 })`
   opacity: 0;
   ${common};
+
+  ${Media.down.m} {
+    opacity: 1;
+  }
 `;
 
 export const Subtitle = styled(Text3Bold).attrs({
@@ -20,6 +25,11 @@ export const Subtitle = styled(Text3Bold).attrs({
   text-align: center;
   opacity: 0;
   ${common};
+
+  ${Media.down.m} {
+    opacity: 1;
+    font-size: 12px;
+  }
 `;
 
 export const Image = styled.img`
@@ -28,6 +38,10 @@ export const Image = styled.img`
   object-fit: cover;
   ${common};
   opacity: 1;
+
+  ${Media.down.m} {
+    transform: scale(1.1);
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -35,6 +49,11 @@ export const ImageWrapper = styled.div`
   height: 100%;
   overflow: hidden;
   ${common};
+
+  ${Media.down.m} {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+    filter: brightness(0.5);
+  }
 `;
 
 export const Snip = styled.div`
@@ -81,10 +100,20 @@ export const CardWrapper = styled.div`
   &::before {
     width: 0;
     height: 1px;
+
+    ${Media.down.m} {
+      width: 80px;
+      opacity: 1;
+    }
   }
   &::after {
     width: 1px;
     height: 0;
+
+    ${Media.down.m} {
+      height: 80px;
+      opacity: 1;
+    }
   }
 
   &:hover::before {

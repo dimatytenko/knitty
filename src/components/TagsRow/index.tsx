@@ -1,35 +1,43 @@
-import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
 import { FilterButton } from '../../ui-kit/Buttons';
 import { StyledWrapper } from './styles';
-import { IProps } from './types';
+import { filters } from '../../constants/routes';
 
-const categories = [
-  'sweaters',
-  'sale',
-  'blanket',
-  'gloves',
-  'socks',
-  'woman',
-  'man',
-  'new',
-];
+export const TagsRowComponent = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
 
-export const TagsRowComponent = ({ setFilters }: IProps) => {
-  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const onChange = (filter: string) => {
+    const newSearchParams: {
+      [key: string]: string;
+    } = {};
+    searchParams.forEach((value, key) => {
+      if (key === 'filter') {
+        return;
+      }
+      newSearchParams[key] = value;
+    });
 
-  const handleClick = ({ title, idx }: { title: string; idx: number }) => {
-    setFilters((prev) => ({ ...prev, category: title }));
-    setActiveIdx(idx);
+    if (filter !== 'all') {
+      newSearchParams.filter = filter;
+    }
+
+    setSearchParams({
+      ...newSearchParams,
+    });
   };
 
   return (
     <StyledWrapper>
-      {categories.map((title, idx) => (
+      {filters.map((title, idx) => (
         <FilterButton
-          active={activeIdx === idx ? true : false}
+          active={
+            searchParams.get('filter') === title ||
+            (title === 'all' && !searchParams.get('filter'))
+          }
           key={idx}
           title={title}
-          onClick={() => handleClick({ title, idx })}
+          onClick={() => onChange(title)}
         />
       ))}
     </StyledWrapper>

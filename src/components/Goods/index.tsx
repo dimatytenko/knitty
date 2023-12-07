@@ -14,7 +14,6 @@ export const Goods: React.FC<IGoodsComponentProps> = ({
   wrapper: Wrapper,
   renderItem,
   loading,
-  setFilters,
   tag,
 }) => {
   return (
@@ -30,7 +29,7 @@ export const Goods: React.FC<IGoodsComponentProps> = ({
         }
         list={data}
       />
-      <GalleryController setFilters={setFilters} />
+      <GalleryController />
 
       <GalleryComponent
         data={data}

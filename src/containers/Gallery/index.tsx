@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 
 import { Goods } from '../../components/Goods';
 import { GlobalStore } from '../../context/GlobalStore';
-import { useFilters } from '../../hooks/useFilters';
 import { StyledGalleryWrapper } from '../../styles/container';
 import { ProductCard } from '../../ui-kit/Card/Product';
 import { Br } from '../../ui-kit/Br';
@@ -11,8 +10,6 @@ import { Br } from '../../ui-kit/Br';
 export const Gallery = () => {
   const { tag } = useParams();
   const { data, setData, loading } = useContext(GlobalStore)!;
-  const { filters, setFilters } = useFilters();
-  console.log('filter', filters);
 
   return (
     <>
@@ -23,7 +20,6 @@ export const Gallery = () => {
         data={data}
         wrapper={StyledGalleryWrapper}
         renderItem={(el) => <ProductCard {...el} setData={setData} />}
-        setFilters={setFilters}
         tag={tag}
       />
 

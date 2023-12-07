@@ -37,4 +37,5 @@ export const AboutSubtitle = styled(Heading3)`
   display: block;
   text-align: center;
   margin-bottom: 45px;
+  text-transform: uppercase;
 `;

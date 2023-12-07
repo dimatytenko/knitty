@@ -1,4 +1,4 @@
-import { route } from '../../constants/routes';
+import { route, paths } from '../../constants/routes';
 import { HeroLink } from '../../ui-kit/Links';
 import { Text2Bold } from '../../ui-kit/Typography';
 import { StyledMainBlock, StyledTitle } from './styles';
@@ -12,7 +12,9 @@ export const MainBlock = () => {
       <StyledTitle $case="uppercase" color="background">
         PURE NATURAL KNITWEAR
       </StyledTitle>
-      <HeroLink to={route.gallery.path}> see all knits</HeroLink>
+      <HeroLink to={route.gallery.get({ tag: paths.all })}>
+        see all knits
+      </HeroLink>
     </StyledMainBlock>
   );
 };
