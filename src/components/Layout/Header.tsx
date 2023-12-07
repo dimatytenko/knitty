@@ -31,13 +31,6 @@ export const HeaderComponent = () => {
     ScrollTrigger.enable();
 
     if (pathname === route.main.path) {
-      // gsap.set(refHeader.current, {
-      //   position: 'fixed',
-      //   backgroundColor: 'transparent',
-      //   backdropFilter: 'blur(20px) brightness(130%)',
-      //   width: '100%',
-      // });
-
       gsap.fromTo(
         refHeader.current,
         {
