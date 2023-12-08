@@ -1,8 +1,10 @@
-import video from './assets/video.mp4';
-export const Video = () => {
+import { StyledVideo } from './styles';
+import { IProps } from './types';
+
+export const Video = ({ src }: IProps) => {
   return (
-    <video autoPlay loop muted playsInline>
-      <source src={video} type="video/mp4" />
-    </video>
+    <StyledVideo autoPlay loop muted playsInline>
+      <source src={src} type="video/mp4" />
+    </StyledVideo>
   );
 };

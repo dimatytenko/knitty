@@ -8,13 +8,6 @@ export const StyledHeroWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-
-  video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
 `;
 
 export const StyledMainBlock = styled.div`
