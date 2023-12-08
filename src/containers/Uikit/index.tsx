@@ -26,6 +26,9 @@ import { Pagination } from '../../ui-kit/Pagination';
 import { ProductCard } from '../../ui-kit/Card/Product';
 import { Sort } from '../../ui-kit/Sort';
 import { ScrollButton } from '../../ui-kit/ScrollButton';
+import { HowItsMade } from '../HowItsMade';
+import CollapseComponent from '../../components/Collapse';
+import { faqList } from '../../constants/faq';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -146,6 +149,8 @@ export const Uikit = () => {
           />
         </div>
         <br />
+        <HowItsMade />
+        <CollapseComponent list={faqList['Returns & refunds']} />
       </Container>
     </div>
   );
