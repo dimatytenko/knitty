@@ -3,7 +3,7 @@ import React from 'react';
 import { constatnts, socialLinks } from './constants';
 import { IconSvg } from '../../ui-kit/Icon/Svg';
 import { FooterLink } from '../../ui-kit/Links';
-import { TextBody3Bold } from '../../ui-kit/Typography/styles';
+import { Text3Bold } from '../../ui-kit/Typography';
 import {
   StyledFooter,
   Container,
@@ -17,7 +17,6 @@ import {
 } from './styles';
 import { IProps } from './types';
 import { IFooterComponentProps } from '../../types/layout';
-import { Text3Bold } from '../../ui-kit/Typography';
 
 export const LinksBlock = ({ header, list }: IProps) => {
   return (
@@ -64,12 +63,12 @@ export const FooterComponent: React.FC<IFooterComponentProps> = ({ year }) => {
               <LinksBlock header="Legal Note" list={constatnts['Legal Note']} />
             </RightBlockTop>
             <RightBlockBottom>
-              <TextBody3Bold as="p">
+              <Text3Bold $case="uppercase">
                 © {year} all rights reserved
-              </TextBody3Bold>
-              <TextBody3Bold as="p">
+              </Text3Bold>
+              <Text3Bold $case="uppercase">
                 [All photos are used for non-commercial purposes]
-              </TextBody3Bold>
+              </Text3Bold>
             </RightBlockBottom>
           </RightBlock>
         </FooterContent>
