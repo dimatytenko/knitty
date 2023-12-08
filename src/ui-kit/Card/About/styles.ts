@@ -91,7 +91,7 @@ export const CardWrapper = styled.div`
     position: absolute;
     top: 50px;
     right: 29px;
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.palette.colors.background};
     z-index: 1;
     opacity: 0;
     ${common};
