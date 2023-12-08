@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { StyledFavoriteButton, StyledMainButton } from '../../Buttons/styles';
+import { Link } from 'react-router-dom';
 
 export const StyledProductCard = styled.div`
   /* width: 100%;
@@ -61,7 +62,7 @@ export const StyledImageContent = styled.div`
   }
 `;
 
-export const StyledImageWrapper = styled.div`
+export const StyledImageLink = styled(Link)`
   width: 100%;
   height: 420px;
 

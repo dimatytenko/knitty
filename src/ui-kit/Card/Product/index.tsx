@@ -2,12 +2,11 @@ import { FavouriteButton, MainButton } from '../../Buttons';
 import { Text2Bold } from '../../Typography';
 import {
   StyledImageContent,
-  StyledImageWrapper,
+  StyledImageLink,
   StyledInfoContent,
   StyledProductCard,
 } from './styled';
 import { IProps } from './types';
-import { IProduct } from '../../../types/api';
 
 export const ProductCard = ({
   title,
@@ -49,9 +48,9 @@ export const ProductCard = ({
           isFavourite={isFavourite}
           onClick={() => handleAddToFavourites(id)}
         />
-        <StyledImageWrapper>
+        <StyledImageLink to={`/gallery/product/${id}`}>
           <img src={image} alt={title} />
-        </StyledImageWrapper>
+        </StyledImageLink>
         <MainButton
           isInCart={isInCart}
           title={isInCart ? 'In cart' : 'Add to cart'}

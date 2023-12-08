@@ -3,6 +3,7 @@ import { Route } from '../helpers/Route';
 export const route = {
   main: Route.of({ path: '/' }),
   gallery: Route.of<{ tag?: string }>({ path: '/gallery/:tag' }),
+  singleProduct: Route.of<{ id?: string }>({ path: '/gallery/product/:id' }),
   contact: Route.of({ path: '/contact' }),
   myAccount: Route.of({ path: '/my-account' }),
   myOrders: Route.of({ path: '/my-orders' }),
