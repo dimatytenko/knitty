@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { constatnts, socialLinks } from './constants';
+import { constants, socialLinks } from './constants';
 import { IconSvg } from '../../ui-kit/Icon/Svg';
 import { FooterLink } from '../../ui-kit/Links';
 import { Text3Bold } from '../../ui-kit/Typography';
@@ -23,9 +23,9 @@ export const LinksBlock = ({ header, list }: IProps) => {
     <LinksBlockWrapper>
       <Text3Bold $case="uppercase">{header}</Text3Bold>
       <FooterList>
-        {list.map(({ title, path, ...rest }) => (
+        {list.map(({ title, path, href, ...rest }) => (
           <li key={title}>
-            <FooterLink to={path} {...rest}>
+            <FooterLink to={path} href={href} target="_blank" {...rest}>
               {title}
             </FooterLink>
           </li>
@@ -54,13 +54,13 @@ export const FooterComponent: React.FC<IFooterComponentProps> = ({ year }) => {
               <LinksBlock header="SOCIAL" list={socialLinks} />
               <LinksBlock
                 header="The Fun Stuff"
-                list={constatnts['The Fun Stuff']}
+                list={constants['The Fun Stuff']}
               />
               <LinksBlock
                 header="Things to Know"
-                list={constatnts['Things to Know']}
+                list={constants['Things to Know']}
               />
-              <LinksBlock header="Legal Note" list={constatnts['Legal Note']} />
+              <LinksBlock header="Legal Note" list={constants['Legal Note']} />
             </RightBlockTop>
             <RightBlockBottom>
               <Text3Bold $case="uppercase">

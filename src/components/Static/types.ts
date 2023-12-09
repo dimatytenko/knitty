@@ -3,7 +3,7 @@ export interface IProps {
     title: string;
     subtitle: string;
     info: {
-      titleBlock: string;
+      titleBlock?: string;
       text: string[];
     }[];
   };

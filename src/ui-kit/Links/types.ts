@@ -4,3 +4,9 @@ export interface IProps {
   children: React.ReactElement | string;
   color?: TextColor;
 }
+
+export type IPropsWithHref = Pick<IProps, 'color' | 'children'> & {
+  href?: string;
+  target?: string;
+  to?: string;
+};

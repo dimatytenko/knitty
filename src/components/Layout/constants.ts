@@ -2,7 +2,7 @@ import { links } from '../../constants/links';
 import { route, paths } from '../../constants/routes';
 import { IConstants, ILink, ILinkSocial } from './types';
 
-export const constatnts: IConstants = {
+export const constants: IConstants = {
   'The Fun Stuff': [
     { title: 'Woman', path: route.gallery.get({ tag: paths.woman }) },
     { title: 'Man', path: route.gallery.get({ tag: paths.man }) },
@@ -20,7 +20,10 @@ export const constatnts: IConstants = {
   'Legal Note': [
     { title: 'Privacy Policy', path: route.privacyPolicy.path },
     { title: 'Terms of Service', path: route.termsOfService.path },
-    { title: 'Registered company', path: route.registredCompany.path },
+    {
+      title: 'Registered company',
+      href: links.REGISTERED_COMPANY,
+    },
     { title: 'Refund policy', path: route.refundPolicy.path },
   ],
 };

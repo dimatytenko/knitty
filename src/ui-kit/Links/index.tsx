@@ -1,4 +1,4 @@
-import { IProps } from './types';
+import { IProps, IPropsWithHref } from './types';
 import { IconSvg } from '../Icon/Svg';
 import {
   StyledFooterLink,
@@ -6,6 +6,7 @@ import {
   StyledLinkWithArrow,
   StyledMainLink,
   StyledNavLink,
+  ALinkStyled,
 } from './styles';
 import { Text1Bold, Text2Bold } from '../Typography';
 import { HoverCircle } from '../HoverCircle';
@@ -14,7 +15,6 @@ export const NavigationLink = ({ to, children, color }: IProps) => {
   return (
     <StyledNavLink to={to}>
       <Text2Bold $case="uppercase" color={color}>
-        {' '}
         {children}
       </Text2Bold>
       <IconSvg
@@ -64,10 +64,25 @@ export const MainLink = ({ to, color, children }: IProps) => {
   );
 };
 
-export const FooterLink = ({ to, color, children, ...rest }: IProps) => {
+export const FooterLink = ({
+  to,
+  color,
+  href,
+  target,
+  children,
+  ...rest
+}: IPropsWithHref) => {
   return (
-    <StyledFooterLink to={to} {...rest}>
-      <Text1Bold color={color || 'grey'}>{children}</Text1Bold>
-    </StyledFooterLink>
+    <>
+      {to ? (
+        <StyledFooterLink to={to} {...rest}>
+          <Text1Bold color={color || 'grey'}>{children}</Text1Bold>
+        </StyledFooterLink>
+      ) : (
+        <ALinkStyled href={href} target={target}>
+          <Text1Bold color={color || 'grey'}>{children}</Text1Bold>
+        </ALinkStyled>
+      )}
+    </>
   );
 };

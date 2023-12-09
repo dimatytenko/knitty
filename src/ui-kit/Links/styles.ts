@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import { TextBody1Bold } from '../Typography/styles';
 import { StyledSvg } from '../Icon/Svg/styles';
 import { StyledCircle } from '../HoverCircle/styles';
+import { ALink } from './../../components/Contacts/styles';
 
 const draw = keyframes`
  100% { stroke-dashoffset: 0 }`;
@@ -84,3 +85,5 @@ export const StyledMainLink = styled(Link)`
   justify-content: center;
   align-items: center;
 `;
+
+export const ALinkStyled = styled(ALink)``;

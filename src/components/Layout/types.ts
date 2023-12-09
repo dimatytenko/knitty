@@ -4,7 +4,8 @@ export interface ISocialLinks {
 
 export interface ILink {
   title: string;
-  path: string;
+  path?: string;
+  href?: string;
 }
 
 export interface ILinkSocial extends ILink {
