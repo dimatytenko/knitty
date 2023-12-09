@@ -8,6 +8,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { useState } from 'react';
 import { IProduct } from '../../types/api';
 import { Recomended } from '../../components/Recomended';
+import {ProductDetails} from '../../components/ProductDetails'
 
 export const SingleProduct = () => {
   const [data, setData] = useState<IProduct[] | []>([]);
@@ -28,6 +29,8 @@ export const SingleProduct = () => {
           SINGLE PRODUCT <span style={{ color: 'red' }}>{id}</span>
         </div>
       )}
+      <Br desktop={120} mobile={60} />
+      <ProductDetails/>
       <Br desktop={120} mobile={60} />
       <CollapseComponent list={list} />
       <Br desktop={120} mobile={60} />
