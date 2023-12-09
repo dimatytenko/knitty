@@ -14,17 +14,14 @@ export const constatnts: IConstants = {
   'Things to Know': [
     { title: 'My account', path: route.myAccount.path },
     { title: 'My orders', path: route.myOrders.path },
-    { title: 'Request a return', path: route.requestAReturn.path },
-    { title: 'Shipping Policy', path: route.shippingPolicy.path },
-    { title: 'Return Policy', path: route.returnPolicy.path },
+    { title: 'Contact', path: route.contact.path },
     { title: 'FAQ', path: route.faq.path },
   ],
   'Legal Note': [
     { title: 'Privacy Policy', path: route.privacyPolicy.path },
     { title: 'Terms of Service', path: route.termsOfService.path },
     { title: 'Registered company', path: route.registredCompany.path },
-    { title: 'Shipping Policy', path: route.shippingPolicy.path },
-    { title: 'Contact', path: route.contact.path },
+    { title: 'Refund policy', path: route.refundPolicy.path },
   ],
 };
 

@@ -1,8 +1,8 @@
-import { faqList } from '../../constants/faq';
-import CollapseComponent from '../../components/Collapse';
-import { Container } from '../../components/Layout/styles';
-import { Br } from '../../ui-kit/Br';
-import { Heading2 } from '../../ui-kit/Typography';
+import { faqList } from '../../../constants/faq';
+import CollapseComponent from '../../../components/Collapse';
+import { Container } from '../../../components/Layout/styles';
+import { Br } from '../../../ui-kit/Br';
+import { Heading2 } from '../../../ui-kit/Typography';
 import { SubHeading, Text } from './Typografy';
 
 export function Faq() {

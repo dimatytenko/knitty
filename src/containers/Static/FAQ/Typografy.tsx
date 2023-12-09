@@ -1,4 +1,4 @@
-import { TextBaseProps } from '../../ui-kit/Typography/types';
+import { TextBaseProps } from '../../../ui-kit/Typography/types';
 import { StyledHeading, StyledTextFaq } from './styles';
 
 export const Text: React.FC<TextBaseProps> = (props) => {

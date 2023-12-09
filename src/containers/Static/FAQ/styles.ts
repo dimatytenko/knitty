@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { StyledHeading3, TextBody2Bold } from '../../ui-kit/Typography/styles';
+import {
+  StyledHeading3,
+  TextBody2Bold,
+} from '../../../ui-kit/Typography/styles';
 
 export const StyledTextFaq = styled(TextBody2Bold)`
   width: 430px;

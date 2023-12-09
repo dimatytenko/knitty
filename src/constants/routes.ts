@@ -4,16 +4,16 @@ export const route = {
   main: Route.of({ path: '/' }),
   gallery: Route.of<{ tag?: string }>({ path: '/gallery/:tag' }),
   singleProduct: Route.of<{ id?: string }>({ path: '/gallery/product/:id' }),
-  contact: Route.of({ path: '/contact' }),
+
   myAccount: Route.of({ path: '/my-account' }),
   myOrders: Route.of({ path: '/my-orders' }),
-  requestAReturn: Route.of({ path: '/request-a-return' }),
-  shippingPolicy: Route.of({ path: '/shipping-policy' }),
-  returnPolicy: Route.of({ path: '/return-policy' }),
+  contact: Route.of({ path: '/contact' }),
   faq: Route.of({ path: '/faq' }),
+
   privacyPolicy: Route.of({ path: '/privacy-policy' }),
   termsOfService: Route.of({ path: '/terms-of-service' }),
   registredCompany: Route.of({ path: '/registered-company' }),
+  refundPolicy: Route.of({ path: '/refund-policy' }),
 
   uikit: Route.of({ path: '/ui-kit' }),
 };
@@ -28,16 +28,16 @@ export const paths = {
   sale: 'sale',
   souvenirs: 'souvenirs',
   new: 'new',
-  contact: 'contact',
+
   myAccount: 'my-account',
   myOrders: 'my-orders',
-  requestAReturn: 'request-a-return',
-  shippingPolicy: 'shipping-policy',
-  returnPolicy: 'return-policy',
+  contact: 'contact',
   faq: 'faq',
+
   privacyPolicy: 'privacy-policy',
   termsOfService: 'terms-of-service',
   registredCompany: 'registered-company',
+  refundPolicy: 'refund-policy',
 };
 
 export const excludePathsFooter = [paths.contact];

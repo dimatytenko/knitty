@@ -1,4 +1,4 @@
-import { ContactsComponent } from '../../components/Contacts';
+import { ContactsComponent } from '../../../components/Contacts';
 
 export const Contacts = () => {
   return <ContactsComponent />;

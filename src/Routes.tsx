@@ -4,10 +4,15 @@ import { Route, Routes } from 'react-router-dom';
 import { route } from './constants/routes';
 import { Main } from './containers/Main';
 import { Uikit } from './containers/Uikit';
-import { Faq } from './containers/FAQ';
 import { Gallery } from './containers/Gallery';
-import { Contacts } from './containers/Contacts';
 import { SingleProduct } from './containers/SingleProduct';
+
+import { Contacts } from './containers/Static/Contacts';
+import { Faq } from './containers/Static/FAQ';
+
+import { PrivacyPolicy } from './containers/Static/PrivacyPolicy';
+import { TermsOfService } from './containers/Static/TermsOfService';
+import { PefundPolicy } from './containers/Static/RefundPolicy';
 
 const NotFound = lazy(() => import('./containers/NotFound'));
 
@@ -19,8 +24,25 @@ const PublicRoutes = [
     path={route.singleProduct.path}
     element={<SingleProduct />}
   />,
-  <Route key="faq" path={route.faq.path} element={<Faq />} />,
+
   <Route key="contact" path={route.contact.path} element={<Contacts />} />,
+  <Route key="faq" path={route.faq.path} element={<Faq />} />,
+
+  <Route
+    key="privacy-policy"
+    path={route.privacyPolicy.path}
+    element={<PrivacyPolicy />}
+  />,
+  <Route
+    key="terms-of-service"
+    path={route.termsOfService.path}
+    element={<TermsOfService />}
+  />,
+  <Route
+    key="refund-policy"
+    path={route.refundPolicy.path}
+    element={<PefundPolicy />}
+  />,
 ];
 
 // only for development
