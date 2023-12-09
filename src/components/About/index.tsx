@@ -3,7 +3,8 @@ import React from 'react';
 import { AboutCardProps } from '../../ui-kit/Card/About/types';
 import { AboutCard } from '../../ui-kit/Card/About';
 import { Container } from '../Layout/styles';
-import { AboutWrapper, AboutList, AboutSubtitle, AboutTitle } from './styles';
+import { AboutWrapper, AboutSubtitle, AboutTitle } from './styles';
+import { Slider } from '../../ui-kit/Slider';
 
 interface AboutComponentProps {
   data: AboutCardProps[];
@@ -19,7 +20,14 @@ export const AboutComponent: React.FC<AboutComponentProps> = ({ data }) => {
           reflecting Ukrainian heritage and artistic craftsmanship in every
           pattern and knot
         </AboutTitle>
-        <AboutList>
+
+        <Slider
+          isNavigation
+          isLoop
+          slidesPerViewMobile={1}
+          slidesPerViewTablet={2}
+          slidesPerViewDesktop={3}
+        >
           {data.map((item) => (
             <AboutCard
               key={item.id}
@@ -28,7 +36,7 @@ export const AboutComponent: React.FC<AboutComponentProps> = ({ data }) => {
               img={item.img}
             />
           ))}
-        </AboutList>
+        </Slider>
       </Container>
     </AboutWrapper>
   );

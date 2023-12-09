@@ -43,4 +43,14 @@ export const paths = {
 export const excludePathsFooter = [paths.contact];
 export const excludePathsHeader = [];
 
-export const filters = ['all', 'sweaters', 'blanket', 'gloves', 'socks'];
+export const filters = [
+  'all',
+  'sweaters',
+  'blanket',
+  'gloves',
+  'socks',
+  'scarves',
+  'caps',
+  'jackets',
+  'other',
+];

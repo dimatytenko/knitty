@@ -4,9 +4,11 @@ import RoutesSwitch from './Routes';
 import { GlobalStyles } from './styles';
 import { Layout } from './containers/Layout';
 import { defaultTheme } from './ui-kit/theme/theme';
+import { GlobalStroreProvider } from './context/GlobalStore';
 import './ui-kit/fonts/fonts.css';
 import './ui-kit/MenuMore/styles.css';
-import { GlobalStroreProvider } from './context/GlobalStore';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 function App() {
   return (
