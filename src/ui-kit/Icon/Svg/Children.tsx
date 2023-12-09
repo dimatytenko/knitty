@@ -12,6 +12,11 @@ import {
   Close,
   Plus,
   Minus,
+  ProductOrigin,
+  Material,
+  WaterProof,
+  Warmth,
+  Durability,
 } from './Paths';
 import { StyledSvgIconProps } from './types';
 
@@ -39,6 +44,16 @@ export const SvgChildren: React.FC<StyledSvgIconProps> = ({ type }) => {
       return <Plus />;
     case 'minus':
       return <Minus />;
+    case 'product-origin':
+      return <ProductOrigin />;
+    case 'material':
+      return <Material />;
+    case 'waterproof':
+      return <WaterProof />;
+    case 'warmth':
+      return <Warmth />;
+    case 'durability':
+      return <Durability />;
 
     default:
       return null;

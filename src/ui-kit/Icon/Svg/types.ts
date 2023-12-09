@@ -20,6 +20,11 @@ export const iconOptions = <const>[
   'close',
   'plus',
   'minus',
+  "product-origin",
+  "material",
+  "waterproof",
+  "warmth",
+  "durability"
 ];
 export type icon = (typeof iconOptions)[number];
 
