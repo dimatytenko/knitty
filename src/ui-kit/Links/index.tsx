@@ -7,6 +7,7 @@ import {
   StyledMainLink,
   StyledNavLink,
   ALinkStyled,
+  StyledCategoriesLink,
 } from './styles';
 import { Text1Bold, Text2Bold } from '../Typography';
 import { HoverCircle } from '../HoverCircle';
@@ -34,6 +35,16 @@ export const LinkWithArrow = ({ to, children }: IProps) => {
       <Text2Bold $case="uppercase"> {children}</Text2Bold>
       <IconSvg type="arrow" viewBox="0 0 24 24" width="24" height="24" />
     </StyledLinkWithArrow>
+  );
+};
+
+export const CategoriesLink = ({ to, children }: IProps) => {
+  return (
+    <StyledCategoriesLink to={to}>
+      <Text2Bold $case="uppercase"> {children}</Text2Bold>
+      <IconSvg type="arrow" viewBox="0 0 24 24" width="24" height="24" />
+      <HoverCircle />
+    </StyledCategoriesLink>
   );
 };
 
