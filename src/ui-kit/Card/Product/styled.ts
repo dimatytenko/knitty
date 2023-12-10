@@ -27,6 +27,7 @@ export const StyledImageContent = styled.div`
 
   ${StyledFavoriteButton} {
     position: absolute;
+    z-index: 1;
     top: 20px;
     right: 20px;
 
@@ -63,16 +64,14 @@ export const StyledImageContent = styled.div`
 `;
 
 export const StyledImageLink = styled(Link)`
+  display: inline-block;
   width: 100%;
   height: 420px;
+  transition: all ${({ theme }) => theme.transitions.main};
 
-  background-color: ${({ theme }) => theme.palette.colors.grey};
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  &:hover {
+    transform: scale(1.05);
+    filter: grayscale(50%);
   }
 `;
 
