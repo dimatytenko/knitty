@@ -1,6 +1,6 @@
 import { NavLink, Link } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
-import { TextBody1Bold } from '../Typography/styles';
+import { TextBody1Bold, TextBody2Bold } from '../Typography/styles';
 import { StyledSvg } from '../Icon/Svg/styles';
 import { StyledCircle } from '../HoverCircle/styles';
 import { ALink } from './../../components/Contacts/styles';
@@ -87,3 +87,25 @@ export const StyledMainLink = styled(Link)`
 `;
 
 export const ALinkStyled = styled(ALink)``;
+
+export const StyledCategoriesLink = styled(StyledLinkWithArrow)`
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+
+  ${StyledSvg} {
+    position: relative;
+    z-index: 1;
+  }
+
+  ${TextBody2Bold} {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover ${StyledCircle} {
+    transform: scale(4);
+  }
+`;

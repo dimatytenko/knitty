@@ -13,10 +13,6 @@ export const StyledProductsList = styled.ul`
 
     height: 84px;
     border-top: 1px solid ${({ theme }) => theme.palette.colors.line};
-
-    &:hover {
-      background-color: ${({ theme }) => theme.palette.colors.lightHover};
-    }
   }
 
   li:not(:nth-child(-n + 4)) {

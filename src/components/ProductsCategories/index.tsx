@@ -1,4 +1,4 @@
-import { LinkWithArrow } from '../../ui-kit/Links';
+import { CategoriesLink } from '../../ui-kit/Links';
 import { StyledProductsList } from './styles';
 import { IProps } from './types';
 
@@ -7,7 +7,7 @@ export const ProductsCategoriesComponent = ({ list }: IProps) => {
     <StyledProductsList>
       {list.map(({ title, path }) => (
         <li key={title}>
-          <LinkWithArrow to={path}>{title}</LinkWithArrow>
+          <CategoriesLink to={path}>{title}</CategoriesLink>
         </li>
       ))}
     </StyledProductsList>
