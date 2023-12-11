@@ -29,6 +29,7 @@ import { ScrollButton } from '../../ui-kit/ScrollButton';
 import { HowItsMade } from '../HowItsMade';
 import CollapseComponent from '../../components/Collapse';
 import { faqList } from '../../constants/faq';
+import { ImageSkeleton } from '../../ui-kit/Loader/ImageSkeleton';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -151,6 +152,8 @@ export const Uikit = () => {
         <br />
         <HowItsMade />
         <CollapseComponent list={faqList['Returns & refunds']} />
+        <div>Image skeleton</div>
+        <ImageSkeleton />
       </Container>
     </div>
   );
