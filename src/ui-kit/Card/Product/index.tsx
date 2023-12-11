@@ -1,5 +1,6 @@
 import { FavouriteButton, MainButton } from '../../Buttons';
 import { ImageComponent } from '../../ImageComponent/Index';
+import { ImageSkeleton } from '../../Loader/ImageSkeleton';
 import { Text2Bold } from '../../Typography';
 import {
   StyledImageContent,

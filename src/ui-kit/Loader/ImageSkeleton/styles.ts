@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
+import { StyledSvg } from '../../Icon/Svg/styles';
 
 const li = keyframes`
+
 100% {
     transform: rotate(1turn);
   }
@@ -31,5 +33,26 @@ export const StyledLoader = styled.div`
     aspect-ratio: 1;
     border: 2px solid;
     animation-duration: 6s;
+  }
+`;
+
+const draw = keyframes`
+
+ 100% { 
+
+  stroke-dashoffset: 17783;
+  stroke-dasharray: 17783;
+  }`;
+
+export const StyledSkeleton = styled.div`
+  svg {
+    path {
+      fill: transparent;
+      stroke: ${({ theme }) => theme.palette.colors.primary};
+      stroke-width: 0.3;
+      stroke-dasharray: 500;
+
+      animation: ${draw} 3s linear infinite;
+    }
   }
 `;

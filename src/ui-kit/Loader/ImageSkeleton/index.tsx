@@ -1,5 +1,16 @@
-import { StyledLoader } from './styles';
+import { Logo2 } from './path';
+import { StyledSkeleton } from './styles';
+
+// export const ImageSkeleton = () => {
+//   return <StyledLoader></StyledLoader>;
+// };
 
 export const ImageSkeleton = () => {
-  return <StyledLoader></StyledLoader>;
+  return (
+    <StyledSkeleton>
+      <svg width="280" height="306">
+        <Logo2 />
+      </svg>
+    </StyledSkeleton>
+  );
 };
