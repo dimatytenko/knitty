@@ -7,7 +7,7 @@ export const StyledTitle = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  padding: 20px 0;
+  padding: 16px 0;
   cursor: pointer;
 `;
 
@@ -25,26 +25,24 @@ export const StyledLeftBlock = styled.div`
 `;
 
 export const StyledPlusMinusCircle = styled.div`
-  & > div {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid ${({ theme }) => theme.palette.colors.black};
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.palette.colors.black};
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    span {
-      display: block;
-      position: absolute;
-      width: 15px;
-      height: 1px;
-      background-color: ${({ theme }) => theme.palette.colors.black};
+  span {
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    background-color: ${({ theme }) => theme.palette.colors.black};
 
-      &:last-of-type {
-        transform: rotate(90deg);
-      }
+    &:last-of-type {
+      transform: rotate(90deg);
     }
   }
 `;
