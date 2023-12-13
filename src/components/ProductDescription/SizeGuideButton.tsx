@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Text2Bold } from '../../ui-kit/Typography';
 import { Portal } from '../Portal';
 import { SizeGuideModal } from '../Portal/Modals/SizeGuide';
+import { StyledSizeGuideButton } from './styles';
+import { ArrowIcon } from '../../ui-kit/Sort/styles';
 
 export const SizeGuideButton = () => {
   const [visible, setIsVisible] = useState<boolean>(false);
@@ -11,9 +12,10 @@ export const SizeGuideButton = () => {
 
   return (
     <>
-      <button type="button" onClick={onClick}>
-        <Text2Bold $case="uppercase">size guide</Text2Bold>
-      </button>
+      <StyledSizeGuideButton as="button" type="button" onClick={onClick}>
+        size guide
+        <ArrowIcon />
+      </StyledSizeGuideButton>
       <Portal visible={visible} setIsVisible={setIsVisible}>
         <SizeGuideModal />
       </Portal>

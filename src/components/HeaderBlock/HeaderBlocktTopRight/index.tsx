@@ -18,11 +18,9 @@ export const HeaderBlockTopRight: React.FC<IProps> = ({ color }) => {
           Sign Up
         </MainLink>
       </VerticalSeparator>
-      <VerticalSeparator color={color}>
-        <MainLink to="/sign-in" color={color}>
-          Sign In
-        </MainLink>
-      </VerticalSeparator>
+      <MainLink to="/sign-in" color={color}>
+        Sign In
+      </MainLink>
     </>
   );
 };

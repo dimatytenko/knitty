@@ -67,9 +67,49 @@ export const StyledInfoDescription = styled.div`
 `;
 
 export const StyledInfoDescriptionTitle = styled.div`
-  ${TextBody2Bold} {
-    padding: 20px;
-  }
   display: flex;
   justify-content: space-around;
+  align-items: center;
+`;
+
+export const DescriptionText = styled(TextBody2Bold).attrs({
+  $case: 'uppercase',
+})`
+  position: relative;
+  width: 100%;
+
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: ${({ theme }) => theme.palette.colors.primary};
+  }
+`;
+
+export const StyledSizeGuideButton = styled(TextBody2Bold).attrs({
+  $case: 'uppercase',
+  color: 'unfocus',
+})`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  svg {
+    transform: rotate(-90deg);
+    path {
+      stroke: ${({ theme }) => theme.palette.colors.unfocus};
+    }
+  }
 `;
