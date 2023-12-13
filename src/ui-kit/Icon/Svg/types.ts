@@ -5,6 +5,7 @@ export const colorOptions = <const>[
   'black',
   'none',
   'alert',
+  'unfocus',
 ];
 export type color = (typeof colorOptions)[number];
 
@@ -20,11 +21,11 @@ export const iconOptions = <const>[
   'close',
   'plus',
   'minus',
-  "product-origin",
-  "material",
-  "waterproof",
-  "warmth",
-  "durability"
+  'product-origin',
+  'material',
+  'waterproof',
+  'warmth',
+  'durability',
 ];
 export type icon = (typeof iconOptions)[number];
 

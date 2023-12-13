@@ -8,29 +8,47 @@ import { IProduct } from '../../types/api';
 import { Recomended } from '../../components/Recomended';
 import { ProductDetails } from '../../components/ProductDetails';
 import { ProductDescription } from '../../components/ProductDescription';
+import { ScrollButton } from '../../ui-kit/ScrollButton';
 
 export const SingleProduct = () => {
-  const [data, setData] = useState<IProduct[] | []>([]);
+  const [singleProduct, setSingleProduct] = useState<IProduct[] | []>([]);
+  const [productList, setProductList] = useState<IProduct[] | []>([]);
+
   const { id } = useParams();
 
-  const { loading } = useFetch({
+  const { loading: singleProductLoading } = useFetch({
     endpoint: `baseURL/api/products/${id}`,
-    setData,
+    setData: setSingleProduct,
     noFetching: false,
   });
 
-  if (!data.length) return;
+  const { loading: listLoading } = useFetch({
+    endpoint: `baseURL/api/list`,
+    setData: setProductList,
+    noFetching: false,
+  });
 
   return (
-    <Container>
-      {loading ? <h1>LOADING ...</h1> : <ProductDescription data={data[0]} />}
-      <Br desktop={120} mobile={60} />
-      <ProductDetails />
-      <Br desktop={120} mobile={60} />
-      <HowItsMade />
-      <Br desktop={120} mobile={60} />
-      <Recomended loading={loading} data={data.slice(0, 4)} setData={setData} />
-      <Br desktop={100} mobile={60} />
-    </Container>
+    <>
+      <Container>
+        {!singleProductLoading && singleProduct.length > 0 ? (
+          <ProductDescription data={singleProduct[0]} />
+        ) : (
+          <h1>LOADING ...</h1>
+        )}
+        <Br desktop={120} mobile={60} />
+        <ProductDetails />
+        <Br desktop={120} mobile={60} />
+        <HowItsMade />
+        <Br desktop={120} mobile={60} />
+        <Recomended
+          loading={listLoading}
+          data={productList.slice(0, 4)}
+          setData={setProductList}
+        />
+        <Br desktop={100} mobile={60} />
+      </Container>
+      <ScrollButton />
+    </>
   );
 };

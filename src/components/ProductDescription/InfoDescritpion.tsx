@@ -1,8 +1,12 @@
 import { HorizontalSeparator } from '../../ui-kit/HorizontalSeparator';
-import { Text1Bold, Text2Bold } from '../../ui-kit/Typography';
+import { Text1Bold } from '../../ui-kit/Typography';
 import CollapseComponent from '../Collapse';
 import { SizeGuideButton } from './SizeGuideButton';
-import { StyledInfoDescription, StyledInfoDescriptionTitle } from './styles';
+import {
+  DescriptionText,
+  StyledInfoDescription,
+  StyledInfoDescriptionTitle,
+} from './styles';
 import { descriptionList } from './utils';
 
 export const InfoDescription = () => {
@@ -10,7 +14,7 @@ export const InfoDescription = () => {
     <StyledInfoDescription>
       <HorizontalSeparator />
       <StyledInfoDescriptionTitle>
-        <Text2Bold $case="uppercase">Description</Text2Bold>
+        <DescriptionText>Description</DescriptionText>
         <SizeGuideButton />
       </StyledInfoDescriptionTitle>
       <HorizontalSeparator />
