@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { IProps } from './types';
-import { dataList } from '../../constants/listsData';
-import { IProduct } from '../../types/api';
+import { fakeFetchAllProducts, fakeFetchById } from './utils';
 
 export const useFetch = ({ endpoint, setData, noFetching }: IProps) => {
   const [error, setError] = useState<string>('');
@@ -10,19 +9,12 @@ export const useFetch = ({ endpoint, setData, noFetching }: IProps) => {
   useEffect(() => {
     if (noFetching) return;
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const fakeFetch = (endpoint: string): Promise<IProduct[]> => {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(dataList.splice(0, 30));
-        }, 1500);
-      });
-    };
 
-    const getData = async () => {
+    const getProductsList = async () => {
       setLoading(true);
       try {
-        const data = await fakeFetch(endpoint);
-        if (data) setData((prev) => [...prev, ...data]);
+        const data = await fakeFetchAllProducts();
+        if (data) setData(data);
       } catch (error) {
         if (error instanceof Error) {
           setError(error.message);
@@ -31,7 +23,25 @@ export const useFetch = ({ endpoint, setData, noFetching }: IProps) => {
         setLoading(false);
       }
     };
-    getData();
+
+    const arr = endpoint.split('/');
+    const id = arr.pop()!;
+    const getProductsById = async (id: string) => {
+      setLoading(true);
+      try {
+        const data = await fakeFetchById(id);
+
+        if (data) setData(data);
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    endpoint.includes('product') ? getProductsById(id) : getProductsList();
   }, [endpoint, setData, noFetching]);
   return { error, loading };
 };
