@@ -47,6 +47,7 @@ export const StyledSizeGuideControls = styled.div`
   margin-top: 40px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const StyledTabsWrapper = styled.div`
@@ -68,5 +69,50 @@ export const StyledLine = styled.span`
   width: 148px;
   height: 1px;
 
+  background-color: ${({ theme }) => theme.palette.colors.primary};
+`;
+
+export const StyledCheckBoxWrapper = styled.div`
+  position: relative;
+  display: flex;
+  gap: 60px;
+`;
+
+export const StyledCheckboxWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  input {
+    visibility: hidden;
+    display: none;
+  }
+
+  label {
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+  }
+`;
+
+export const StyledCircleStroke = styled.span`
+  display: block;
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+  border: 1px solid ${({ theme }) => theme.palette.colors.primary};
+`;
+export const StyledCircleFilled = styled.span`
+  display: block;
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-58%);
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
   background-color: ${({ theme }) => theme.palette.colors.primary};
 `;
