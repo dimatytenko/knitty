@@ -22,20 +22,20 @@ export const AllKnitsComponent = () => {
         <ContentWrapper>
           <ImagesWrapper>
             <CardWrapper>
-              <ImageWrapper>
-                <Link to={route.gallery.get({ tag: paths.man })}>
+              <Link to={route.gallery.get({ tag: paths.man })}>
+                <ImageWrapper>
                   <Image src={man} alt="man" />
-                </Link>
-              </ImageWrapper>
-              <Text>man</Text>
+                </ImageWrapper>
+                <Text>man</Text>
+              </Link>
             </CardWrapper>
             <CardWrapper>
-              <ImageWrapper>
-                <Link to={route.gallery.get({ tag: paths.woman })}>
+              <Link to={route.gallery.get({ tag: paths.woman })}>
+                <ImageWrapper>
                   <Image src={woman} alt="woman" />
-                </Link>
-              </ImageWrapper>
-              <Text>woman</Text>
+                </ImageWrapper>
+                <Text>woman</Text>
+              </Link>
             </CardWrapper>
           </ImagesWrapper>
           <ButtonWrapper>

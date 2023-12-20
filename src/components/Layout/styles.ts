@@ -35,7 +35,7 @@ export const StyledHeader = styled.header`
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 100;
 
   padding: 30px 0;
   width: 100%;
@@ -132,7 +132,7 @@ export const FooterList = styled.ul`
 
 export const StyledMobileHeader = styled.header`
   position: fixed;
-  z-index: 1;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
