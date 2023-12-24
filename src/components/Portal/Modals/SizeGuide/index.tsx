@@ -17,5 +17,3 @@ export const SizeGuideModal = () => {
     </SizeGuideProvider>
   );
 };
-
-console.log('object')
