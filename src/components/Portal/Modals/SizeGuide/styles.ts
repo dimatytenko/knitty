@@ -36,7 +36,7 @@ export const StyledTableCell = styled.div`
 export const StyledTableRow = styled.div`
   display: grid;
   align-items: center;
-  grid-template-columns: 175px repeat(7, 115px);
+  grid-template-columns: 175px repeat(6, 115px);
 
   &:first-of-type ${StyledTableCell} {
     border-top: 1px solid ${({ theme }) => theme.palette.colors.primary};

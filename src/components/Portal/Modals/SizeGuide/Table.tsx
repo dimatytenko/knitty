@@ -1,11 +1,15 @@
+import { useContext } from 'react';
 import { Text2Bold } from '../../../../ui-kit/Typography';
-import { rows } from './assets/rows';
 import { StyledTableCell, StyledTableRow, StyledTabledWrapper } from './styles';
+import { SizeGuideContext } from './context/context';
+import { tabs } from './assets/tabs';
 
 export const TableComponent = () => {
+    const { active } = useContext(SizeGuideContext)!;
+
   return (
     <StyledTabledWrapper>
-      {rows.map(({ name, cells }) => (
+      {Object.values(tabs)[active].map(({ name, cells }) => (
         <StyledTableRow key={name}>
           <Text2Bold $case="uppercase">{name}</Text2Bold>
           {cells.map((cell, idx) => (

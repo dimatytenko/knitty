@@ -143,7 +143,8 @@ export const StyledMobileHeader = styled.header`
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
 
-  padding: 30px 20px 30px 20px;
+  padding: 10px;
+  padding-right: 15px;
 
   backdrop-filter: blur(20px) brightness(130%);
 `;
