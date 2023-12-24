@@ -57,7 +57,7 @@ export const GlobalStyles = createGlobalStyle`
     position: fixed;
     inset: 0;
 
-    z-index: 10;
+    z-index: 101;
     pointer-events: none;
   }
 
