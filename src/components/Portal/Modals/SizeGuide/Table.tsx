@@ -12,23 +12,14 @@ export const TableComponent = () => {
     gsap.fromTo(
       '.table-item',
       {
-        // rotate: 10,
-
         skewX: '-10deg',
         skewY: '10deg',
-
         opacity: 0,
-        // scale: 1.5,
       },
       {
-
-        // rotate: 0,
         skewX: '0deg',
         skewY: '0deg',
-
-        overwrite: false,
         opacity: 1,
-        // scale: 1,
         stagger: 0.02,
       },
     );
