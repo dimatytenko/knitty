@@ -1,2 +1,2 @@
 export const BASE_URL =
-  'https://corsproxy.io/?https://vlad31252.pythonanywhere.com/api/';
+  'https://cors-anywhere.herokuapp.com/https://vlad31252.pythonanywhere.com/api/';

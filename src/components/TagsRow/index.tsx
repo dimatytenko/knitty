@@ -11,11 +11,11 @@ export const TagsRowComponent = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const {
-    globalState: { categories: filters },
+    globalState: { filters },
     loading,
   } = useFetch({
-    fetch: useGET({ endpoint: `categories/` }),
-    globalStateKey: 'categories',
+    fetch: useGET({ endpoint: `filters/` }),
+    globalStateKey: 'filters',
     cache: true,
   });
 

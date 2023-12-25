@@ -11,9 +11,10 @@ interface IProps {
 export const HeaderBlockBottomLeft: React.FC<IProps> = ({ color }) => {
   
   const {
-    globalState: { sections },
+    globalState: { categories },
   } = useContext(GlobalStore)!;
 
-
-  return <NavList list={sections ? sections.slice(0, 3) : []} color={color} />;
+  return (
+    <NavList list={categories ? categories.slice(0, 3) : []} color={color} />
+  );
 };

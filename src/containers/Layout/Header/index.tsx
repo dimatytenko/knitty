@@ -8,12 +8,10 @@ export const Header = () => {
   const isDesktop = useMedia({ minWidth: '900px' });
 
   const { loading } = useFetch({
-    fetch: useGET({ endpoint: 'sections/' }),
-    globalStateKey: 'sections',
+    fetch: useGET({ endpoint: 'categories/' }),
+    globalStateKey: 'categories',
     cache: true,
   });
-
-
 
 
   return (
