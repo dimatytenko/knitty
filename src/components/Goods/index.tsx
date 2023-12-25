@@ -16,8 +16,9 @@ export const Goods: React.FC<IGoodsComponentProps> = ({
   loading,
   tag,
 }) => {
+
   return (
-    <Container>
+    <Container >
       <PageTitle
         title={`Shop ${tag}`}
         text={

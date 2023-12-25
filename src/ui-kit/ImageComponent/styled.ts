@@ -10,7 +10,7 @@ export const StyledImageWrapper = styled.div`
     object-fit: cover;
     object-position: center;
 
-    transform: scale(1.5);
+    transform: scale(1.25);
     filter: blur(10px);
     opacity: 0;
   }
