@@ -11,7 +11,7 @@ export const Gallery = () => {
   const { tag } = useParams();
 
   const { data, loading, setData } = useFetch({
-    fetch: useGET({ endpoint: 'products/' }),
+    fetch: useGET({ endpoint: `products/?category=${1}` }),
     globalStateKey: tag,
   });
 

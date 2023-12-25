@@ -54,7 +54,7 @@ export const useFetch = ({
     };
 
     fetchData();
-  }, []);
+  }, [fetch]);
 
   return { error, loading, data, setData, globalSetter, globalState };
 };
