@@ -3,40 +3,36 @@ import { Container } from '../../components/Layout/styles';
 import { Br } from '../../ui-kit/Br';
 import { HowItsMade } from '../HowItsMade';
 import { useFetch } from '../../hooks/useFetch';
-import { useState } from 'react';
-import { IProduct } from '../../types/api';
 import { Recomended } from '../../components/Recomended';
 import { ProductDetails } from '../../components/ProductDetails';
 import { ProductDescription } from '../../components/ProductDescription';
 import { ScrollButton } from '../../ui-kit/ScrollButton';
 import { useGET } from '../../api/fetchApi';
+import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
 export const SingleProduct = () => {
   const { id } = useParams();
-  const {
-    loading: singleProductLoading,
-    data:  singleProduct ,
-  } = useFetch({
-    fetch: useGET({ endpoint: `products/${id}` }),
+  const { loading: singleProductLoading, data: singleProduct } = useFetch({
+    fetch: useGET({ endpoint: `products/${id}/` }),
   });
 
-   const {
-     loading: listLoading,
-     data: productList,
-     setData: setProductList,
-   } = useFetch({
-     fetch: useGET({ endpoint: `products/` }),
-   });
-  
+  const {
+    loading: listLoading,
+    data: productList,
+    setData: setProductList,
+  } = useFetch({
+    fetch: useGET({ endpoint: `products/` }),
+  });
+
 
 
   return (
     <>
       <Container>
-        {!singleProductLoading && singleProduct.length > 0 ? (
-          <ProductDescription data={singleProduct[0]} />
+        {singleProductLoading ? (
+          <MainLoader />
         ) : (
-          <h1>LOADING ...</h1>
+          <ProductDescription data={singleProduct} />
         )}
         <Br desktop={120} mobile={60} />
         <ProductDetails />

@@ -1,6 +1,6 @@
 export interface IProps {
   width?: number;
   height?: number;
-  title: string;
+  alt: string;
   image: string;
 }
