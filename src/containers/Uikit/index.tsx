@@ -31,6 +31,7 @@ import CollapseComponent from '../../components/Collapse';
 import { faqList } from '../../constants/faq';
 import { ImageSkeleton } from '../../ui-kit/Loader/ImageSkeleton';
 import { NavLinkLoader } from '../../ui-kit/Loader/NavlLink';
+import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -133,7 +134,6 @@ export const Uikit = () => {
         <ScrollButton />
         <CartButton />
         <BurgerButton />
-
         <br />
         <div style={{ width: '700px' }}>
           <Pagination total={40} defaultPageSize={8} />
@@ -148,7 +148,7 @@ export const Uikit = () => {
             setData={() => console.log('use state setter')}
             isFavourite={false}
             isInCart={false}
-            img_preview=''
+            img_preview=""
           />
         </div>
         <br />
@@ -156,6 +156,8 @@ export const Uikit = () => {
         <CollapseComponent list={faqList['Returns & refunds']} />
         <div>Image skeleton</div>
         <ImageSkeleton />
+        <div>Main Loader</div>
+        <MainLoader />
       </Container>
     </div>
   );

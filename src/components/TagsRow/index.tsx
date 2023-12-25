@@ -5,6 +5,7 @@ import { StyledWrapper } from './styles';
 // import { filters } from '../../constants/routes';
 import { useFetch } from '../../hooks/useFetch';
 import { useGET } from '../../api/fetchApi';
+import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
 export const TagsRowComponent = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -12,7 +13,7 @@ export const TagsRowComponent = () => {
   const { data: filters, loading } = useFetch({
     fetch: useGET({ endpoint: `categories/` }),
     globalStateKey: 'categories',
-    cache: true
+    cache: true,
   });
 
   const onChange = (filter: string) => {
@@ -38,7 +39,7 @@ export const TagsRowComponent = () => {
   return (
     <StyledWrapper>
       {loading ? (
-        <div> Loading...</div>
+        <MainLoader />
       ) : (
         filters?.map(({ name, id }) => (
           <FilterButton

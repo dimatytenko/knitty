@@ -1,3 +1,4 @@
+import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 import { NoItems } from './NoItems';
 import { IGalleryComponentProps } from './types';
 
@@ -7,7 +8,7 @@ export const GalleryComponent = ({
   renderItem,
   loading,
 }: IGalleryComponentProps) => {
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <MainLoader />;
   if (!data.length) return <NoItems />;
 
   return (
