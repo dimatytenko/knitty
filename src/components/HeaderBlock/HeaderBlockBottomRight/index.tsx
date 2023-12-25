@@ -4,11 +4,16 @@ import { NavList } from '../NavList';
 import { StyledFavLink } from '../styles';
 import { IProps } from './types';
 import { CartButton } from '../../../ui-kit/Buttons';
+import { useContext } from 'react';
+import { GlobalStore } from '../../../context/GlobalStore';
 
 export const HeaderBlockBottomRight = ({ favList, color }: IProps) => {
+  const {
+    globalState: { sections },
+  } = useContext(GlobalStore)!;
   return (
     <>
-      <NavList list={listRight} color={color} />
+      <NavList list={sections ? sections.slice(3, 5) : []} color={color} />
       <StyledFavLink to="/favorites">
         <Text2Bold $case="uppercase" color={color}>
           Favorits

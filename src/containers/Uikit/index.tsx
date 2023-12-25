@@ -30,6 +30,7 @@ import { HowItsMade } from '../HowItsMade';
 import CollapseComponent from '../../components/Collapse';
 import { faqList } from '../../constants/faq';
 import { ImageSkeleton } from '../../ui-kit/Loader/ImageSkeleton';
+import { NavLinkLoader } from '../../ui-kit/Loader/NavlLink';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
@@ -141,12 +142,13 @@ export const Uikit = () => {
         <div>ProductCard</div>
         <div style={{ width: '320px', height: '450px' }}>
           <ProductCard
-            title="Wool sweater"
+            name="Wool sweater"
             price={150}
             id="id-15"
             setData={() => console.log('use state setter')}
             isFavourite={false}
             isInCart={false}
+            img_preview=''
           />
         </div>
         <br />

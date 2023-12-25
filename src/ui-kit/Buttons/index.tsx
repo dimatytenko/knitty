@@ -93,7 +93,10 @@ export const FavouriteButton = ({ onClick, isFavourite }: IPropsFavorites) => {
 
 export const CartButton = ({ color = 'primary' }: IPropsCartButton) => {
   const [visible, setIsVisible] = useState<boolean>(false);
-  const { cartList, setData } = useContext(GlobalStore)!;
+  const {
+    globalState: { cartList },
+    globalSetter,
+  } = useContext(GlobalStore)!;
 
   const onClick = () => {
     setIsVisible(true);
@@ -107,7 +110,7 @@ export const CartButton = ({ color = 'primary' }: IPropsCartButton) => {
         {!cartList.length ? null : <Span color={color}>{cartList.length}</Span>}
       </StyledCartBtn>
       <Portal visible={visible} setIsVisible={setIsVisible}>
-        <ModalCart cartList={cartList} setData={setData} />
+        <ModalCart cartList={cartList} setData={globalSetter} />
       </Portal>
     </>
   );

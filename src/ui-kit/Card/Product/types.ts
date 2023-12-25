@@ -1,12 +1,12 @@
 import { IProduct } from '../../../types/api';
 
 export interface IProps {
-  title: string;
+  name: string;
   price: number;
   id: string;
   isFavourite: boolean;
   isInCart: boolean;
-  image: string;
+  img_preview: string;
 
   setData: React.Dispatch<React.SetStateAction<IProduct[]>>;
 }

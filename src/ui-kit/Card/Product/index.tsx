@@ -11,12 +11,12 @@ import {
 import { IProps } from './types';
 
 export const ProductCard = ({
-  title,
+  name,
   price,
   id,
   isFavourite,
   isInCart,
-  image,
+  img_preview,
   setData,
 }: IProps) => {
   const handleAddToCart = (id: string) => {
@@ -51,7 +51,7 @@ export const ProductCard = ({
           onClick={() => handleAddToFavourites(id)}
         />
         <StyledImageLink to={`/gallery/product/${id}`}>
-          <ImageComponent image={image} title={title} />
+          <ImageComponent image={img_preview} title={name} />
         </StyledImageLink>
         <MainButton
           isInCart={isInCart}
@@ -60,7 +60,7 @@ export const ProductCard = ({
         />
       </StyledImageContent>
       <StyledInfoContent>
-        <Text2Bold $case="uppercase">{title}</Text2Bold>
+        <Text2Bold $case="uppercase">{name}</Text2Bold>
         <Text2Bold>€{price}</Text2Bold>
       </StyledInfoContent>
     </StyledProductCard>

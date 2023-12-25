@@ -1,7 +1,7 @@
-import { IProduct } from '../../types/api';
+import { AxiosResponse } from 'axios';
 
 export interface IProps {
-  endpoint: string;
-  setData: React.Dispatch<React.SetStateAction<IProduct[]>>;
-  noFetching: boolean;
+  fetch: () => Promise<AxiosResponse<any, any>>;
+  globalStateKey?: string;
+  cache?: boolean;
 }

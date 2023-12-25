@@ -13,14 +13,17 @@ import { HeaderBlockBottomLeft } from '../HeaderBlock/HeaderBlockBottomLeft';
 import { HeaderBlockBottomRight } from '../HeaderBlock/HeaderBlockBottomRight';
 import { GlobalStore } from '../../context/GlobalStore';
 import { route } from '../../constants/routes';
+import { NavLinkLoader } from '../../ui-kit/Loader/NavlLink';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const HeaderComponent = () => {
+export const HeaderComponent = ({ loading }) => {
   const { pathname } = useLocation();
   const { palette } = useTheme();
   const refHeader = useRef(null);
-  const { favList } = useContext(GlobalStore)!;
+  const {
+    globalState: { favList },
+  } = useContext(GlobalStore)!;
 
   const isFixed = pathname === route.contact.path;
   const color = pathname === route.contact.path ? 'background' : 'secondary';
@@ -81,7 +84,13 @@ export const HeaderComponent = () => {
         <StyledHeaderContent>
           <HeaderBlockComponent
             renderTop={<HeaderBlockTopLeft color={color} />}
-            renderBottom={<HeaderBlockBottomLeft color={color} />}
+            renderBottom={
+              loading ? (
+                <div>Loading...</div>
+              ) : (
+                <HeaderBlockBottomLeft color={color} />
+              )
+            }
             color={color}
           />
           <MainLink to={route.main.path}>
@@ -98,7 +107,11 @@ export const HeaderComponent = () => {
             color={color}
             renderTop={<HeaderBlockTopRight color={color} />}
             renderBottom={
-              <HeaderBlockBottomRight favList={favList} color={color} />
+              loading ? (
+                <div>Loading...</div>
+              ) : (
+                <HeaderBlockBottomRight favList={favList} color={color} />
+              )
             }
           />
         </StyledHeaderContent>

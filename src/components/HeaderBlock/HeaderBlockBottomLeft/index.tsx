@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { listLeft } from '../../Layout/constants';
 import { NavList } from '../NavList';
 import { TextColor } from '../../../ui-kit/Typography/types';
+import { GlobalStore } from '../../../context/GlobalStore';
 
 interface IProps {
   color: TextColor;
 }
 
 export const HeaderBlockBottomLeft: React.FC<IProps> = ({ color }) => {
-  return <NavList list={listLeft} color={color} />;
+  
+  const {
+    globalState: { sections },
+  } = useContext(GlobalStore)!;
+
+
+  return <NavList list={sections ? sections.slice(0, 3) : []} color={color} />;
 };

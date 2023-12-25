@@ -1,8 +1,28 @@
 import { useMedia } from 'use-media';
 import { HeaderComponent } from '../../../components/Layout/Header';
 import { MobileHeaderComponent } from '../../../components/Layout/MobileHeader';
+import { useFetch } from '../../../hooks/useFetch';
+import { useGET } from '../../../api/fetchApi';
 
 export const Header = () => {
   const isDesktop = useMedia({ minWidth: '900px' });
-  return <>{isDesktop ? <HeaderComponent /> : <MobileHeaderComponent />}</>;
+
+  const { loading } = useFetch({
+    fetch: useGET({ endpoint: 'sections/' }),
+    globalStateKey: 'sections',
+    cache: true,
+  });
+
+
+
+
+  return (
+    <>
+      {isDesktop ? (
+        <HeaderComponent loading={loading} />
+      ) : (
+        <MobileHeaderComponent />
+      )}
+    </>
+  );
 };

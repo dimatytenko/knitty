@@ -1,7 +1,11 @@
-import { ILink } from '../../Layout/types';
 import { TextColor } from '../../../ui-kit/Typography/types';
 
+type TypeLink = {
+  name: string;
+  id:number;
+}
+
 export interface IProps {
-  list: ILink[];
+  list: TypeLink[];
   color: TextColor;
 }
