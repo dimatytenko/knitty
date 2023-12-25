@@ -10,7 +10,10 @@ import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 export const TagsRowComponent = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const { data: filters, loading } = useFetch({
+  const {
+    globalState: { categories: filters },
+    loading,
+  } = useFetch({
     fetch: useGET({ endpoint: `categories/` }),
     globalStateKey: 'categories',
     cache: true,
@@ -35,6 +38,7 @@ export const TagsRowComponent = () => {
       ...newSearchParams,
     });
   };
+
 
   return (
     <StyledWrapper>
