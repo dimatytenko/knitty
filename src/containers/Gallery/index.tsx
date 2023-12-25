@@ -1,15 +1,21 @@
-import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { Goods } from '../../components/Goods';
-import { GlobalStore } from '../../context/GlobalStore';
 import { StyledGalleryWrapper } from '../../styles/container';
 import { ProductCard } from '../../ui-kit/Card/Product';
 import { Br } from '../../ui-kit/Br';
+import { useFetch } from '../../hooks/useFetch';
+import { useGET } from '../../api/fetchApi';
 
 export const Gallery = () => {
   const { tag } = useParams();
-  const { data, setData, loading } = useContext(GlobalStore)!;
+
+  const { data, loading, setData } = useFetch({
+    fetch: useGET({ endpoint: 'products/' }),
+    globalStateKey: tag,
+  });
+
+
 
   return (
     <>

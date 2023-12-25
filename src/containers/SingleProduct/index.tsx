@@ -9,24 +9,26 @@ import { Recomended } from '../../components/Recomended';
 import { ProductDetails } from '../../components/ProductDetails';
 import { ProductDescription } from '../../components/ProductDescription';
 import { ScrollButton } from '../../ui-kit/ScrollButton';
+import { useGET } from '../../api/fetchApi';
 
 export const SingleProduct = () => {
-  const [singleProduct, setSingleProduct] = useState<IProduct[] | []>([]);
-  const [productList, setProductList] = useState<IProduct[] | []>([]);
-
   const { id } = useParams();
-
-  const { loading: singleProductLoading } = useFetch({
-    endpoint: `baseURL/api/products/${id}`,
-    setData: setSingleProduct,
-    noFetching: false,
+  const {
+    loading: singleProductLoading,
+    data:  singleProduct ,
+  } = useFetch({
+    fetch: useGET({ endpoint: `products/${id}` }),
   });
 
-  const { loading: listLoading } = useFetch({
-    endpoint: `baseURL/api/list`,
-    setData: setProductList,
-    noFetching: false,
-  });
+   const {
+     loading: listLoading,
+     data: productList,
+     setData: setProductList,
+   } = useFetch({
+     fetch: useGET({ endpoint: `products/` }),
+   });
+  
+
 
   return (
     <>

@@ -2,10 +2,18 @@ import { useSearchParams } from 'react-router-dom';
 
 import { FilterButton } from '../../ui-kit/Buttons';
 import { StyledWrapper } from './styles';
-import { filters } from '../../constants/routes';
+// import { filters } from '../../constants/routes';
+import { useFetch } from '../../hooks/useFetch';
+import { useGET } from '../../api/fetchApi';
 
 export const TagsRowComponent = () => {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const { data: filters, loading } = useFetch({
+    fetch: useGET({ endpoint: `categories/` }),
+    globalStateKey: 'categories',
+    cache: true
+  });
 
   const onChange = (filter: string) => {
     const newSearchParams: {
@@ -29,17 +37,21 @@ export const TagsRowComponent = () => {
 
   return (
     <StyledWrapper>
-      {filters.map((title, idx) => (
-        <FilterButton
-          active={
-            searchParams.get('filter') === title ||
-            (title === 'all' && !searchParams.get('filter'))
-          }
-          key={idx}
-          title={title}
-          onClick={() => onChange(title)}
-        />
-      ))}
+      {loading ? (
+        <div> Loading...</div>
+      ) : (
+        filters?.map(({ name, id }) => (
+          <FilterButton
+            active={
+              searchParams.get('filter') === name ||
+              (name === 'all' && !searchParams.get('filter'))
+            }
+            key={id}
+            title={name}
+            onClick={() => onChange(name)}
+          />
+        ))
+      )}
     </StyledWrapper>
   );
 };

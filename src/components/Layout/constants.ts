@@ -1,6 +1,6 @@
 import { links } from '../../constants/links';
 import { route, paths } from '../../constants/routes';
-import { IConstants, ILink, ILinkSocial } from './types';
+import { IConstants, ILinkSocial } from './types';
 
 export const constants: IConstants = {
   'The Fun Stuff': [
@@ -49,14 +49,4 @@ export const socialLinks: ILinkSocial[] = [
   },
 ];
 
-export const listLeft: ILink[] = [
-  { title: 'Woman', path: route.gallery.get({ tag: paths.woman }) },
-  { title: 'Man', path: route.gallery.get({ tag: paths.man }) },
-  { title: 'Kids', path: route.gallery.get({ tag: paths.kids }) },
-  { title: 'Sale', path: route.gallery.get({ tag: paths.sale }) },
-];
 
-export const listRight: ILink[] = [
-  { title: 'Souvenirs', path: route.gallery.get({ tag: paths.souvenirs }) },
-  { title: 'New', path: route.gallery.get({ tag: paths.new }) },
-];

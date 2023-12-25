@@ -9,6 +9,8 @@ import { excludePathsFooter, excludePathsHeader } from '../../constants/routes';
 
 export const Layout: FC<WithChildren> = ({ children }) => {
   const { pathname } = useLocation();
+
+
   return (
     <LayoutComponent
       header={<Header />}

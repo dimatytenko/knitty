@@ -1,20 +1,50 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { IProps } from './types';
-import { fakeFetchAllProducts, fakeFetchById } from './utils';
+import { GlobalStore } from '../../context/GlobalStore';
+import store from 'store';
 
-export const useFetch = ({ endpoint, setData, noFetching }: IProps) => {
+export const useFetch = ({
+  fetch,
+  globalStateKey = '',
+  cache = false,
+}: IProps) => {
+  const { globalSetter, globalState } = useContext(GlobalStore)!;
+
+  const [data, setData] = useState([]);
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
+  const setCache = (cache: boolean) => {
+    if (cache) {
+      const cacheData = store.get(globalStateKey);
+      if (cacheData) {
+        globalSetter((prev) => ({ ...prev, [globalStateKey]: cacheData }));
+        return true;
+      }
+    }
+    return false;
+  };
+
   useEffect(() => {
-    if (noFetching) return;
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    console.log('use fetch');
 
-    const getProductsList = async () => {
+    if (setCache(cache)) {
+      return;
+    }
+
+    const fetchData = async () => {
       setLoading(true);
       try {
-        const data = await fakeFetchAllProducts();
+        const { data } = await fetch();
         if (data) setData(data);
+
+        if (globalStateKey) {
+          globalSetter((prev) => ({ ...prev, [globalStateKey]: data }));
+        }
+
+        if (cache) {
+          store.set(globalStateKey, data);
+        }
       } catch (error) {
         if (error instanceof Error) {
           setError(error.message);
@@ -24,24 +54,8 @@ export const useFetch = ({ endpoint, setData, noFetching }: IProps) => {
       }
     };
 
-    const arr = endpoint.split('/');
-    const id = arr.pop()!;
-    const getProductsById = async (id: string) => {
-      setLoading(true);
-      try {
-        const data = await fakeFetchById(id);
+    fetchData();
+  }, []);
 
-        if (data) setData(data);
-      } catch (error) {
-        if (error instanceof Error) {
-          setError(error.message);
-        }
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    endpoint.includes('product') ? getProductsById(id) : getProductsList();
-  }, [endpoint, setData, noFetching]);
-  return { error, loading };
+  return { error, loading, data, setData, globalSetter, globalState };
 };
