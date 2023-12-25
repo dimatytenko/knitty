@@ -23,7 +23,7 @@ const Logo = () => {
 
 export const MobileHeaderComponent = () => {
   return (
-    <StyledMobileHeader>
+    <StyledMobileHeader id="mobile-header">
       <BurgerButton />
       <Logo />
       <CartButton color="primary" />

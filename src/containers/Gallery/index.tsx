@@ -15,8 +15,6 @@ export const Gallery = () => {
     globalStateKey: tag,
   });
 
-
-
   return (
     <>
       <Br desktop={120} mobile={60} />
