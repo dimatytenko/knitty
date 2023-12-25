@@ -1,4 +1,4 @@
-import { IProduct } from '../../types/api';
+import { IProduct, ProductImage } from '../../types/api';
 import { IFaqItem } from '../../types/faq';
 
 export interface IProductDescrtiptionProps {
@@ -6,7 +6,7 @@ export interface IProductDescrtiptionProps {
 }
 
 export interface IPhotosBlockProps {
-  list: string[];
+  list: ProductImage[];
 }
 
 export interface IDescriptionProps {
@@ -16,4 +16,8 @@ export interface IDescriptionProps {
 export interface IInfoTitle {
   title: string;
   price: number;
+}
+
+export interface IInfoDescriptionProps{
+  description: string;
 }

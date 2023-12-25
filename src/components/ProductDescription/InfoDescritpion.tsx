@@ -7,9 +7,10 @@ import {
   StyledInfoDescription,
   StyledInfoDescriptionTitle,
 } from './styles';
+import {  IInfoDescriptionProps } from './types';
 import { descriptionList } from './utils';
 
-export const InfoDescription = () => {
+export const InfoDescription = ({description}:IInfoDescriptionProps) => {
   return (
     <StyledInfoDescription>
       <HorizontalSeparator />
@@ -18,14 +19,7 @@ export const InfoDescription = () => {
         <SizeGuideButton />
       </StyledInfoDescriptionTitle>
       <HorizontalSeparator />
-      <Text1Bold>
-        Ethno traces the roots of our Ukranian culture, with intricate tonal
-        symbols traditionally used by our Pagan ancestors to keep you balanced
-        and in harmony. Fluffy, fuzzy and impossibly warm, Ethno's prolonged
-        sleeves are the final cherry on top. Inspired by unique Ukranian
-        ethnographic patterns, it's perfectly oversized and promises to keep you
-        twice as cozy.
-      </Text1Bold>
+      <Text1Bold>{description}</Text1Bold>
       <HorizontalSeparator />
       <CollapseComponent list={descriptionList} />
     </StyledInfoDescription>

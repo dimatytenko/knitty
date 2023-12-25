@@ -8,9 +8,9 @@ export const InfoBlock = ({ data }: IProductDescrtiptionProps) => {
   return (
     <StyledInfoBlock>
       <StyledStickyWrapper>
-        <InfoTitle title={data.title} price={data.price} />
+        <InfoTitle title={data.name} price={data.price} />
         <InfoControls id={data.id} />
-        <InfoDescription />
+        <InfoDescription description={ data.description} />
       </StyledStickyWrapper>
     </StyledInfoBlock>
   );

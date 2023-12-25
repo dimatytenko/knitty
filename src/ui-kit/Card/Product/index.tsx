@@ -1,6 +1,5 @@
 import { FavouriteButton, MainButton } from '../../Buttons';
 import { ImageComponent } from '../../ImageComponent/Index';
-import { ImageSkeleton } from '../../Loader/ImageSkeleton';
 import { Text2Bold } from '../../Typography';
 import {
   StyledImageContent,
@@ -51,7 +50,7 @@ export const ProductCard = ({
           onClick={() => handleAddToFavourites(id)}
         />
         <StyledImageLink to={`/gallery/product/${id}`}>
-          <ImageComponent image={img_preview} title={name} />
+          <ImageComponent image={img_preview} alt={name} />
         </StyledImageLink>
         <MainButton
           isInCart={isInCart}

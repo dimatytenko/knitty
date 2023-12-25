@@ -6,7 +6,7 @@ import { StyledImageWrapper } from './styled';
 
 export const ImageComponent = ({
   image,
-  title,
+  alt,
   width = 318,
   height = 420,
 }: IProps) => {
@@ -28,7 +28,7 @@ export const ImageComponent = ({
       <img
         ref={refImage}
         src={image}
-        alt={title}
+        alt={alt}
         onLoad={onLoad}
         loading="lazy"
         width={width}
