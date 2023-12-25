@@ -26,7 +26,6 @@ export const useFetch = ({
   };
 
   useEffect(() => {
-    console.log('use fetch');
 
     if (setCache(cache)) {
       return;

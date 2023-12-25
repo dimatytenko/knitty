@@ -14,6 +14,7 @@ import { HeaderBlockBottomRight } from '../HeaderBlock/HeaderBlockBottomRight';
 import { GlobalStore } from '../../context/GlobalStore';
 import { route } from '../../constants/routes';
 import { NavLinkLoader } from '../../ui-kit/Loader/NavlLink';
+import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -85,11 +86,7 @@ export const HeaderComponent = ({ loading }) => {
           <HeaderBlockComponent
             renderTop={<HeaderBlockTopLeft color={color} />}
             renderBottom={
-              loading ? (
-                <div>Loading...</div>
-              ) : (
-                <HeaderBlockBottomLeft color={color} />
-              )
+              loading ? <MainLoader /> : <HeaderBlockBottomLeft color={color} />
             }
             color={color}
           />
@@ -108,7 +105,7 @@ export const HeaderComponent = ({ loading }) => {
             renderTop={<HeaderBlockTopRight color={color} />}
             renderBottom={
               loading ? (
-                <div>Loading...</div>
+                <MainLoader/>
               ) : (
                 <HeaderBlockBottomRight favList={favList} color={color} />
               )
