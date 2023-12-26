@@ -6,13 +6,23 @@ import { ProductCard } from '../../ui-kit/Card/Product';
 import { Br } from '../../ui-kit/Br';
 import { useFetch } from '../../hooks/useFetch';
 import { useGET } from '../../api/fetchApi';
+import { GlobalStore } from '../../context/GlobalStore';
+import { useContext } from 'react';
 
 export const Gallery = () => {
   const { tag } = useParams();
 
+  const {
+    globalState: { categories },
+  } = useContext(GlobalStore)!;
+
+
+  let categoryId = categories?.findIndex(({name}) => name.toLowerCase() === tag);
+
   const { data, loading, setData } = useFetch({
-    fetch: useGET({ endpoint: `products/?category=${1}` }),
+    fetch: useGET({ endpoint: `products/?category=${++categoryId}` }),
     globalStateKey: tag,
+    noFetching: !categories,
   });
 
   return (
