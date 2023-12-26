@@ -11,7 +11,7 @@ export const useFetch = ({
 }: IProps) => {
   const { globalSetter, globalState } = useContext(GlobalStore)!;
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any[] | []>([]);
   const [error, setError] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
