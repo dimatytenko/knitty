@@ -22,6 +22,7 @@ export const ImageComponent = ({
       duration: 1.5,
     });
   };
+
   return (
     <StyledImageWrapper>
       {loading && <ImageSkeleton />}

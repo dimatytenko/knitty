@@ -7,6 +7,7 @@ export const useFetch = ({
   fetch,
   globalStateKey = '',
   cache = false,
+  noFetching = false,
 }: IProps) => {
   const { globalSetter, globalState } = useContext(GlobalStore)!;
 
@@ -26,6 +27,7 @@ export const useFetch = ({
   };
 
   useEffect(() => {
+    if (noFetching) return;
 
     if (setCache(cache)) {
       return;
@@ -54,7 +56,7 @@ export const useFetch = ({
     };
 
     fetchData();
-  }, [fetch]);
+  }, [fetch, noFetching]);
 
   return { error, loading, data, setData, globalSetter, globalState };
 };

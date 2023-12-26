@@ -25,7 +25,6 @@ export const SingleProduct = () => {
   });
 
 
-
   return (
     <>
       <Container>
