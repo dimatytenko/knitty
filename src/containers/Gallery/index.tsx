@@ -17,12 +17,12 @@ export const Gallery = () => {
   } = useContext(GlobalStore)!;
 
 
-  let categoryId = categories?.findIndex(({name}) => name.toLowerCase() === tag);
+  let categoryId = categories.findIndex(({name}) => name.toLowerCase() === tag);
 
   const { data, loading, setData } = useFetch({
     fetch: useGET({ endpoint: `products/?category=${++categoryId}` }),
     globalStateKey: tag,
-    noFetching: !categories,
+    noFetching: !categories.length,
   });
 
   return (

@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { IProps } from './types';
+import { GlobalStateType, IProps } from './types';
 
 export const GlobalStore = createContext<{
   globalState: any;
@@ -7,7 +7,12 @@ export const GlobalStore = createContext<{
 } | null>(null);
 
 const useGlobalStore = () => {
-  const [globalState, globalSetter] = useState({ cartList: [], favList:[], data:[] });
+  const [globalState, globalSetter] = useState<GlobalStateType>({
+    categories: [],
+    filters: [],
+    cartList: [],
+    favList: [],
+  });
 
   return {
     globalState,
