@@ -13,6 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <FpjsProvider
     loadOptions={{
       apiKey: 'ubJJOvwQyzytaEb6tAJx',
+
     }}
   >
     <BrowserRouter>
