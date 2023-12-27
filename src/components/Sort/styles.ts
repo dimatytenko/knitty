@@ -1,12 +1,21 @@
 import styled from 'styled-components';
 
 import { IconSvg } from '../../ui-kit/Icon/Svg';
+import { TextBody3Bold } from '../../ui-kit/Typography/styles';
 
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
   cursor: pointer;
+
+   ${TextBody3Bold} {
+    white-space: nowrap;
+  }
+`;
+
+export const ItemWrapper = styled.div`
+ 
 `;
 
 export const ArrowIcon = styled(IconSvg).attrs({
@@ -18,4 +27,4 @@ export const ArrowIcon = styled(IconSvg).attrs({
   transform: ${({ $open }) => ($open ? 'rotate(-180deg)' : 'rotate(0deg)')};
 `;
 
-export const ItemWrapper = styled.div``;
+

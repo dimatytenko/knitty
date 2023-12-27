@@ -38,7 +38,6 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
   });
 
   return (
-    <>
       <Container>
         <Br desktop={120} mobile={60} />
         <PageTitle
@@ -70,17 +69,6 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
         </PaginationWrapper>
         <Br desktop={100} mobile={60} />
       </Container>
-      {/*
-
-      <Goods
-        loading={loading}
-        data={data}
-        wrapper={StyledGalleryWrapper}
-        renderItem={(el) => <ProductCard {...el} setData={setData} />}
-        tag={'woman'}
-      />
-
-       */}
-    </>
+     
   );
 };

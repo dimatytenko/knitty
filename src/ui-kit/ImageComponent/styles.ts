@@ -13,12 +13,11 @@ export const StyledImageWrapper = styled.div`
 
 export const ImageWrapper = styled.div`
   width: 420px;
-  height: 600px;
-  overflow: hidden;
+  height: 470px;
 `;
 
 export const StyledImage = styled.img`
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;

@@ -9,8 +9,12 @@ import { ProductDescription } from '../../components/ProductDescription';
 import { ScrollButton } from '../../ui-kit/ScrollButton';
 import { useGET } from '../../api/fetchApi';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
+import { useMedia } from 'use-media';
+import gsap from 'gsap';
 
 export const SingleProduct = () => {
+  const isDesktop = useMedia({ minWidth: '900px' });
+
   const { id } = useParams();
   const { loading: singleProductLoading, data: singleProduct } = useFetch({
     fetch: useGET({ endpoint: `products/${id}/` }),
@@ -24,10 +28,15 @@ export const SingleProduct = () => {
     fetch: useGET({ endpoint: `products/` }),
   });
 
-
   return (
     <>
-      <Container>
+      <Container
+        style={{
+          paddingTop: isDesktop
+            ? '0px'
+            : gsap.getProperty('#mobile-header', 'height') + 10 + 'px',
+        }}
+      >
         {singleProductLoading ? (
           <MainLoader />
         ) : (

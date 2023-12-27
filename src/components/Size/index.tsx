@@ -14,7 +14,7 @@ export const Size = () => {
   return (
     <DropDown
       list={itemsList.slice(1)}
-      title="size"
+      title="select size"
       value={size.label}
       setter={(item) => setSize(item)}
     />
