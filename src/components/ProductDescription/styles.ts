@@ -6,6 +6,7 @@ import {
 } from '../Collapse/styles';
 import { TextBody1Bold, TextBody2Bold } from '../../ui-kit/Typography/styles';
 import { scrollStyles } from '../../ui-kit/theme/scroll';
+import { ImageWrapper, StyledImageWrapper } from '../../ui-kit/ImageComponent/styles';
 
 export const StyledProductDescription = styled.div`
   display: grid;
@@ -15,12 +16,23 @@ export const StyledProductDescription = styled.div`
 
 export const StyledPhotosBlock = styled.div`
   ${scrollStyles}
-  height: 600px;
-  overflow-y: auto;
+  height: 700px;
+  overflow-y: scroll;
 
   display: grid;
-  grid-template-columns: repeat(2, minmax(420px, 430px));
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
+
+  ${ImageWrapper} {
+    width: 100%;
+    height: 600px;
+
+    img {
+      position: unset;
+
+      transform: scale(1.25);
+    }
+  }
 `;
 
 export const StyledInfoBlock = styled.div`
