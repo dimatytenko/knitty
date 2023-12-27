@@ -9,6 +9,7 @@ import App from './App.tsx';
 const vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+console.log('env', import.meta.env);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <FpjsProvider
