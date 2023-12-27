@@ -24,14 +24,9 @@ export const StyledPhotosBlock = styled.div`
   gap: 10px;
 
   ${ImageWrapper} {
-    width: 100%;
+    /* width: 100%; */
     height: 600px;
 
-    img {
-      position: unset;
-
-      transform: scale(1.25);
-    }
   }
 `;
 
