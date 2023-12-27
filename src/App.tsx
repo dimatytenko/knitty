@@ -21,7 +21,6 @@ function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div>VISITOR_ID: {data?.visitorId}</div>
       <GlobalStroreProvider>
         <Layout>
           <RoutesSwitch />

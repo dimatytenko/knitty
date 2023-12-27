@@ -9,11 +9,11 @@ import App from './App.tsx';
 const vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <FpjsProvider
     loadOptions={{
-      apiKey: 'ubJJOvwQyzytaEb6tAJx',
-
+      apiKey: import.meta.env.VITE_FINGER_PRINT_KEY,
     }}
   >
     <BrowserRouter>
