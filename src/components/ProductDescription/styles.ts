@@ -8,27 +8,22 @@ import { TextBody1Bold, TextBody2Bold } from '../../ui-kit/Typography/styles';
 import { scrollStyles } from '../../ui-kit/theme/scroll';
 
 export const StyledProductDescription = styled.div`
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: calc(70% - 10px) calc(30% - 10px);
+  gap: 20px;
 `;
 
 export const StyledPhotosBlock = styled.div`
   ${scrollStyles}
-  width: 864px;
-  padding-right: 6px;
   height: 600px;
   overflow-y: auto;
-`;
 
-export const StyledPhotosList = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(420px, 430px));
   gap: 10px;
-  flex-wrap: wrap;
 `;
 
 export const StyledInfoBlock = styled.div`
-  max-width: 406px;
-
   position: relative;
   height: 100%;
 `;
