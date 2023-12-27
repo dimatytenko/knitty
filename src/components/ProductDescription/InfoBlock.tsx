@@ -10,7 +10,7 @@ export const InfoBlock = ({ data }: IProductDescrtiptionProps) => {
       <StyledStickyWrapper>
         <InfoTitle title={data.name} price={data.price} />
         <InfoControls id={data.id} />
-        <InfoDescription description={ data.description} />
+        <InfoDescription description={data.description} />
       </StyledStickyWrapper>
     </StyledInfoBlock>
   );

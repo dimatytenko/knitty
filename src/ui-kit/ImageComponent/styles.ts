@@ -17,12 +17,16 @@ export const ImageWrapper = styled.div`
 `;
 
 export const StyledImage = styled.img`
-  max-width: 100%;
+  width: auto;
   height: 100%;
   object-fit: cover;
   object-position: center;
 
-  transform: scale(1.25);
+  position: relative;
+  top: 50%;
+  left: 50%;
+
+  transform: scale(1.25) translate(-50%, -50%);
   filter: blur(10px);
   opacity: 0;
 `;
