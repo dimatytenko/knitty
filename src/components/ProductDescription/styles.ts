@@ -5,6 +5,7 @@ import {
   StyledTitle,
 } from '../Collapse/styles';
 import { TextBody1Bold, TextBody2Bold } from '../../ui-kit/Typography/styles';
+import { scrollStyles } from '../../ui-kit/theme/scroll';
 
 export const StyledProductDescription = styled.div`
   display: flex;
@@ -12,14 +13,21 @@ export const StyledProductDescription = styled.div`
 `;
 
 export const StyledPhotosBlock = styled.div`
-  width: 66.5%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  ${scrollStyles}
+  width: 864px;
+  padding-right: 6px;
+  height: 600px;
+  overflow-y: auto;
+`;
+
+export const StyledPhotosList = styled.div`
+  display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 `;
 
 export const StyledInfoBlock = styled.div`
-  width: 33.5%;
+  max-width: 406px;
 
   position: relative;
   height: 100%;

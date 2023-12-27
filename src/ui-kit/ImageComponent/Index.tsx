@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { ImageSkeleton } from '../Loader/ImageSkeleton';
 import gsap from 'gsap';
 import { IProps } from './types';
-import { StyledImageWrapper } from './styled';
+import { StyledImageWrapper, ImageWrapper, StyledImage } from './styles';
 
 export const ImageComponent = ({
   image,
@@ -26,15 +26,17 @@ export const ImageComponent = ({
   return (
     <StyledImageWrapper>
       {loading && <ImageSkeleton />}
-      <img
-        ref={refImage}
-        src={image}
-        alt={alt}
-        onLoad={onLoad}
-        loading="lazy"
-        width={width}
-        height={height}
-      />
+      <ImageWrapper>
+        <StyledImage
+          ref={refImage}
+          src={image}
+          alt={alt}
+          onLoad={onLoad}
+          loading="lazy"
+          width={width}
+          height={height}
+        />
+      </ImageWrapper>
     </StyledImageWrapper>
   );
 };
