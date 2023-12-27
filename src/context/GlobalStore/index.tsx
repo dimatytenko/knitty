@@ -12,6 +12,9 @@ const useGlobalStore = () => {
     filters: [],
     cartList: [],
     favList: [],
+    globalFilters: {
+      filter: 1,
+    },
   });
 
   return {

@@ -1,46 +1,19 @@
-import { useSearchParams } from 'react-router-dom';
-
 import { FilterButton } from '../../ui-kit/Buttons';
 import { StyledWrapper } from './styles';
-// import { filters } from '../../constants/routes';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
-import { useContext } from 'react';
+import { IProps } from './types';
+import { useContext, useState } from 'react';
+import { useLocale } from 'antd/es/locale';
+import { useLocation } from 'react-router';
 import { GlobalStore } from '../../context/GlobalStore';
-import { useFetch } from '../../hooks/useFetch';
-import { useGET } from '../../api/fetchApi';
 
-export const TagsRowComponent = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const {
-    globalState: { filters },
-    loading,
-  } = useFetch({
-    fetch: useGET({ endpoint: `filters/` }),
-    globalStateKey: 'filters',
-    cache: true,
-  });
-
-  const onChange = (filter: string) => {
-    const newSearchParams: {
-      [key: string]: string;
-    } = {};
-    searchParams.forEach((value, key) => {
-      if (key === 'filter') {
-        return;
-      }
-      newSearchParams[key] = value;
-    });
-
-    if (filter !== 'all') {
-      newSearchParams.filter = filter;
-    }
-
-    setSearchParams({
-      ...newSearchParams,
-    });
-  };
-
+export const TagsRowComponent = ({
+  loading,
+  filters,
+  activeFilter,
+}: IProps) => {
+  const [active, setActive] = useState(activeFilter || 1);
+  const { globalSetter } = useContext(GlobalStore)!;
 
   return (
     <>
@@ -48,15 +21,18 @@ export const TagsRowComponent = () => {
         <MainLoader />
       ) : (
         <StyledWrapper>
-          {filters?.map(({ name, id }) => (
+          {filters.map(({ name, id }) => (
             <FilterButton
-              active={
-                searchParams.get('filter') === name.toLowerCase() ||
-                (name.toLowerCase() === 'all' && !searchParams.get('filter'))
-              }
+              active={active === id}
               key={id}
               title={name}
-              onClick={() => onChange(name.toLowerCase())}
+              onClick={() => {
+                setActive(id)
+                globalSetter((prev) => {
+                  prev.globalFilters.filter = id;
+                  return { ...prev };
+                });
+              }}
             />
           ))}
         </StyledWrapper>

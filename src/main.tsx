@@ -14,12 +14,14 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <FpjsProvider
     loadOptions={{
       apiKey: import.meta.env.VITE_FINGER_PRINT_KEY,
+      // endpoint: "https://cors-anywhere.herokuapp.com/"+BASE_URL + "observe/"
+
     }}
   >
     <BrowserRouter>
-      <React.StrictMode>
+      {/* <React.StrictMode> */}
         <App />
-      </React.StrictMode>
+      {/* </React.StrictMode> */}
     </BrowserRouter>
   </FpjsProvider>
 );

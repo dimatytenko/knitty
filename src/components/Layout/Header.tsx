@@ -18,7 +18,7 @@ import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export const HeaderComponent = ({ loading }) => {
+export const HeaderComponent = () => {
   const { pathname } = useLocation();
   const { palette } = useTheme();
   const refHeader = useRef(null);
@@ -85,9 +85,7 @@ export const HeaderComponent = ({ loading }) => {
         <StyledHeaderContent>
           <HeaderBlockComponent
             renderTop={<HeaderBlockTopLeft color={color} />}
-            renderBottom={
-              loading ? <MainLoader /> : <HeaderBlockBottomLeft color={color} />
-            }
+            renderBottom={<HeaderBlockBottomLeft color={color} />}
             color={color}
           />
           <MainLink to={route.main.path}>
@@ -104,11 +102,7 @@ export const HeaderComponent = ({ loading }) => {
             color={color}
             renderTop={<HeaderBlockTopRight color={color} />}
             renderBottom={
-              loading ? (
-                <MainLoader/>
-              ) : (
-                <HeaderBlockBottomRight favList={favList} color={color} />
-              )
+              <HeaderBlockBottomRight favList={favList} color={color} />
             }
           />
         </StyledHeaderContent>

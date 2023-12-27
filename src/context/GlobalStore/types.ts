@@ -9,10 +9,13 @@ export type CategoriesType = {
 };
 
 export type GlobalStateType = {
+  globalFilters: {
+    filter: number;
+  };
   categories: CategoriesType[] | [];
   filters: FiltersType[] | [];
-  cartList: [],
-  favList: []
+  cartList: [];
+  favList: [];
 };
 
 export interface IProps {

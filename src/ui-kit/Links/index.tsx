@@ -38,9 +38,10 @@ export const LinkWithArrow = ({ to, children }: IProps) => {
   );
 };
 
-export const CategoriesLink = ({ to, children }: IProps) => {
+export const CategoriesLink = ({ to, children, onClick }: IProps) => {
+
   return (
-    <StyledCategoriesLink to={to}>
+    <StyledCategoriesLink to={to} onClick={onClick}>
       <Text2Bold $case="uppercase"> {children}</Text2Bold>
       <IconSvg type="arrow" viewBox="0 0 24 24" width="24" height="24" />
       <HoverCircle />

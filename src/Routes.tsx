@@ -13,12 +13,15 @@ import { Faq } from './containers/Static/FAQ';
 import { PrivacyPolicy } from './containers/Static/PrivacyPolicy';
 import { TermsOfService } from './containers/Static/TermsOfService';
 import { PefundPolicy } from './containers/Static/RefundPolicy';
+import { useFetch } from './hooks/useFetch';
+import { useGET } from './api/fetchApi';
+import { MainLoader } from './ui-kit/Loader/MainLoader';
+import { CategoriesType } from './context/GlobalStore/types';
 
 const NotFound = lazy(() => import('./containers/NotFound'));
 
 const PublicRoutes = [
   <Route key="main" path={route.main.path} element={<Main />} />,
-  <Route key="gallery" path={route.gallery.path} element={<Gallery />} />,
   <Route
     key="single-product"
     path={route.singleProduct.path}
@@ -51,15 +54,38 @@ const UikitRoutes = [
 ];
 
 const RoutesSwitch = () => {
+  const {
+    loading,
+    globalState: { categories },
+  } = useFetch({
+    fetch: useGET({ endpoint: 'categories/' }),
+    globalStateKey: 'categories',
+    cache: true,
+  });
+
+  const routes = categories.map(({ name, id }: CategoriesType) => (
+    <Route
+      key={name}
+      path={`/gallery/${name.toLowerCase()}`}
+      element={<Gallery route={{ name: name.toLowerCase(), id }} />}
+    />
+  ));
+
   return (
-    <Suspense fallback={<>Loading...</>}>
-      <Routes>
-        {UikitRoutes}
-        {PublicRoutes}
-        {/* {PrivateRoutes} */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Suspense>
+    <>
+      {loading ? (
+        <MainLoader />
+      ) : (
+        <Suspense fallback={<>Loading...</>}>
+          <Routes>
+            {UikitRoutes}
+            {[...routes, ...PublicRoutes]}
+            {/* {PrivateRoutes} */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      )}
+    </>
   );
 };
 
