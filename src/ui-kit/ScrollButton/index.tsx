@@ -1,6 +1,6 @@
 import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { StyledScrollButton } from './styles';
-import { ArrowIcon } from '../Sort/styles';
+import { ArrowIcon } from '../../components/Sort/styles';
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 

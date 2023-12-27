@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Portal } from '../Portal';
 import { SizeGuideModal } from '../Portal/Modals/SizeGuide';
 import { StyledSizeGuideButton } from './styles';
-import { ArrowIcon } from '../../ui-kit/Sort/styles';
+import { ArrowIcon } from '../Sort/styles';
 
 export const SizeGuideButton = () => {
   const [visible, setIsVisible] = useState<boolean>(false);
