@@ -3,6 +3,7 @@ export interface IProps {
   to: string;
   children: React.ReactElement | string;
   color?: TextColor;
+  onClick: ()=>void;
 }
 
 export type IPropsWithHref = Pick<IProps, 'color' | 'children'> & {

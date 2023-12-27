@@ -18,11 +18,11 @@ export const Pagination: React.FC<StyledPaginationProps> = ({
       newSearchParams[key] = value;
     });
 
-    setSearchParams({
-      ...newSearchParams,
-      page: page.toString(),
-      pageSize: pageSize.toString(),
-    });
+    // setSearchParams({
+    //   ...newSearchParams,
+    //   page: page.toString(),
+    //   pageSize: pageSize.toString(),
+    // });
   };
 
   return (

@@ -30,10 +30,10 @@ export const Sort = () => {
       newSearchParams[key] = value;
     });
 
-    setSearchParams({
-      ...newSearchParams,
-      sort: sort,
-    });
+    // setSearchParams({
+    //   ...newSearchParams,
+    //   sort: sort,
+    // });
   }, [sort, searchParams, setSearchParams]);
 
   const onOpenChange = (open: boolean) => {
