@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { IconSvg } from '../Icon/Svg';
+import { IconSvg } from '../../ui-kit/Icon/Svg';
 
 export const Wrapper = styled.div`
   display: flex;

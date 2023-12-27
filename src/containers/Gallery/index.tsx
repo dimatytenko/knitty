@@ -21,7 +21,6 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
     globalState: { globalFilters: {filter: activeFilter} },
   } = useContext(GlobalStore)!;
 
-  console.log(activeFilter);
 
   const {
     globalState: { filters },

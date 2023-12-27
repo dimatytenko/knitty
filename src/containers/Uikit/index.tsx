@@ -24,7 +24,7 @@ import {
 import { Container } from '../../components/Layout/styles';
 import { Pagination } from '../../ui-kit/Pagination';
 import { ProductCard } from '../../ui-kit/Card/Product';
-import { Sort } from '../../ui-kit/Sort';
+import { Sort } from '../../components/Sort';
 import { ScrollButton } from '../../ui-kit/ScrollButton';
 import { HowItsMade } from '../HowItsMade';
 import CollapseComponent from '../../components/Collapse';
