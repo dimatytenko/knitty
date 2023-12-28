@@ -5,25 +5,38 @@ import { StyledProductDescription } from './styles';
 import { IProductDescrtiptionProps } from './types';
 import { SwiperPhotoBlock } from './SwiperPhotoBlock';
 import gsap from 'gsap';
+import { Container } from '../Layout/styles';
 
 export const ProductDescription = ({ data }: IProductDescrtiptionProps) => {
   const isDesktop = useMedia({ minWidth: '900px' });
 
-  const styles = {
-    gridTemplateColumns: isDesktop ? '5fr 2fr' : '1fr',
-    paddingTop: isDesktop
-      ? '0px'
-      : gsap.getProperty('#mobile-header', 'height', 'px'),
-  };
-
   return (
-    <StyledProductDescription style={styles}>
+    <>
       {isDesktop ? (
-        <PhotosBlock list={data?.images || []} />
+        <Container>
+          <StyledProductDescription
+            style={{ gridTemplateColumns: '5fr 2fr', paddingTop: 'unset' }}
+          >
+            <PhotosBlock list={data?.images || []} />
+            <InfoBlock data={data} />
+          </StyledProductDescription>
+        </Container>
       ) : (
-        <SwiperPhotoBlock list={data?.images || []} />
+        <>
+          <StyledProductDescription
+            style={{
+              gridTemplateColumns: '1fr',
+              paddingTop: gsap.getProperty('#mobile-header', 'height', 'px'),
+            }}
+          >
+            <SwiperPhotoBlock list={data?.images || []} />
+            <Container>
+              <InfoBlock data={data} />
+            </Container>
+          </StyledProductDescription>
+        </>
       )}
-      <InfoBlock data={data} />
-    </StyledProductDescription>
+    </>
+
   );
 };
