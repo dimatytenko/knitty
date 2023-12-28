@@ -150,6 +150,7 @@ export const StyledMobileHeader = styled.header`
 `;
 
 export const StyledMobileLogo = styled.div`
+  justify-self: center;
   a {
     transform: scale(0.7);
   }
