@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const StyledScrollButton = styled.button`
   position: fixed;
+  z-index: 100;
   bottom: 5%;
   right: 5%;
 
