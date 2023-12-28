@@ -15,12 +15,11 @@ import { PaginationWrapper } from '../../components/Goods/styles';
 import { Pagination } from '../../ui-kit/Pagination';
 
 export const Gallery = ({ route: { name, id } }: IProps) => {
-
-
   const {
-    globalState: { globalFilters: {filter: activeFilter} },
+    globalState: {
+      globalFilters: { filter: activeFilter },
+    },
   } = useContext(GlobalStore)!;
-
 
   const {
     globalState: { filters },
@@ -31,44 +30,46 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
     cache: true,
   });
 
+  const category = id === 6 ? '' : `&category=${id}`;
+  const filter = activeFilter === 1 ? '' : `filter=${activeFilter}`;
+
   const { data, loading, setData } = useFetch({
     fetch: useGET({
-      endpoint: `products/?category=${id}&filter=${activeFilter}`,
+      endpoint: `products/?` + filter + category,
     }),
   });
 
   return (
-      <Container>
-        <Br desktop={120} mobile={60} />
-        <PageTitle
-          title={`Shop ${name}`}
-          text={
-            <Text2Bold $case="uppercase" color="unfocus" $width={488}>
-              Explore our curated collection of artisanal knitwear from around
-              the world. From cozy sweaters to stylish scarves, each piece is
-              meticulously crafted by talented artisans
-            </Text2Bold>
-          }
-          list={data}
-        />
-        <GalleryController
-          activeFilter={activeFilter}
-          filters={filters}
-          loading={loadingFilters}
-        />
+    <Container>
+      <Br desktop={120} mobile={60} />
+      <PageTitle
+        title={`Shop ${name}`}
+        text={
+          <Text2Bold $case="uppercase" color="unfocus" $width={488}>
+            Explore our curated collection of artisanal knitwear from around the
+            world. From cozy sweaters to stylish scarves, each piece is
+            meticulously crafted by talented artisans
+          </Text2Bold>
+        }
+        list={data}
+      />
+      <GalleryController
+        activeFilter={activeFilter}
+        filters={filters}
+        loading={loadingFilters}
+      />
 
-        <GalleryComponent
-          data={data}
-          wrapper={StyledGalleryWrapper}
-          renderItem={(el) => <ProductCard {...el} setData={setData} />}
-          loading={loading}
-        />
+      <GalleryComponent
+        data={data}
+        wrapper={StyledGalleryWrapper}
+        renderItem={(el) => <ProductCard {...el} setData={setData} />}
+        loading={loading}
+      />
 
-        <PaginationWrapper>
-          <Pagination total={data.length} defaultPageSize={8} />
-        </PaginationWrapper>
-        <Br desktop={100} mobile={60} />
-      </Container>
-     
+      <PaginationWrapper>
+        <Pagination total={data.length} defaultPageSize={8} />
+      </PaginationWrapper>
+      <Br desktop={100} mobile={60} />
+    </Container>
   );
 };

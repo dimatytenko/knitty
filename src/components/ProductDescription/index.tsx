@@ -37,6 +37,5 @@ export const ProductDescription = ({ data }: IProductDescrtiptionProps) => {
         </>
       )}
     </>
-
   );
 };

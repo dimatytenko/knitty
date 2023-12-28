@@ -13,8 +13,6 @@ import { HeaderBlockBottomLeft } from '../HeaderBlock/HeaderBlockBottomLeft';
 import { HeaderBlockBottomRight } from '../HeaderBlock/HeaderBlockBottomRight';
 import { GlobalStore } from '../../context/GlobalStore';
 import { route } from '../../constants/routes';
-import { NavLinkLoader } from '../../ui-kit/Loader/NavlLink';
-import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
 gsap.registerPlugin(ScrollTrigger);
 

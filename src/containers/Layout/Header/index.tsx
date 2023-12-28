@@ -5,9 +5,6 @@ import { MobileHeaderComponent } from '../../../components/Layout/MobileHeader';
 export const Header = () => {
   const isDesktop = useMedia({ minWidth: '900px' });
 
-
-
-
   return (
     <>
       {isDesktop ? (
