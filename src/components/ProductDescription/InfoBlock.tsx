@@ -1,4 +1,3 @@
-import { Container } from '../Layout/styles';
 import { InfoControls } from './InfoControls';
 import { InfoDescription } from './InfoDescritpion';
 import { InfoTitle } from './InfoTitle';
@@ -7,7 +6,6 @@ import { IProductDescrtiptionProps } from './types';
 
 export const InfoBlock = ({ data }: IProductDescrtiptionProps) => {
   return (
-    <Container>
       <StyledInfoBlock>
         <StyledStickyWrapper>
           <InfoTitle title={data.name} price={data.price} />
@@ -15,6 +13,5 @@ export const InfoBlock = ({ data }: IProductDescrtiptionProps) => {
           <InfoDescription description={data.description} />
         </StyledStickyWrapper>
       </StyledInfoBlock>
-    </Container>
   );
 };
