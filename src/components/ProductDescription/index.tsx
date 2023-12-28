@@ -14,7 +14,6 @@ export const ProductDescription = ({ data }: IProductDescrtiptionProps) => {
     paddingTop: isDesktop
       ? '0px'
       : gsap.getProperty('#mobile-header', 'height', 'px'),
-    height: 'auto',
   };
 
   return (

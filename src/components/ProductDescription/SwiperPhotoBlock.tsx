@@ -6,7 +6,7 @@ import 'swiper/css';
 
 export const SwiperPhotoBlock = ({ list }: IPhotosBlockProps) => {
   return (
-    <Swiper >
+    <Swiper>
       {list.map(({ image, id }) => (
         <SwiperSlide key={id}>
           <ImageComponent image={image} alt="model" />

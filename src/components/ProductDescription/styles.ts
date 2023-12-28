@@ -14,7 +14,7 @@ export const StyledProductDescription = styled.div`
 
   .swiper{
     width: 100%;
-    /* height: 600px; */
+    height:470px;
   }
 `;
 
