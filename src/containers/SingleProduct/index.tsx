@@ -31,8 +31,7 @@ export const SingleProduct = () => {
       ) : (
         <ProductDescription data={singleProduct} />
       )}
-      <Container
-      >
+      <Container>
         <Br desktop={120} mobile={60} />
         <ProductDetails />
         <Br desktop={120} mobile={60} />
@@ -44,6 +43,7 @@ export const SingleProduct = () => {
           setData={setProductList}
         />
         <Br desktop={100} mobile={60} />
+
       </Container>
       <ScrollButton />
     </>

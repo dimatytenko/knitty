@@ -9,12 +9,13 @@ import { scrollStyles } from '../../ui-kit/theme/scroll';
 import { ImageWrapper } from '../../ui-kit/ImageComponent/styles';
 
 export const StyledProductDescription = styled.div`
+  position: relative;
   display: grid;
   gap: 20px;
 
-  .swiper{
+  .swiper {
     width: 100%;
-    height:470px;
+    height: 470px;
   }
 `;
 
@@ -30,7 +31,6 @@ export const StyledPhotosBlock = styled.div`
   ${ImageWrapper} {
     /* width: 100%; */
     height: 600px;
-
   }
 `;
 
