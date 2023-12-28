@@ -30,18 +30,18 @@ export const SingleProduct = () => {
 
   return (
     <>
+      {singleProductLoading ? (
+        <MainLoader />
+      ) : (
+        <ProductDescription data={singleProduct} />
+      )}
       <Container
-        style={{
-          paddingTop: isDesktop
-            ? '0px'
-            : gsap.getProperty('#mobile-header', 'height') + 10 + 'px',
-        }}
+        // style={{
+        //   paddingTop: isDesktop
+        //     ? '0px'
+        //     : gsap.getProperty('#mobile-header', 'height') + 10 + 'px',
+        // }}
       >
-        {singleProductLoading ? (
-          <MainLoader />
-        ) : (
-          <ProductDescription data={singleProduct} />
-        )}
         <Br desktop={120} mobile={60} />
         <ProductDetails />
         <Br desktop={120} mobile={60} />

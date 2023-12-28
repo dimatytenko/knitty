@@ -6,12 +6,16 @@ import {
 } from '../Collapse/styles';
 import { TextBody1Bold, TextBody2Bold } from '../../ui-kit/Typography/styles';
 import { scrollStyles } from '../../ui-kit/theme/scroll';
-import { ImageWrapper, StyledImageWrapper } from '../../ui-kit/ImageComponent/styles';
+import { ImageWrapper } from '../../ui-kit/ImageComponent/styles';
 
 export const StyledProductDescription = styled.div`
   display: grid;
-  grid-template-columns: calc(70% - 10px) calc(30% - 10px);
   gap: 20px;
+
+  .swiper{
+    width: 100%;
+    /* height: 600px; */
+  }
 `;
 
 export const StyledPhotosBlock = styled.div`
