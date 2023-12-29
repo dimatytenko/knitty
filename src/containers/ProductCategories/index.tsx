@@ -5,9 +5,7 @@ import { IProps } from './types';
 export const ProductsCategories = ({ filters }: IProps) => {
   return (
     <Container>
-      <ProductsCategoriesComponent
-        list={filters.filter(({name}) => name.toLowerCase() !== 'all')}
-      />
+      <ProductsCategoriesComponent list={filters} />
     </Container>
   );
 };
