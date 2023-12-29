@@ -1,37 +1,32 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { StyledPagination } from './styles';
 import { StyledPaginationProps } from './types';
+import { GlobalStore } from '../../context/GlobalStore';
 
 export const Pagination: React.FC<StyledPaginationProps> = ({
   total,
-  defaultPageSize,
 }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const {
+    globalSetter,
+    globalState: {
+      globalFilters: { pageSize },
+    },
+  } = useContext(GlobalStore)!;
 
-  const onChange = (page: number, pageSize: number) => {
-    const newSearchParams: {
-      [key: string]: string;
-    } = {};
-    searchParams.forEach((value, key) => {
-      newSearchParams[key] = value;
+  const onChange = (page: number) => {
+    globalSetter((prev) => {
+      prev.globalFilters.page = page;
+      return { ...prev };
     });
-
-    // setSearchParams({
-    //   ...newSearchParams,
-    //   page: page.toString(),
-    //   pageSize: pageSize.toString(),
-    // });
   };
 
   return (
     <StyledPagination
-      defaultCurrent={
-        searchParams.get('page') ? Number(searchParams.get('page')) : 1
-      }
+      defaultCurrent={1}
       total={total}
-      defaultPageSize={defaultPageSize}
+      defaultPageSize={pageSize}
       showLessItems={true}
       onChange={onChange}
     />

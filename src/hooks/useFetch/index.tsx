@@ -37,7 +37,7 @@ export const useFetch = ({
       setLoading(true);
       try {
         const { data } = await fetch();
-        if (data) setData(data);
+        setData(data);
 
         if (globalStateKey) {
           globalSetter((prev) => ({ ...prev, [globalStateKey]: data }));

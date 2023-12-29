@@ -1,12 +1,10 @@
-import { lazy, Suspense } from 'react';
+import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 import { route } from './constants/routes';
 import { Main } from './containers/Main';
 import { Uikit } from './containers/Uikit';
 import { Gallery } from './containers/Gallery';
 import { SingleProduct } from './containers/SingleProduct';
-
 import { Contacts } from './containers/Static/Contacts';
 import { Faq } from './containers/Static/FAQ';
 
@@ -17,19 +15,46 @@ import { useFetch } from './hooks/useFetch';
 import { useGET } from './api/fetchApi';
 import { MainLoader } from './ui-kit/Loader/MainLoader';
 import { CategoriesType } from './context/GlobalStore/types';
+// import { SuspenseComponent } from './components/Suspense';
 
 const NotFound = lazy(() => import('./containers/NotFound'));
+// const Main = lazy(() => import('./containers/Main'));
+// const SingleProduct = lazy(() => import('./containers/SingleProduct'));
+// const Contacts = lazy(() => import('./containers/Static/Contacts'));
+// const Faq = lazy(() => import('./containers/Static/FAQ'));
 
 const PublicRoutes = [
-  <Route key="main" path={route.main.path} element={<Main />} />,
+  <Route
+    key="main"
+    path={route.main.path}
+    // lazy={() => import('./containers/Main')}
+    element={<Main />}
+  />,
   <Route
     key="single-product"
     path={route.singleProduct.path}
-    element={<SingleProduct />}
+    element={
+      <SingleProduct />
+      // <SuspenseComponent component={SingleProduct} />
+    }
   />,
 
-  <Route key="contact" path={route.contact.path} element={<Contacts />} />,
-  <Route key="faq" path={route.faq.path} element={<Faq />} />,
+  <Route
+    key="contact"
+    path={route.contact.path}
+    element={
+      <Contacts />
+      // <SuspenseComponent component={Contacts} />
+    }
+  />,
+  <Route
+    key="faq"
+    path={route.faq.path}
+    element={
+      <Faq />
+      // <SuspenseComponent component={Faq} />
+    }
+  />,
 
   <Route
     key="privacy-policy"
@@ -76,14 +101,12 @@ const RoutesSwitch = () => {
       {loading ? (
         <MainLoader />
       ) : (
-        <Suspense fallback={<>Loading...</>}>
-          <Routes>
-            {UikitRoutes}
-            {[...routes, ...PublicRoutes]}
-            {/* {PrivateRoutes} */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          {UikitRoutes}
+          {[...routes, ...PublicRoutes]}
+          {/* {PrivateRoutes} */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       )}
     </>
   );
