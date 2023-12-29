@@ -16,6 +16,7 @@ const useGlobalStore = () => {
       filter: 0,
       page: 1,
       pageSize: 8,
+      ordering: null,
     },
   });
 

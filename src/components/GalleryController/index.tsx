@@ -15,7 +15,7 @@ export const GalleryController = ({
         filters={filters}
         activeFilter={activeFilter}
       />
-      <Sort />
+      <Sort  />
     </StyledWrapper>
   );
 };
