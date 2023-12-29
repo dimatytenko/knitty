@@ -13,6 +13,7 @@ import { GalleryController } from '../../components/GalleryController';
 import { GalleryComponent } from '../../components/Gallery';
 import { PaginationWrapper } from '../../components/Goods/styles';
 import { Pagination } from '../../ui-kit/Pagination';
+import { genereteQueryParams } from './helper';
 
 export const Gallery = ({ route: { name, id } }: IProps) => {
   const {
@@ -21,6 +22,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
         filter: activeFilter,
         page: pageFilter,
         pageSize: pageSizeFilter,
+        ordering: orderingFilter,
       },
     },
   } = useContext(GlobalStore)!;
@@ -34,14 +36,18 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
     cache: true,
   });
 
-  const category = id === 7 ? '' : `&category=${id}`;
-  const filter = activeFilter === 0 ? '' : `&filter=${activeFilter}`;
-  const page = `page=${pageFilter}`;
-  const pageSize = `&page_size=${pageSizeFilter}`;
 
   const { data, loading, setData } = useFetch({
     fetch: useGET({
-      endpoint: `products/?` + page + pageSize + filter + category,
+      endpoint:
+        `products/?` +
+        genereteQueryParams({
+          id,
+          activeFilter,
+          pageFilter,
+          pageSizeFilter,
+          orderingFilter,
+        }),
     }),
   });
 

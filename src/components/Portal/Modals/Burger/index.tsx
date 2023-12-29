@@ -1,9 +1,10 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { StyledModalBurger } from './styles';
 import gsap from 'gsap';
 import { IProps } from './types';
-import ModalBody from './ModalBody';
 import { clipPath, items } from './utils';
+import Bubbles from './Bubbles';
+import { ModalBody } from './ModalBody';
 
 export const ModalBurger = ({ setIsVisible }: IProps) => {
   const refs = useRef([]);
@@ -23,23 +24,13 @@ export const ModalBurger = ({ setIsVisible }: IProps) => {
     );
   }, []);
 
-  const onClose = () => {
-    setIsVisible(false);
-  };
-
   return (
     <>
-      <button
-        type="button"
-        style={{ position: 'relative', zIndex: 2 }}
-        onClick={onClose}
-      >
-        CLOSE
-      </button>
       <StyledModalBurger>
         {items.map((_, idx) => (
-          <ModalBody key={idx} ref={refs} />
+          <Bubbles key={idx} ref={refs} />
         ))}
+        <ModalBody setIsVisible={setIsVisible} />
       </StyledModalBurger>
     </>
   );

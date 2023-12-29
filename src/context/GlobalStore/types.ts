@@ -3,17 +3,20 @@ export type FiltersType = {
   name: string;
 };
 
+export type GlobalFiltersType = {
+  filter: number;
+  page: number;
+  pageSize: number;
+  ordering: 'price' | '-price' | null;
+};
+
 export type CategoriesType = {
   id: number;
   name: string;
 };
 
 export type GlobalStateType = {
-  globalFilters: {
-    filter: number;
-    page: number;
-    pageSize: number;
-  };
+  globalFilters: GlobalFiltersType;
   categories: CategoriesType[] | [];
   filters: FiltersType[] | [];
   cartList: [];

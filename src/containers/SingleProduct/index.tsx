@@ -39,11 +39,10 @@ export const SingleProduct = () => {
         <Br desktop={120} mobile={60} />
         <Recomended
           loading={listLoading}
-          data={productList.results.slice(0, 4)}
+          data={productList.length > 0 ? productList.results.slice(0, 4) : []}
           setData={setProductList}
         />
         <Br desktop={100} mobile={60} />
-
       </Container>
       <ScrollButton />
     </>
