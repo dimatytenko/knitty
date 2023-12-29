@@ -11,6 +11,8 @@ export type CategoriesType = {
 export type GlobalStateType = {
   globalFilters: {
     filter: number;
+    page: number;
+    pageSize: number;
   };
   categories: CategoriesType[] | [];
   filters: FiltersType[] | [];

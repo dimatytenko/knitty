@@ -14,7 +14,12 @@ export const HeaderBlockBottomLeft: React.FC<IProps> = ({ color }) => {
     globalState: { categories },
   } = useContext(GlobalStore)!;
 
+
+
   return (
-    <NavList list={categories ? categories.slice(0, 3) : []} color={color} />
+    <NavList
+      list={categories ? categories.slice(0, 3) : []}
+      color={color}
+    />
   );
 };

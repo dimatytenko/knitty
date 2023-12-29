@@ -17,7 +17,11 @@ import { Pagination } from '../../ui-kit/Pagination';
 export const Gallery = ({ route: { name, id } }: IProps) => {
   const {
     globalState: {
-      globalFilters: { filter: activeFilter },
+      globalFilters: {
+        filter: activeFilter,
+        page: pageFilter,
+        pageSize: pageSizeFilter,
+      },
     },
   } = useContext(GlobalStore)!;
 
@@ -31,11 +35,13 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
   });
 
   const category = id === 7 ? '' : `&category=${id}`;
-  const filter = activeFilter === 0 ? '' : `filter=${activeFilter}`;
+  const filter = activeFilter === 0 ? '' : `&filter=${activeFilter}`;
+  const page = `page=${pageFilter}`;
+  const pageSize = `&page_size=${pageSizeFilter}`;
 
   const { data, loading, setData } = useFetch({
     fetch: useGET({
-      endpoint: `products/?` + filter + category,
+      endpoint: `products/?` + page + pageSize + filter + category,
     }),
   });
 
@@ -51,7 +57,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
             meticulously crafted by talented artisans
           </Text2Bold>
         }
-        list={data}
+        count={data?.count || 0}
       />
       <GalleryController
         activeFilter={activeFilter}
@@ -60,14 +66,14 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
       />
 
       <GalleryComponent
-        data={data}
+        data={data?.results || []}
         wrapper={StyledGalleryWrapper}
         renderItem={(el) => <ProductCard {...el} setData={setData} />}
         loading={loading}
       />
 
       <PaginationWrapper>
-        <Pagination total={data.length} defaultPageSize={8} />
+        <Pagination total={data?.count || 0} />
       </PaginationWrapper>
       <Br desktop={100} mobile={60} />
     </Container>
