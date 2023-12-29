@@ -5,10 +5,66 @@ export const StyledModalBurger = styled.div`
   height: 100%;
 `;
 
+export const StyledBubbles = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.palette.colors.background};
+`;
+
 export const StyledBodyWrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
+  height: 100%;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & > div > a,
+  p {
+    text-transform: capitalize;
+    font-size: 50px;
+
+    display: block;
+
+    &.active {
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.7));
+    }
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+`;
+
+export const StyledButtonClose = styled.button`
+  position: relative;
+  z-index: 2;
+`;
+
+export const StyledBodyFooter = styled.div`
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    gap: 10px;
+  }
+
+  p,
+  a {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
 `;
