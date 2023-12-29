@@ -12,7 +12,7 @@ export const TagsRowComponent = ({
   filters,
   activeFilter,
 }: IProps) => {
-  const [active, setActive] = useState(activeFilter || 1);
+  const [active, setActive] = useState(activeFilter || 0);
   const { globalSetter } = useContext(GlobalStore)!;
 
   return (
@@ -21,13 +21,13 @@ export const TagsRowComponent = ({
         <MainLoader />
       ) : (
         <StyledWrapper>
-          {filters.map(({ name, id }) => (
+          {[{ name: 'all', id: 0 }, ...filters].map(({ name, id }) => (
             <FilterButton
               active={active === id}
               key={id}
               title={name}
               onClick={() => {
-                setActive(id)
+                setActive(id);
                 globalSetter((prev) => {
                   prev.globalFilters.filter = id;
                   return { ...prev };

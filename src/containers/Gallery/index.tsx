@@ -30,8 +30,8 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
     cache: true,
   });
 
-  const category = id === 6 ? '' : `&category=${id}`;
-  const filter = activeFilter === 1 ? '' : `filter=${activeFilter}`;
+  const category = id === 7 ? '' : `&category=${id}`;
+  const filter = activeFilter === 0 ? '' : `filter=${activeFilter}`;
 
   const { data, loading, setData } = useFetch({
     fetch: useGET({

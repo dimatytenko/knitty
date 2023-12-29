@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-react';
 
 import App from './App.tsx';
+import { BASE_URL } from './api/baseUrl.ts';
 
 // fix height on mobile version
 // source https://denis-creative.com/zadaem-razmer-100vh-bez-prokrutki-dlya-mobilnyh-ustrojstv/
@@ -14,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <FpjsProvider
     loadOptions={{
       apiKey: import.meta.env.VITE_FINGER_PRINT_KEY,
-      // endpoint: "https://cors-anywhere.herokuapp.com/"+BASE_URL + "observe/"
+      // endpoint: BASE_URL + "test/"
 
     }}
   >

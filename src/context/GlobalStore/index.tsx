@@ -13,7 +13,7 @@ const useGlobalStore = () => {
     cartList: [],
     favList: [],
     globalFilters: {
-      filter: 1,
+      filter: 0,
     },
   });
 
