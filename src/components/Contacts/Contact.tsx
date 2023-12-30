@@ -6,6 +6,7 @@ import {
   LinksWrapper,
   CenterBlock,
   SocialWrapper,
+  SocialBlockWrapper,
 } from './styles';
 import { socialLinks } from '../Layout/constants';
 import { FooterLink } from '../../ui-kit/Links';
@@ -74,7 +75,7 @@ export const Contacts = () => {
         <LinksWrapper>{phones.map((item) => getLink(item))}</LinksWrapper>
         <LinksWrapper>{emails.map((item) => getLink(item))}</LinksWrapper>
       </CenterBlock>
-      <div>
+      <SocialBlockWrapper>
         <TextHead color="background">Social</TextHead>
         <SocialWrapper>
           {socialLinks.map(({ title, path, ...rest }) => (
@@ -83,7 +84,7 @@ export const Contacts = () => {
             </FooterLink>
           ))}
         </SocialWrapper>
-      </div>
+      </SocialBlockWrapper>
     </ContactWrapper>
   );
 };
