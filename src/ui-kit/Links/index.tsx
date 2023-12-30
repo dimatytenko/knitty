@@ -12,9 +12,9 @@ import {
 import { Text1Bold, Text2Bold } from '../Typography';
 import { HoverCircle } from '../HoverCircle';
 
-export const NavigationLink = ({ to, children, color }: IProps) => {
+export const NavigationLink = ({ to, children, color, onClick }: IProps) => {
   return (
-    <StyledNavLink to={to}>
+    <StyledNavLink to={to} onClick={onClick}>
       <Text2Bold $case="uppercase" color={color}>
         {children}
       </Text2Bold>
