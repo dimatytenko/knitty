@@ -30,6 +30,7 @@ export const TagsRowComponent = ({
                 setActive(id);
                 globalSetter((prev) => {
                   prev.globalFilters.filter = id;
+                  prev.globalFilters.page = 1;
                   return { ...prev };
                 });
               }}
