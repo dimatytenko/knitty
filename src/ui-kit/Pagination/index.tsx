@@ -11,7 +11,7 @@ export const Pagination: React.FC<StyledPaginationProps> = ({
   const {
     globalSetter,
     globalState: {
-      globalFilters: { pageSize },
+      globalFilters: { pageSize, page },
     },
   } = useContext(GlobalStore)!;
 
@@ -24,11 +24,12 @@ export const Pagination: React.FC<StyledPaginationProps> = ({
 
   return (
     <StyledPagination
-      defaultCurrent={1}
+      current={page}
       total={total}
       defaultPageSize={pageSize}
       showLessItems={true}
       onChange={onChange}
+
     />
   );
 };
