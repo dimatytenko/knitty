@@ -10,6 +10,23 @@ export const StyledSizeGuide = styled.div`
 
   padding: 60px;
   background-color: ${({ theme }) => theme.palette.colors.background};
+
+  overflow-x: scroll;
+  width: 100vw;
+  max-width: 1000px;
+
+  &::-webkit-scrollbar {
+    height: 10px; /* ширина всей полосы прокрутки */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent; /* цвет зоны отслеживания */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) =>
+      theme.palette.colors.line}; /* цвет бегунка */
+  }
 `;
 
 export const StyledTabledWrapper = styled.div`

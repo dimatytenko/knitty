@@ -1,4 +1,4 @@
-import { ContactsWrapper, ContentWrapper, StyledTitle } from './styles';
+import { ContactsWrapper, StyledTitle } from './styles';
 import { Container } from '../Layout/styles';
 import { Contacts } from './Contact';
 import { useMedia } from 'use-media';

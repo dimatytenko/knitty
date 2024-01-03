@@ -7,4 +7,5 @@ export enum POINTS {
 
 export interface IContainerProps extends WithChildren {
   point?: POINTS;
+  style?: any;
 }
