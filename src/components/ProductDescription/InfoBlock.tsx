@@ -5,11 +5,13 @@ import { StyledInfoBlock, StyledStickyWrapper } from './styles';
 import { IProductDescrtiptionProps } from './types';
 
 export const InfoBlock = ({ data }: IProductDescrtiptionProps) => {
+
+
   return (
       <StyledInfoBlock>
         <StyledStickyWrapper>
           <InfoTitle title={data.name} price={data.price} />
-          <InfoControls id={data.id} />
+          <InfoControls data={data} />
           <InfoDescription description={data.description} />
         </StyledStickyWrapper>
       </StyledInfoBlock>
