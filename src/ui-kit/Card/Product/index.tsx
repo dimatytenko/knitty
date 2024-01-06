@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { FavouriteButton, MainButton } from '../../Buttons';
 import { ImageComponent } from '../../ImageComponent/Index';
 import { Text2Bold } from '../../Typography';
@@ -8,59 +9,55 @@ import {
   StyledProductCard,
 } from './styled';
 import { IProps } from './types';
+import { GlobalStore } from '../../../context/GlobalStore';
+import { isIn } from './helpers';
 
-export const ProductCard = ({
-  name,
-  price,
-  id,
-  isFavourite,
-  isInCart,
-  img_preview,
-  setData,
-}: IProps) => {
-  const handleAddToCart = (id: string) => {
-    setData((prev) =>
-      prev.map((product) => {
-        return product.id === id
-          ? {
-              ...product,
-              isInCart: !product.isInCart,
-              quantity: 1,
-            }
-          : product;
-      }),
-    );
+export const ProductCard = ({ setData, ...props }: IProps) => {
+  const {
+    globalState: { favList, cartList },
+  } = useContext(GlobalStore)!;
+
+  const handleAddToCart = (product: any) => {
+    setData((prev) => {
+      !isIn({ list: prev.cartList, id: product.id })
+        ? prev.cartList.push({ ...product, quantity: 1 })
+        : (prev.cartList = prev.cartList.filter((el) => el.id !== product.id));
+      return { ...prev };
+    });
   };
 
-  const handleAddToFavourites = (id: string) => {
-    setData((prev) =>
-      prev.map((product) => {
-        return product.id === id
-          ? { ...product, isFavourite: !product.isFavourite }
-          : product;
-      }),
-    );
+  const handleAddToFavourites = (product: any) => {
+    setData((prev) => {
+      !isIn({ list: prev.favList, id: product.id })
+        ? prev.favList.push(product)
+        : (prev.favList = prev.favList.filter((el) => el.id !== product.id));
+      return { ...prev };
+    });
   };
+
+  const isInCart = isIn({ list: cartList, id: props.id });
+  const isInFav = isIn({ list: favList, id: props.id });
+
 
   return (
     <StyledProductCard as="article">
       <StyledImageContent>
         <FavouriteButton
-          isFavourite={isFavourite}
-          onClick={() => handleAddToFavourites(id)}
+          isFavourite={isInFav}
+          onClick={() => handleAddToFavourites(props)}
         />
-        <StyledImageLink to={`/gallery/product/${id}`}>
-          <ImageComponent image={img_preview} alt={name} />
+        <StyledImageLink to={`/gallery/product/${props.id}`}>
+          <ImageComponent image={props.img_preview} alt={props.name} />
         </StyledImageLink>
         <MainButton
           isInCart={isInCart}
           title={isInCart ? 'In cart' : 'Add to cart'}
-          onClick={() => handleAddToCart(id)}
+          onClick={() => handleAddToCart(props)}
         />
       </StyledImageContent>
       <StyledInfoContent>
-        <Text2Bold $case="uppercase">{name}</Text2Bold>
-        <Text2Bold>€{price}</Text2Bold>
+        <Text2Bold $case="uppercase">{props.name}</Text2Bold>
+        <Text2Bold>€{props.price}</Text2Bold>
       </StyledInfoContent>
     </StyledProductCard>
   );

@@ -7,9 +7,8 @@ export interface IProduct {
   name: string;
   price: number;
   id: string | number;
-  isFavourite: boolean;
-  isInCart: boolean;
   quantity?: number;
   images: ProductImage[];
+  img_preview: string;
   description: string;
 }

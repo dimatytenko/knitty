@@ -1,5 +1,4 @@
 import { Text2Bold, Span } from '../../../ui-kit/Typography';
-// import { listRight } from '../../Layout/constants';
 import { NavList } from '../NavList';
 import { StyledFavLink } from '../styles';
 import { IProps } from './types';

@@ -101,6 +101,7 @@ export const CartButton = ({ color = 'primary' }: IPropsCartButton) => {
   const onClick = () => {
     setIsVisible(true);
   };
+
   return (
     <>
       <StyledCartBtn type="button" onClick={onClick}>
@@ -110,7 +111,10 @@ export const CartButton = ({ color = 'primary' }: IPropsCartButton) => {
         {!cartList.length ? null : <Span color={color}>{cartList.length}</Span>}
       </StyledCartBtn>
       <Portal visible={visible} setIsVisible={setIsVisible}>
-        <ModalCart cartList={cartList} setData={globalSetter} />
+        {
+          //@ts-expect-error
+          <ModalCart cartList={cartList} setData={globalSetter} />
+        }
       </Portal>
     </>
   );

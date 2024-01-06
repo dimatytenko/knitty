@@ -7,6 +7,6 @@ export interface IProps {
 }
 
 export interface IModalHeaderProps {
-  cartList: IProduct[];
+  cartListLength: number;
   setIsVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }

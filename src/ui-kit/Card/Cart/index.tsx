@@ -4,26 +4,20 @@ import { Buttons } from './Buttons';
 import { StyledCartCard, StyledImageWrapper, StyledInfoBlock } from './styles';
 import { IProps } from './types';
 
-export const CartCard = ({
-  title,
-  id,
-  setData,
-  price,
-  quantity,
-  image,
-}: IProps) => {
+export const CartCard = ({ setData, ...props }: IProps) => {
   const refCard = useRef(null);
+
   return (
     <StyledCartCard ref={refCard}>
       <StyledImageWrapper>
-        <img src={image} alt={title} />
+        <img src={props.img_preview} alt={props.name} />
       </StyledImageWrapper>
       <StyledInfoBlock>
-        <Heading3 $case="uppercase">{title}</Heading3>
-        <Text2Bold>€{price}</Text2Bold>
+        <Heading3 $case="uppercase">{props.name}</Heading3>
+        <Text2Bold>€{props.price}</Text2Bold>
         <Buttons
-          quantity={quantity!}
-          id={id}
+          quantity={props.quantity!}
+          id={props.id}
           setData={setData}
           refCard={refCard}
         />

@@ -28,6 +28,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
         ordering: orderingFilter,
       },
     },
+    globalSetter
   } = useContext(GlobalStore)!;
 
   const {
@@ -39,7 +40,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
     cache: true,
   });
 
-  const { data, loading, setData } = useFetch({
+  const { data, loading } = useFetch({
     fetch: useGET({
       endpoint:
         `products/?` +
@@ -75,7 +76,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
       <GalleryComponent
         data={data?.results || []}
         wrapper={StyledGalleryWrapper}
-        renderItem={(el) => <ProductCard {...el} setData={setData} />}
+        renderItem={(el) => <ProductCard {...el} setData={globalSetter} />}
         loading={loading}
       />
 
