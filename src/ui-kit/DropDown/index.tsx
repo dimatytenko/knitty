@@ -13,7 +13,6 @@ export const DropDown = ({ list, title, value, setter }: IProps) => {
       <ItemWrapper onClick={() => setter(item)}>
         <Text3Bold
           $case="uppercase"
-          // color={SORT_iTEMS[item] === sort ? 'unfocus' : 'primary'}
           color="primary"
         >
           {item.label}

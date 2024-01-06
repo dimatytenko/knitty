@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import {  lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { route } from './constants/routes';
 import { Main } from './containers/Main';
@@ -15,19 +15,13 @@ import { useFetch } from './hooks/useFetch';
 import { useGET } from './api/fetchApi';
 import { MainLoader } from './ui-kit/Loader/MainLoader';
 import { CategoriesType } from './context/GlobalStore/types';
-// import { SuspenseComponent } from './components/Suspense';
 
 const NotFound = lazy(() => import('./containers/NotFound'));
-// const Main = lazy(() => import('./containers/Main'));
-// const SingleProduct = lazy(() => import('./containers/SingleProduct'));
-// const Contacts = lazy(() => import('./containers/Static/Contacts'));
-// const Faq = lazy(() => import('./containers/Static/FAQ'));
 
 const PublicRoutes = [
   <Route
     key="main"
     path={route.main.path}
-    // lazy={() => import('./containers/Main')}
     element={<Main />}
   />,
   <Route
@@ -35,7 +29,6 @@ const PublicRoutes = [
     path={route.singleProduct.path}
     element={
       <SingleProduct />
-      // <SuspenseComponent component={SingleProduct} />
     }
   />,
 
@@ -44,7 +37,6 @@ const PublicRoutes = [
     path={route.contact.path}
     element={
       <Contacts />
-      // <SuspenseComponent component={Contacts} />
     }
   />,
   <Route
@@ -52,7 +44,6 @@ const PublicRoutes = [
     path={route.faq.path}
     element={
       <Faq />
-      // <SuspenseComponent component={Faq} />
     }
   />,
 

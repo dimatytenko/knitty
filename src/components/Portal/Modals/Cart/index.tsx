@@ -25,7 +25,6 @@ export const ModalCart = ({ cartList, setIsVisible, setData }: IProps) => {
     );
   }, [cartList]);
 
-  console.log(cartList)
 
   return (
     <StyledModalCart ref={refModal}>
