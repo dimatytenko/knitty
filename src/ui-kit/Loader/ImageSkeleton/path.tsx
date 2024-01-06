@@ -2,7 +2,6 @@ import { useRef } from 'react';
 
 export const Logo2 = () => {
   const refPath = useRef();
-  //   console.log(refPath.current && refPath.current.getTotalLength());
 
   return (
     <>

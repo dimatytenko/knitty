@@ -5,7 +5,7 @@ import { Text2Bold } from '../Typography';
 import { StyledCircle } from '../HoverCircle/styles';
 
 export const StyledButtonText = styled(Text2Bold).attrs({
-  $case: 'uppercase', //dont't work
+  $case: 'uppercase',
 })`
   text-transform: uppercase;
 `;

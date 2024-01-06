@@ -1,4 +1,3 @@
-import { IProduct } from '../../../types/api';
 
 export interface IProps {
   name: string;
@@ -8,5 +7,5 @@ export interface IProps {
   isInCart: boolean;
   img_preview: string;
 
-  setData: React.Dispatch<React.SetStateAction<IProduct[]>>;
+  setData: React.Dispatch<React.SetStateAction<any>>;
 }

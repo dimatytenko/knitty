@@ -1,10 +1,6 @@
 import { Logo2 } from './path';
 import { StyledSkeleton } from './styles';
 
-// export const ImageSkeleton = () => {
-//   return <StyledLoader></StyledLoader>;
-// };
-
 export const ImageSkeleton = () => {
   return (
     <StyledSkeleton>

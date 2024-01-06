@@ -14,8 +14,11 @@ import { GalleryComponent } from '../../components/Gallery';
 import { PaginationWrapper } from '../../components/Goods/styles';
 import { Pagination } from '../../ui-kit/Pagination';
 import { genereteQueryParams } from './helper';
+import { useMedia } from 'use-media';
 
 export const Gallery = ({ route: { name, id } }: IProps) => {
+  const isDesktop = useMedia({ minWidth: '900px' });
+
   const {
     globalState: {
       globalFilters: {
@@ -25,6 +28,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
         ordering: orderingFilter,
       },
     },
+    globalSetter
   } = useContext(GlobalStore)!;
 
   const {
@@ -36,8 +40,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
     cache: true,
   });
 
-
-  const { data, loading, setData } = useFetch({
+  const { data, loading } = useFetch({
     fetch: useGET({
       endpoint:
         `products/?` +
@@ -52,8 +55,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
   });
 
   return (
-    <Container>
-      <Br desktop={120} mobile={60} />
+    <Container style={{ paddingTop: isDesktop ? '120px' : '140px' }}>
       <PageTitle
         title={`Shop ${name}`}
         text={
@@ -74,7 +76,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
       <GalleryComponent
         data={data?.results || []}
         wrapper={StyledGalleryWrapper}
-        renderItem={(el) => <ProductCard {...el} setData={setData} />}
+        renderItem={(el) => <ProductCard {...el} setData={globalSetter} />}
         loading={loading}
       />
 

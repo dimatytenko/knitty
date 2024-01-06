@@ -10,9 +10,9 @@ export const Buttons = ({
   setData,
   refCard,
 }: TypeButtonsProps) => {
-  const habdleDecrement = (id: string | number) => {
+  const handleDecrement = (id: string | number) => {
     setData((prev) =>
-      prev.map((product) => {
+      prev.cartList.map((product) => {
         if (product.id === id) {
           if (product.quantity && !(product.quantity <= 1))
             return { ...product, quantity: (product.quantity -= 1) };
@@ -22,9 +22,9 @@ export const Buttons = ({
     );
   };
 
-  const habdleIncrement = (id: string | number) => {
+  const handleIncrement = (id: string | number) => {
     setData((prev) =>
-      prev.map((product) => {
+      prev.cartList.map((product) => {
         if (product.id === id) {
           if (product.quantity)
             return { ...product, quantity: (product.quantity += 1) };
@@ -39,16 +39,10 @@ export const Buttons = ({
       opacity: 0,
       left: '-100%',
       onComplete: () => {
-        setData((prev) =>
-          prev.map((product) => {
-            if (product.id === id) {
-              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-              const { quantity, ...rest } = product;
-              return { ...rest, isInCart: false };
-            }
-            return product;
-          }),
-        );
+        setData((prev) => {
+          prev.cartList = prev.cartList.filter((el) => el.id !== id);
+          return { ...prev };
+        });
       },
     });
   };
@@ -56,11 +50,11 @@ export const Buttons = ({
   return (
     <StyledButtonsWrapper>
       <StyledIncrementButtons>
-        <button type="button" onClick={() => habdleDecrement(id)}>
+        <button type="button" onClick={() => handleDecrement(id)}>
           <IconSvg type="minus" width="16" height="16" viewBox="0 0 16 16" />
         </button>
         <span>{quantity}</span>
-        <button type="button" onClick={() => habdleIncrement(id)}>
+        <button type="button" onClick={() => handleIncrement(id)}>
           <IconSvg type="plus" width="16" height="16" viewBox="0 0 16 16" />
         </button>
       </StyledIncrementButtons>

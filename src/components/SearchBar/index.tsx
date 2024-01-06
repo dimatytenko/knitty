@@ -6,6 +6,7 @@ import { GSAPWrapper } from '../../ui-kit/GSAPWrapper';
 import { gsap } from 'gsap';
 import { useTheme } from 'styled-components';
 import { TextColor } from '../../ui-kit/Typography/types';
+import { SearchModal } from './SearchModal';
 
 interface IProps {
   color: TextColor;
@@ -17,6 +18,7 @@ export const SearchBarComponent: React.FC<IProps> = ({ color }) => {
   const refInput = useRef(null);
   const refIcon = useRef(null);
   const [value, setValue] = useState<string>('');
+  const [searchModal, setSearchModal] = useState(false);
 
   useEffect(() => {
     if (!value) return;
@@ -32,13 +34,14 @@ export const SearchBarComponent: React.FC<IProps> = ({ color }) => {
       });
     }
 
+    if (e.target.value) {
+      setSearchModal(true);
+    }
+
     setValue(e.target.value);
   };
 
   const onFocus = () => {
-    if (value) {
-      return;
-    }
     gsap.to(refText.current, {
       left: -gsap.getProperty(refText.current, 'offsetWidth'),
     });
@@ -49,16 +52,30 @@ export const SearchBarComponent: React.FC<IProps> = ({ color }) => {
   };
 
   const onBlur = () => {
-    if (value) {
-      return;
-    }
+    gsap.to(refText.current, { left: 0 });
+    gsap.to(refInput.current, { left: 0, borderColor: 'transparent' });
+    gsap.to(refIcon.current, { fill: 'black' });
+  };
+
+  const onMouseEnter = () => {
+    gsap.to(refText.current, {
+      left: -gsap.getProperty(refText.current, 'offsetWidth'),
+    });
+    gsap.to(refInput.current, {
+      left: -gsap.getProperty(refText.current, 'offsetWidth'),
+      borderBottom: `1px solid ${palette.colors.primary}`,
+    });
+  };
+
+  const onMouseLeave = () => {
+    if (value) return;
     gsap.to(refText.current, { left: 0 });
     gsap.to(refInput.current, { left: 0, borderColor: 'transparent' });
     gsap.to(refIcon.current, { fill: 'black' });
   };
 
   return (
-    <StyledSearchBar>
+    <StyledSearchBar onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <GSAPWrapper ref={refText}>
         <TextBody1Bold color={color}>Search</TextBody1Bold>
       </GSAPWrapper>
@@ -80,6 +97,15 @@ export const SearchBarComponent: React.FC<IProps> = ({ color }) => {
           />
         </StyledInputField>
       </GSAPWrapper>
+      {searchModal && (
+        <SearchModal
+          value={value}
+          onClose={() => {
+            setSearchModal(false);
+            setValue('');
+          }}
+        />
+      )}
     </StyledSearchBar>
   );
 };

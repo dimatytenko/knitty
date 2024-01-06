@@ -25,9 +25,10 @@ export const ModalCart = ({ cartList, setIsVisible, setData }: IProps) => {
     );
   }, [cartList]);
 
+
   return (
     <StyledModalCart ref={refModal}>
-      <ModalHeader setIsVisible={setIsVisible} cartList={cartList} />
+      <ModalHeader setIsVisible={setIsVisible} cartListLength={cartList.length} />
       <HorizontalSeparator />
       <GalleryComponent
         data={cartList}

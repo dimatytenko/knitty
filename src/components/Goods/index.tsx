@@ -2,12 +2,12 @@ import React from 'react';
 
 import { IGoodsComponentProps } from './types';
 import { Container } from '../Layout/styles';
-import { GalleryController } from '..//GalleryController';
 import { PageTitle } from '../PageTitle';
 import { Text2Bold } from '../../ui-kit/Typography';
 import { Pagination } from '../../ui-kit/Pagination';
 import { PaginationWrapper } from './styles';
 import { GalleryComponent } from '../Gallery';
+import { GalleryController } from '../GalleryController';
 
 export const Goods: React.FC<IGoodsComponentProps> = ({
   data,

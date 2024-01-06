@@ -9,6 +9,5 @@ export const useCart = ({ data }: { data: IProduct[] }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
-  // console.log(cartList);
   return { cartList, setCartList };
 };

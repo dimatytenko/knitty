@@ -34,7 +34,6 @@ export const TableComponent = () => {
             <StyledTableCell
               key={idx}
               className="table-item"
-              // ref={(el) => (refItems.items[parentIdx+idx] = el)}
             >
               <Text2Bold $case="uppercase">{cell}</Text2Bold>
             </StyledTableCell>
