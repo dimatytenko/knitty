@@ -6,7 +6,7 @@ export type ProductImage = {
 export interface IProduct {
   name: string;
   price: number;
-  id: string | number;
+  id: number;
   quantity?: number;
   images: ProductImage[];
   img_preview: string;

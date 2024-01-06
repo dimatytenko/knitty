@@ -10,6 +10,7 @@ export const HeaderBlockBottomRight = ({ favList, color }: IProps) => {
   const {
     globalState: { categories },
   } = useContext(GlobalStore)!;
+
   return (
     <>
       <NavList list={categories ? categories.slice(3, 5) : []} color={color} />

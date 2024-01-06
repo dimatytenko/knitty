@@ -10,16 +10,20 @@ import {
 } from './styled';
 import { IProps } from './types';
 import { GlobalStore } from '../../../context/GlobalStore';
-import { isIn } from './helpers';
+import { isIn } from '../../../helpers/helpers';
 
 export const ProductCard = ({ setData, ...props }: IProps) => {
   const {
     globalState: { favList, cartList },
   } = useContext(GlobalStore)!;
 
+    const isInCart = isIn({ list: cartList, id: props.id });
+    const isInFav = isIn({ list: favList, id: props.id });
+
+
   const handleAddToCart = (product: any) => {
     setData((prev) => {
-      !isIn({ list: prev.cartList, id: product.id })
+      !isInCart
         ? prev.cartList.push({ ...product, quantity: 1 })
         : (prev.cartList = prev.cartList.filter((el) => el.id !== product.id));
       return { ...prev };
@@ -35,8 +39,6 @@ export const ProductCard = ({ setData, ...props }: IProps) => {
     });
   };
 
-  const isInCart = isIn({ list: cartList, id: props.id });
-  const isInFav = isIn({ list: favList, id: props.id });
 
 
   return (
