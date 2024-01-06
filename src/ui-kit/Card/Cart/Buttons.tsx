@@ -11,27 +11,29 @@ export const Buttons = ({
   refCard,
 }: TypeButtonsProps) => {
   const handleDecrement = (id: string | number) => {
-    setData((prev) =>
-      prev.cartList.map((product) => {
+    setData((prev) => {
+      prev.cartList = prev.cartList.map((product) => {
         if (product.id === id) {
           if (product.quantity && !(product.quantity <= 1))
             return { ...product, quantity: (product.quantity -= 1) };
         }
         return product;
-      }),
-    );
+      });
+      return { ...prev };
+    });
   };
 
   const handleIncrement = (id: string | number) => {
-    setData((prev) =>
-      prev.cartList.map((product) => {
+    setData((prev) => {
+      prev.cartList = prev.cartList.map((product) => {
         if (product.id === id) {
           if (product.quantity)
             return { ...product, quantity: (product.quantity += 1) };
         }
         return product;
-      }),
-    );
+      });
+      return { ...prev };
+    });
   };
 
   const handleRemove = (id: string | number) => {
