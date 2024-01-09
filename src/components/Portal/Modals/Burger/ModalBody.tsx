@@ -1,19 +1,22 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import { HorizontalSeparator } from '../../../../ui-kit/HorizontalSeparator';
 import { GlobalStore } from '../../../../context/GlobalStore';
 import { CategoriesType } from '../../../../context/GlobalStore/types';
 import { NavLink } from 'react-router-dom';
-import { StyledBodyFooter, StyledBodyWrapper } from './styles';
+import { StyledBodyWrapper, StyledItem, WrapperModalCart } from './styles';
 import { ButtonClose } from './ButtonClose';
 import { IProps } from './types';
 import gsap from 'gsap';
-import { LangSwitcherComponent } from '../../../LangSwitcher';
-import { MainLink } from '../../../../ui-kit/Links';
+import { ModalCart } from '../Cart';
+import { ModalFooter } from './ModalFooter';
 
 export const ModalBody = ({ setIsVisible }: IProps) => {
+  const [visibleModalCart, setIsVisibleModalCart] = useState<boolean>(false);
+
   const refBody = useRef(null);
   const {
-    globalState: { categories },
+    globalState: { categories, cartList },
+    globalSetter,
   } = useContext(GlobalStore)!;
 
   useEffect(() => {
@@ -30,36 +33,56 @@ export const ModalBody = ({ setIsVisible }: IProps) => {
   }, [refBody]);
 
   const color = 'secondary';
-
   return (
     <StyledBodyWrapper ref={refBody}>
       <ButtonClose onClose={() => setIsVisible(false)} />
       <div>
-        <p>Search</p>
+        <StyledItem as="p">Search</StyledItem>
         <HorizontalSeparator />
       </div>
       {categories.map(({ name, id }: CategoriesType) => (
         <div key={id}>
-          <NavLink
+          <StyledItem
+            as={NavLink}
             to={`gallery/${name.toLowerCase()}`}
             onClick={() => setIsVisible(false)}
           >
             {name.toLowerCase()}
-          </NavLink>
+          </StyledItem>
           <HorizontalSeparator />
         </div>
       ))}
-      <StyledBodyFooter>
-        <LangSwitcherComponent color={color} />
-        <div>
-          <MainLink to="/sign-up" color={color}>
-            Sign Up
-          </MainLink>
-          <MainLink to="/sign-in" color={color}>
-            Sign In
-          </MainLink>
-        </div>
-      </StyledBodyFooter>
+      <div>
+        <StyledItem
+          as={NavLink}
+          to={`favorites`}
+          onClick={() => setIsVisible(false)}
+        >
+          favorites
+        </StyledItem>
+        <HorizontalSeparator />
+      </div>
+      <div>
+        <StyledItem
+          as="button"
+          type="button"
+          onClick={() => setIsVisibleModalCart((prev) => !prev)}
+        >
+          cart
+        </StyledItem>
+
+        <HorizontalSeparator />
+      </div>
+      <ModalFooter color={color} />
+      {visibleModalCart && (
+        <WrapperModalCart>
+          <ModalCart
+            cartList={cartList}
+            setData={globalSetter}
+            setIsVisible={setIsVisibleModalCart}
+          />
+        </WrapperModalCart>
+      )}
     </StyledBodyWrapper>
   );
 };
