@@ -17,14 +17,13 @@ export const ProductCard = ({ setData, ...props }: IProps) => {
     globalState: { favList, cartList },
   } = useContext(GlobalStore)!;
 
-    const isInCart = isIn({ list: cartList, id: props.id });
-    const isInFav = isIn({ list: favList, id: props.id });
-
+  const isInCart = isIn({ list: cartList, id: props.id });
+  const isInFav = isIn({ list: favList, id: props.id });
 
   const handleAddToCart = (product: any) => {
     setData((prev) => {
       !isInCart
-        ? prev.cartList.push({ ...product, quantity: 1 })
+        ? (prev.cartList = [...prev.cartList, { ...product, quantity: 1 }])
         : (prev.cartList = prev.cartList.filter((el) => el.id !== product.id));
       return { ...prev };
     });
@@ -32,14 +31,12 @@ export const ProductCard = ({ setData, ...props }: IProps) => {
 
   const handleAddToFavourites = (product: any) => {
     setData((prev) => {
-      !isIn({ list: prev.favList, id: product.id })
-        ? prev.favList.push(product)
+      !isInFav
+        ? (prev.favList = [...prev.favList, product])
         : (prev.favList = prev.favList.filter((el) => el.id !== product.id));
       return { ...prev };
     });
   };
-
-
 
   return (
     <StyledProductCard as="article">
@@ -49,7 +46,12 @@ export const ProductCard = ({ setData, ...props }: IProps) => {
           onClick={() => handleAddToFavourites(props)}
         />
         <StyledImageLink to={`/gallery/product/${props.id}`}>
-          <ImageComponent image={props.img_preview} alt={props.name} />
+          <ImageComponent
+            image={props.img_preview}
+            alt={props.name}
+            width={'auto'}
+            height={420}
+          />
         </StyledImageLink>
         <MainButton
           isInCart={isInCart}

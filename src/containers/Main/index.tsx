@@ -31,7 +31,6 @@ export const Main = () => {
       <About />
       <Br desktop={120} mobile={80} />
       {loading ? <MainLoader /> : <ProductsCategories filters={filters} />}
-      {/* <ProductsCategories filters={[]} /> */}
       <Br desktop={120} mobile={80} />
       <Globally />
       <Br desktop={120} mobile={80} />

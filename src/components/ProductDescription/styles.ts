@@ -29,7 +29,6 @@ export const StyledPhotosBlock = styled.div`
   gap: 10px;
 
   ${ImageWrapper} {
-    /* width: 100%; */
     height: 600px;
   }
 `;

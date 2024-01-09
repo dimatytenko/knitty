@@ -3,6 +3,7 @@ import { StyledLoader } from '../Loader/ImageSkeleton/styles';
 
 export const StyledImageWrapper = styled.div`
   position: relative;
+  overflow: hidden;
 
   ${StyledLoader} {
     position: absolute;
@@ -12,8 +13,7 @@ export const StyledImageWrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  /* width: 420px; */
-  height: 470px;
+  height: 100%;
 `;
 
 export const StyledImage = styled.img`

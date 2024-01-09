@@ -5,7 +5,6 @@ export const StyledSearchBar = styled.div`
   display: flex;
   align-items: center;
   gap: 5px;
-  /* overflow: hidden; */
 `;
 
 export const StyledInputField = styled.div`

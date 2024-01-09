@@ -7,8 +7,8 @@ import { StyledImageWrapper, ImageWrapper, StyledImage } from './styles';
 export const ImageComponent = ({
   image,
   alt,
-  width = 318,
-  height = 420,
+  width = "auto",
+  height = "100%",
 }: IProps) => {
   const refImage = useRef(null);
   const [loading, setLoading] = useState(true);
@@ -24,7 +24,7 @@ export const ImageComponent = ({
   };
 
   return (
-    <StyledImageWrapper>
+    <StyledImageWrapper style={{ width, height }}>
       {loading && <ImageSkeleton />}
       <ImageWrapper>
         <StyledImage
