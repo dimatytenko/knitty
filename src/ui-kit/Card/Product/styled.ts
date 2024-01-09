@@ -3,8 +3,6 @@ import { StyledFavoriteButton, StyledMainButton } from '../../Buttons/styles';
 import { Link } from 'react-router-dom';
 
 export const StyledProductCard = styled.div`
-  /* width: 100%;
-  height: 100%; */
 `;
 
 const rotation = keyframes`

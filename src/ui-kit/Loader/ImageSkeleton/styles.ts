@@ -45,6 +45,9 @@ const draw = keyframes`
   }`;
 
 export const StyledSkeleton = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
   svg {
     path {
       fill: transparent;

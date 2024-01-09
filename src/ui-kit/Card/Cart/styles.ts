@@ -4,7 +4,7 @@ export const StyledCartCard = styled.article`
   position: relative;
 
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: max-content 1fr;
   gap: 20px;
 `;
 
@@ -53,6 +53,7 @@ export const StyledIncrementButtons = styled.div`
 
 export const StyledButtonsWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 20px;
 `;

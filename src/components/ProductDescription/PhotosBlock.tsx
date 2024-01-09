@@ -6,7 +6,7 @@ export const PhotosBlock = ({ list }: IPhotosBlockProps) => {
   return (
     <StyledPhotosBlock>
       {list.map(({ id, image }) => (
-        <ImageComponent key={id} image={image} alt="model" />
+        <ImageComponent key={id} image={image} alt="model" width="auto"/>
       ))}
     </StyledPhotosBlock>
   );
