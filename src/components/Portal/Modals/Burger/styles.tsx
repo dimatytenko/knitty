@@ -28,18 +28,6 @@ export const StyledBodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  & > div > a,
-  p {
-    text-transform: capitalize;
-    font-size: 50px;
-
-    display: block;
-
-    &.active {
-      background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.7));
-    }
-  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -66,5 +54,24 @@ export const StyledBodyFooter = styled.div`
   a {
     font-size: 20px;
     text-transform: uppercase;
+  }
+`;
+
+export const WrapperModalCart = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+`;
+
+export const StyledItem = styled.a`
+  text-transform: capitalize;
+  font-size: 50px;
+  display: block;
+
+  &.active {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.7));
   }
 `;
