@@ -10,7 +10,7 @@ import { ScrollButton } from '../../ui-kit/ScrollButton';
 import { useGET } from '../../api/fetchApi';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
-export const SingleProduct = () => {
+ const SingleProduct = () => {
   const { id } = useParams();
   const { loading: singleProductLoading, data: singleProduct } = useFetch({
     fetch: useGET({ endpoint: `products/${id}/` }),
@@ -48,3 +48,5 @@ export const SingleProduct = () => {
     </>
   );
 };
+
+export default SingleProduct;

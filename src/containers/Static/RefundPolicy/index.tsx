@@ -1,6 +1,8 @@
 import { Static } from '../../../components/Static';
 import { data } from './assets/data';
 
-export const PefundPolicy = () => {
+const RefundPolicy = () => {
   return <Static data={data} />;
 };
+
+export default RefundPolicy;

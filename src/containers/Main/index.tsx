@@ -10,7 +10,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { useGET } from '../../api/fetchApi';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
-export const Main = () => {
+const Main = () => {
   const {
     globalState: { filters },
     loading,
@@ -38,3 +38,5 @@ export const Main = () => {
     </div>
   );
 };
+
+export default Main;
