@@ -6,7 +6,7 @@ import { SubHeading, Text } from './Typografy';
 import { Container } from '../../../ui-kit/Container';
 import { POINTS } from '../../../ui-kit/Container/types';
 
-export function Faq() {
+const Faq = () => {
   return (
     <Container point={POINTS.l}>
       <Br desktop={120} mobile={60} />
@@ -30,4 +30,6 @@ export function Faq() {
       <Br desktop={120} mobile={60} />
     </Container>
   );
-}
+};
+
+export default Faq;

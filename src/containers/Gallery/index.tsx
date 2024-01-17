@@ -16,7 +16,7 @@ import { Pagination } from '../../ui-kit/Pagination';
 import { genereteQueryParams } from './helper';
 import { useMedia } from 'use-media';
 
-export const Gallery = ({ route: { name, id } }: IProps) => {
+const Gallery = ({ route: { name, id } }: IProps) => {
   const isDesktop = useMedia({ minWidth: '900px' });
 
   const {
@@ -28,7 +28,7 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
         ordering: orderingFilter,
       },
     },
-    globalSetter
+    globalSetter,
   } = useContext(GlobalStore)!;
 
   const {
@@ -87,3 +87,5 @@ export const Gallery = ({ route: { name, id } }: IProps) => {
     </Container>
   );
 };
+
+export default Gallery;

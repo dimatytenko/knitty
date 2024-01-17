@@ -1,52 +1,32 @@
-import {  lazy } from 'react';
+import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { route } from './constants/routes';
-import { Main } from './containers/Main';
 import { Uikit } from './containers/Uikit';
-import { Gallery } from './containers/Gallery';
-import { SingleProduct } from './containers/SingleProduct';
-import { Contacts } from './containers/Static/Contacts';
-import { Faq } from './containers/Static/FAQ';
-
-import { PrivacyPolicy } from './containers/Static/PrivacyPolicy';
-import { TermsOfService } from './containers/Static/TermsOfService';
-import { PefundPolicy } from './containers/Static/RefundPolicy';
 import { useFetch } from './hooks/useFetch';
 import { useGET } from './api/fetchApi';
 import { MainLoader } from './ui-kit/Loader/MainLoader';
 import { CategoriesType } from './context/GlobalStore/types';
 
 const NotFound = lazy(() => import('./containers/NotFound'));
+const Main = lazy(() => import('./containers/Main'));
+const SingleProduct = lazy(() => import('./containers/SingleProduct'));
+const Contacts = lazy(() => import('./containers/Static/Contacts'));
+const Faq = lazy(() => import('./containers/Static/FAQ'));
+const PrivacyPolicy = lazy(() => import('./containers/Static/PrivacyPolicy'));
+const TermsOfService = lazy(() => import('./containers/Static/TermsOfService'));
+const RefundPolicy = lazy(() => import('./containers/Static/RefundPolicy'));
+const Gallery = lazy(() => import('./containers/Gallery'));
+
 
 const PublicRoutes = [
-  <Route
-    key="main"
-    path={route.main.path}
-    element={<Main />}
-  />,
+  <Route key="main" path={route.main.path} element={<Main />} />,
   <Route
     key="single-product"
     path={route.singleProduct.path}
-    element={
-      <SingleProduct />
-    }
+    element={<SingleProduct />}
   />,
-
-  <Route
-    key="contact"
-    path={route.contact.path}
-    element={
-      <Contacts />
-    }
-  />,
-  <Route
-    key="faq"
-    path={route.faq.path}
-    element={
-      <Faq />
-    }
-  />,
-
+  <Route key="contact" path={route.contact.path} element={<Contacts />} />,
+  <Route key="faq" path={route.faq.path} element={<Faq />} />,
   <Route
     key="privacy-policy"
     path={route.privacyPolicy.path}
@@ -60,7 +40,7 @@ const PublicRoutes = [
   <Route
     key="refund-policy"
     path={route.refundPolicy.path}
-    element={<PefundPolicy />}
+    element={<RefundPolicy />}
   />,
 ];
 
@@ -92,12 +72,14 @@ const RoutesSwitch = () => {
       {loading ? (
         <MainLoader />
       ) : (
-        <Routes>
-          {UikitRoutes}
-          {[...routes, ...PublicRoutes]}
-          {/* {PrivateRoutes} */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<MainLoader />}>
+          <Routes>
+            {UikitRoutes}
+            {[...routes, ...PublicRoutes]}
+            {/* {PrivateRoutes} */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       )}
     </>
   );
