@@ -14,6 +14,9 @@ export const route = {
   termsOfService: Route.of({ path: '/terms-of-service' }),
   registredCompany: Route.of({ path: '/registered-company' }),
   refundPolicy: Route.of({ path: '/refund-policy' }),
+  signIn: Route.of({ path: '/auth/sign-in' }),
+  signUp: Route.of({ path: '/auth/sign-up' }),
+  forgot: Route.of({ path: '/auth/forgot' }),
 
   uikit: Route.of({ path: '/ui-kit' }),
 };

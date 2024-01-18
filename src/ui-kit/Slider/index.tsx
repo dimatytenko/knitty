@@ -17,7 +17,7 @@ export const Slider: React.FC<PropsWithChildren & SliderProps> = ({
   children,
 }) => {
   const modules = [Navigation];
-  const arrayChildren = Children.toArray(children);
+  // const arrayChildren = Children.toArray(children);
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
   const navigationRefs = {
@@ -59,9 +59,10 @@ export const Slider: React.FC<PropsWithChildren & SliderProps> = ({
         }
       }}
     >
-      {Children.map(arrayChildren, (child, i) => (
+      {/* {Children.map(arrayChildren, (child, i) => (
         <SwiperSlide key={i}>{child}</SwiperSlide>
-      ))}
+      ))} */}
+      {children}
       <ArrowButton ref={prevRef} $position="left">
         <PrevArrow />
       </ArrowButton>
