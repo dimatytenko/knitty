@@ -13,8 +13,13 @@ export const InputField = ({
   const refLabel = useRef();
   const refInput = useRef();
 
+
   return (
-    <StyledInputField>
+    <StyledInputField
+      onMouseEnter={() => {
+        refInput.current.focus();
+      }}
+    >
       <StyledLabel as="label" htmlFor={inputKey} color="unfocus" ref={refLabel}>
         {label}
       </StyledLabel>
@@ -31,13 +36,15 @@ export const InputField = ({
             scale: 0.7,
           })
         }
-        onBlur={() =>
-          gsap.to(refLabel.current, {
-            y: 0,
-            transformOrigin: 'center left',
-            scale: 1,
-          })
-        }
+        onBlur={() => {
+          if (!value) {
+            gsap.to(refLabel.current, {
+              y: 0,
+              transformOrigin: 'center left',
+              scale: 1,
+            });
+          }
+        }}
         onChange={({ target: { value } }) => onChange(value)}
       />
     </StyledInputField>

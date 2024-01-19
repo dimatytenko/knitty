@@ -3,6 +3,7 @@ import { IFilterButton } from './types';
 
 import { Text2Bold } from '../Typography';
 import { StyledCircle } from '../HoverCircle/styles';
+import { TextBody2Bold } from '../Typography/styles';
 
 export const StyledButtonText = styled(Text2Bold).attrs({
   $case: 'uppercase',
@@ -24,6 +25,13 @@ export const StyledMainButton = styled.button<{ $isincart?: boolean }>`
 
   background-color: ${({ $isincart, theme }) =>
     $isincart ? theme.palette.colors.alert : theme.palette.colors.background};
+
+  &:disabled {
+    border: 1px solid ${({ theme }) => theme.palette.colors.line};
+    ${TextBody2Bold} {
+      color: ${({ theme }) => theme.palette.colors.line};
+    }
+  }
 
   ${StyledButtonText} {
     color: ${({ theme }) => theme.palette.colors.background};
