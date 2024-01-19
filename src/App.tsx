@@ -6,11 +6,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 function App() {
-
   return (
-    <Layout>
-      <RoutesSwitch />
-    </Layout>
+      <Layout>
+        <RoutesSwitch />
+      </Layout>
   );
 }
 

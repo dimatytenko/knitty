@@ -10,6 +10,7 @@ import { defaultTheme } from './ui-kit/theme/theme.ts';
 import { Normalize } from 'styled-normalize';
 import { GlobalStyles } from './styles/index.ts';
 import { GlobalStroreProvider } from './context/GlobalStore/index.tsx';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 // fix height on mobile version
 // source https://denis-creative.com/zadaem-razmer-100vh-bez-prokrutki-dlya-mobilnyh-ustrojstv/
@@ -21,14 +22,15 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <ThemeProvider theme={defaultTheme}>
     <BrowserRouter>
       <GlobalStroreProvider>
-        <FpjsProvider
+        {/* <FpjsProvider
           loadOptions={{
             apiKey: import.meta.env.VITE_FINGER_PRINT_KEY,
-            // endpoint: BASE_URL + "test/"
           }}
-        >
+        > */}
+        <GoogleOAuthProvider clientId="1001284759160-t08belp9vng164s2jm1o5balqdivvgfu.apps.googleusercontent.com">
           <App />
-        </FpjsProvider>
+        </GoogleOAuthProvider>
+        {/* </FpjsProvider> */}
       </GlobalStroreProvider>
     </BrowserRouter>
     <Normalize />

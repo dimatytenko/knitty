@@ -1,12 +1,13 @@
 import { TextColor } from '../Typography/types';
 
 export interface IProps {
-  title?: string;
+  title?: string | React.ReactElement;
   onClick: (val?: any) => void;
   type?: 'button' | 'submit';
   active?: boolean;
   isInCart?: boolean;
   children?: React.ReactElement;
+  disabled?: boolean;
 }
 
 export interface IFilterButton extends IProps {

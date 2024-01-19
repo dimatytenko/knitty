@@ -26,9 +26,10 @@ export const MainButton = ({
   onClick = () => {},
   type = 'button',
   isInCart,
+  disabled=false
 }: IProps) => {
   return (
-    <StyledMainButton $isincart={isInCart} type={type} onClick={onClick}>
+    <StyledMainButton $isincart={isInCart} type={type} onClick={onClick} disabled={disabled}>
       <Text2Bold $case="uppercase" color="primary">
         {title}
       </Text2Bold>

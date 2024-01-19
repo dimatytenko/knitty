@@ -5,6 +5,7 @@ import { AboutCard } from '../../ui-kit/Card/About';
 import { Container } from '../Layout/styles';
 import { AboutWrapper, AboutSubtitle, AboutTitle } from './styles';
 import { Slider } from '../../ui-kit/Slider';
+import { SwiperSlide } from 'swiper/react';
 
 interface AboutComponentProps {
   data: AboutCardProps[];
@@ -29,12 +30,13 @@ export const AboutComponent: React.FC<AboutComponentProps> = ({ data }) => {
           slidesPerViewDesktop={3}
         >
           {data.map((item) => (
-            <AboutCard
-              key={item.id}
-              title={item.title}
-              subtitle={item.subtitle}
-              img={item.img}
-            />
+            <SwiperSlide key={item.id}>
+              <AboutCard
+                title={item.title}
+                subtitle={item.subtitle}
+                img={item.img}
+              />
+            </SwiperSlide>
           ))}
         </Slider>
       </Container>
