@@ -10,7 +10,7 @@ import { ScrollButton } from '../../ui-kit/ScrollButton';
 import { useGET } from '../../api/fetchApi';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
- const SingleProduct = () => {
+const SingleProduct = () => {
   const { id } = useParams();
   const { loading: singleProductLoading, data: singleProduct } = useFetch({
     fetch: useGET({ endpoint: `products/${id}/` }),
@@ -23,6 +23,8 @@ import { MainLoader } from '../../ui-kit/Loader/MainLoader';
   } = useFetch({
     fetch: useGET({ endpoint: `products/` }),
   });
+
+  console.log(productList);
 
   return (
     <>
@@ -39,7 +41,11 @@ import { MainLoader } from '../../ui-kit/Loader/MainLoader';
         <Br desktop={120} mobile={60} />
         <Recomended
           loading={listLoading}
-          data={productList.length > 0 ? productList.results.slice(0, 4) : []}
+          data={
+            productList?.results?.length > 0
+              ? productList?.results?.slice(0, 4)
+              : []
+          }
           setData={setProductList}
         />
         <Br desktop={100} mobile={60} />
