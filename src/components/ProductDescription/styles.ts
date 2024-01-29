@@ -126,3 +126,7 @@ export const StyledSizeGuideButton = styled(TextBody2Bold).attrs({
     }
   }
 `;
+
+export const StyledTextWrapper = styled.div`
+  padding: 16px 0;
+`;
