@@ -112,7 +112,6 @@ export const DescriptionText = styled(TextBody2Bold).attrs({
 
 export const StyledSizeGuideButton = styled(TextBody2Bold).attrs({
   $case: 'uppercase',
-  color: 'unfocus',
 })`
   width: 100%;
   display: flex;
