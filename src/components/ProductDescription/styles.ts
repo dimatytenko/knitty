@@ -7,6 +7,7 @@ import {
 import { TextBody1Bold, TextBody2Bold } from '../../ui-kit/Typography/styles';
 import { scrollStyles } from '../../ui-kit/theme/scroll';
 import { ImageWrapper } from '../../ui-kit/ImageComponent/styles';
+import { Breadcrumb } from 'antd';
 
 export const StyledProductDescription = styled.div`
   position: relative;
@@ -129,4 +130,11 @@ export const StyledSizeGuideButton = styled(TextBody2Bold).attrs({
 
 export const StyledTextWrapper = styled.div`
   padding: 16px 0;
+`;
+
+export const StyledBreadCrumb = styled(Breadcrumb)`
+  ol {
+    display: flex;
+    align-items: center;
+  }
 `;
