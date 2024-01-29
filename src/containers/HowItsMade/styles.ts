@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Media } from '../../ui-kit/theme/breakpoints';
+import { TextBody2Bold } from '../../ui-kit/Typography/styles';
 
 export const StyledWrapper = styled.div`
   display: grid;
@@ -27,4 +28,8 @@ export const StyledHeading = styled.div`
 export const StyledInfo = styled.div`
   display: flex;
   gap: 30px;
+
+  ${TextBody2Bold} {
+    text-align: justify;
+  }
 `;

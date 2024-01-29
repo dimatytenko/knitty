@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { StyledHeading2 } from '../../../../ui-kit/Typography/styles';
+import {
+  StyledHeading2,
+  TextBody2Bold,
+} from '../../../../ui-kit/Typography/styles';
 
 export const StyledSizeGuide = styled.div`
   position: absolute;
@@ -27,6 +30,18 @@ export const StyledSizeGuide = styled.div`
     background-color: ${({ theme }) =>
       theme.palette.colors.line}; /* цвет бегунка */
   }
+
+  ${TextBody2Bold} {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+`;
+
+export const StyledTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const StyledTabledWrapper = styled.div`

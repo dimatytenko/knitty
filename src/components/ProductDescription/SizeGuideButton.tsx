@@ -17,7 +17,7 @@ export const SizeGuideButton = () => {
         <ArrowIcon />
       </StyledSizeGuideButton>
       <Portal visible={visible} setIsVisible={setIsVisible}>
-        <SizeGuideModal />
+        <SizeGuideModal setIsVisible={setIsVisible} />
       </Portal>
     </>
   );
