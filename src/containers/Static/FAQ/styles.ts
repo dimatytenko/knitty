@@ -3,6 +3,7 @@ import {
   StyledHeading3,
   TextBody2Bold,
 } from '../../../ui-kit/Typography/styles';
+import { Media } from '../../../ui-kit/theme/breakpoints';
 
 export const StyledTextFaq = styled(TextBody2Bold)`
   width: 430px;
@@ -13,4 +14,8 @@ export const StyledTextFaq = styled(TextBody2Bold)`
 
 export const StyledHeading = styled(StyledHeading3)`
   font-size: 40px;
+
+  ${Media.down.m} {
+    font-size: 32px;
+  }
 `;

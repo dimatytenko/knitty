@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const StyledCollaps = styled.div``;
 
 export const StyledTitle = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  align-content: center;
 
   padding: 16px 0;
   cursor: pointer;

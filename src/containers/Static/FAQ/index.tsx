@@ -5,10 +5,16 @@ import { Heading2 } from '../../../ui-kit/Typography';
 import { SubHeading, Text } from './Typografy';
 import { Container } from '../../../ui-kit/Container';
 import { POINTS } from '../../../ui-kit/Container/types';
+import { useMedia } from 'use-media';
 
 const Faq = () => {
+    const isDesktop = useMedia({ minWidth: '900px' });
+
   return (
-    <Container point={POINTS.l}>
+    <Container
+      point={POINTS.l}
+      style={{ paddingTop: isDesktop ? '120px' : '30px' }}
+    >
       <Br desktop={120} mobile={60} />
       <Heading2 $justify="center">Frequently Asked Questions</Heading2>
       <Text $case="uppercase" color="unfocus">
