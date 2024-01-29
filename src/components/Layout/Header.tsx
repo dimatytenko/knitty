@@ -67,7 +67,7 @@ export const HeaderComponent = () => {
     } else {
       gsap.set(refHeader.current, {
         position: 'absolute',
-        maxWwidth: '100%',
+        maxWidth: '100%',
         backdropFilter: 'unset',
       });
     }
