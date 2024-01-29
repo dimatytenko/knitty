@@ -38,6 +38,12 @@ export const StyledSizeGuide = styled.div`
   }
 `;
 
+export const StyledTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 export const StyledTabledWrapper = styled.div`
   position: relative;
   margin-top: 70px;

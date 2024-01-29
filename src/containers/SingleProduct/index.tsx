@@ -24,6 +24,8 @@ const SingleProduct = () => {
     fetch: useGET({ endpoint: `products/` }),
   });
 
+  console.log(singleProduct);
+
 
   return (
     <>
