@@ -68,9 +68,9 @@ export const HeroLink = ({ to, children }: IProps) => {
   );
 };
 
-export const MainLink = ({ to, color, children }: IProps) => {
+export const MainLink = ({ to, color, children, onClick }: IProps) => {
   return (
-    <StyledMainLink to={to}>
+    <StyledMainLink to={to} onClick={onClick}>
       <Text1Bold color={color}>{children}</Text1Bold>
     </StyledMainLink>
   );

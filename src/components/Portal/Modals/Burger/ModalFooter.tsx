@@ -1,17 +1,18 @@
+import { route } from '../../../../constants/routes';
 import { MainLink } from '../../../../ui-kit/Links';
-import { TextColor } from '../../../../ui-kit/Typography/types';
 import { LangSwitcherComponent } from '../../../LangSwitcher';
 import { StyledBodyFooter } from './styles';
+import { IModalFooter } from './types';
 
-export const ModalFooter = ({ color }: { color: TextColor }) => {
+export const ModalFooter = ({ color, closeModal }: IModalFooter) => {
   return (
     <StyledBodyFooter>
       <LangSwitcherComponent color={color} />
       <div>
-        <MainLink to="/sign-up" color={color}>
+        <MainLink to={route.signUp.path} color={color} onClick={closeModal}>
           Sign Up
         </MainLink>
-        <MainLink to="/sign-in" color={color}>
+        <MainLink to={route.signIn.path} color={color} onClick={closeModal}>
           Sign In
         </MainLink>
       </div>

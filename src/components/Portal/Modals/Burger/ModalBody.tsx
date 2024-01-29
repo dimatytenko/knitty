@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 import { useContext, useEffect, useRef, useState } from 'react';
 import { HorizontalSeparator } from '../../../../ui-kit/HorizontalSeparator';
 import { GlobalStore } from '../../../../context/GlobalStore';
@@ -13,7 +14,7 @@ import { ModalFooter } from './ModalFooter';
 export const ModalBody = ({ setIsVisible }: IProps) => {
   const [visibleModalCart, setIsVisibleModalCart] = useState<boolean>(false);
 
-  const refBody = useRef(null);
+  const refBody = useRef();
   const {
     globalState: { categories, cartList },
     globalSetter,
@@ -73,7 +74,7 @@ export const ModalBody = ({ setIsVisible }: IProps) => {
 
         <HorizontalSeparator />
       </div>
-      <ModalFooter color={color} />
+      <ModalFooter color={color} closeModal={() => setIsVisible(false)} />
       {visibleModalCart && (
         <WrapperModalCart>
           <ModalCart
