@@ -1,4 +1,3 @@
-import { Breadcrumb } from 'antd';
 import { InfoControls } from './InfoControls';
 import { InfoDescription } from './InfoDescritpion';
 import { InfoTitle } from './InfoTitle';
