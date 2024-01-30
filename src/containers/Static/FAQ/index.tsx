@@ -39,4 +39,3 @@ const Faq = () => {
 };
 
 export default Faq;
-console.log('object')
