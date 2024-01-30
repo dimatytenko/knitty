@@ -7,6 +7,7 @@ import { Media } from '../../../ui-kit/theme/breakpoints';
 
 export const StyledTextFaq = styled(TextBody2Bold)`
   width: 100%;
+  max-width: 430px;
   text-align: center;
   margin: 0 auto;
   margin-top: 30px;
