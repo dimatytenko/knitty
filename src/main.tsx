@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-react';
@@ -28,7 +27,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           }}
         > */}
         <GoogleOAuthProvider clientId="1001284759160-t08belp9vng164s2jm1o5balqdivvgfu.apps.googleusercontent.com">
-          <App />
+            <App />
         </GoogleOAuthProvider>
         {/* </FpjsProvider> */}
       </GlobalStroreProvider>
