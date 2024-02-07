@@ -1,41 +1,26 @@
 import React from 'react';
 
-import { constants, socialLinks } from './constants';
 import { IconSvg } from '../../ui-kit/Icon/Svg';
-import { FooterLink } from '../../ui-kit/Links';
 import { Text3Bold } from '../../ui-kit/Typography';
 import {
   StyledFooter,
   Container,
   FooterContent,
-  LinksBlockWrapper,
   LeftBlock,
   RightBlock,
   RightBlockTop,
   RightBlockBottom,
-  FooterList,
 } from './styles';
-import { IProps } from './types';
 import { IFooterComponentProps } from '../../types/layout';
+import { useTranslation } from 'react-i18next';
+import { LinksBlock } from './LinksBlock';
+import useStatic from './useStatic';
 
-export const LinksBlock = ({ header, list }: IProps) => {
-  return (
-    <LinksBlockWrapper>
-      <Text3Bold $case="uppercase">{header}</Text3Bold>
-      <FooterList>
-        {list.map(({ title, path, href, ...rest }) => (
-          <li key={title}>
-            <FooterLink to={path} href={href} target="_blank" {...rest}>
-              {title}
-            </FooterLink>
-          </li>
-        ))}
-      </FooterList>
-    </LinksBlockWrapper>
-  );
-};
+
 
 export const FooterComponent: React.FC<IFooterComponentProps> = ({ year }) => {
+  const { t } = useTranslation();
+  const { constants, socialLinks } = useStatic();
   return (
     <StyledFooter>
       <Container>
@@ -51,23 +36,26 @@ export const FooterComponent: React.FC<IFooterComponentProps> = ({ year }) => {
           </LeftBlock>
           <RightBlock>
             <RightBlockTop>
-              <LinksBlock header="SOCIAL" list={socialLinks} />
+              <LinksBlock header={t('footer.SOCIAL')} list={socialLinks} />
               <LinksBlock
-                header="The Fun Stuff"
+                header={t('footer.The Fun Stuff')}
                 list={constants['The Fun Stuff']}
               />
               <LinksBlock
-                header="Things to Know"
+                header={t('footer.Things to Know')}
                 list={constants['Things to Know']}
               />
-              <LinksBlock header="Legal Note" list={constants['Legal Note']} />
+              <LinksBlock
+                header={t('footer.Legal Note')}
+                list={constants['Legal Note']}
+              />
             </RightBlockTop>
             <RightBlockBottom>
               <Text3Bold $case="uppercase">
-                © {year} all rights reserved
+                © {year} {t('footer.all rights reserved')}
               </Text3Bold>
               <Text3Bold $case="uppercase">
-                [All photos are used for non-commercial purposes]
+                [{t('footer.ALL PHOTOS ARE USED FOR NON-COMMERCIAL PURPOSES')}]
               </Text3Bold>
             </RightBlockBottom>
           </RightBlock>

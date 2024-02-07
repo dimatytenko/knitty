@@ -99,7 +99,7 @@ export const RightBlockTop = styled.div`
 
   ${Media.up.m} {
     grid-template-columns: repeat(4, 1fr);
-    gap: unset;
+    gap: 10px;
   }
 
   ul {

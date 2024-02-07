@@ -6,21 +6,19 @@ import { Container } from '../Layout/styles';
 import { AboutWrapper, AboutSubtitle, AboutTitle } from './styles';
 import { Slider } from '../../ui-kit/Slider';
 import { SwiperSlide } from 'swiper/react';
+import { useTranslation } from 'react-i18next';
 
 interface AboutComponentProps {
   data: AboutCardProps[];
 }
 
 export const AboutComponent: React.FC<AboutComponentProps> = ({ data }) => {
+  const { t } = useTranslation();
   return (
     <AboutWrapper>
       <Container>
-        <AboutSubtitle>Knots of Ukrainian Culture</AboutSubtitle>
-        <AboutTitle>
-          Our handcrafted creations are a part of our nation`s history,
-          reflecting Ukrainian heritage and artistic craftsmanship in every
-          pattern and knot
-        </AboutTitle>
+        <AboutSubtitle>{t('about.preTitile')}</AboutSubtitle>
+        <AboutTitle>{t('about.text')}</AboutTitle>
 
         <Slider
           isNavigation

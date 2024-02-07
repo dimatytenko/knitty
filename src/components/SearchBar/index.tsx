@@ -7,12 +7,15 @@ import { gsap } from 'gsap';
 import { useTheme } from 'styled-components';
 import { TextColor } from '../../ui-kit/Typography/types';
 import { SearchModal } from './SearchModal';
+import { useTranslation } from 'react-i18next';
 
 interface IProps {
   color: TextColor;
 }
 
 export const SearchBarComponent: React.FC<IProps> = ({ color }) => {
+  const { t } = useTranslation();
+
   const { palette } = useTheme();
   const refText = useRef(null);
   const refInput = useRef(null);
@@ -77,7 +80,7 @@ export const SearchBarComponent: React.FC<IProps> = ({ color }) => {
   return (
     <StyledSearchBar onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <GSAPWrapper ref={refText}>
-        <TextBody1Bold color={color}>Search</TextBody1Bold>
+        <TextBody1Bold color={color}>{t('header.search')}</TextBody1Bold>
       </GSAPWrapper>
       <GSAPWrapper ref={refInput}>
         <StyledInputField>
