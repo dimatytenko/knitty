@@ -19,7 +19,7 @@ export const StyledInputField = styled.div`
   }
 
   input {
-    width: 180px;
+    width: 170px;
     display: inline-block;
     padding: 5px;
 

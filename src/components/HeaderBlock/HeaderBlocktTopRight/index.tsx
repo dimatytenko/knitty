@@ -3,12 +3,15 @@ import { VerticalSeparator } from '../../../ui-kit/VerticalSeparator';
 import { LangSwitcherComponent } from '../../LangSwitcher';
 import { TextColor } from '../../../ui-kit/Typography/types';
 import { route } from '../../../constants/routes';
+import { useTransition } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface IProps {
   color: TextColor;
 }
 
 export const HeaderBlockTopRight: React.FC<IProps> = ({ color }) => {
+  const { t } = useTranslation();
   return (
     <>
       <VerticalSeparator color={color}>
@@ -16,11 +19,11 @@ export const HeaderBlockTopRight: React.FC<IProps> = ({ color }) => {
       </VerticalSeparator>
       <VerticalSeparator color={color}>
         <MainLink to={route.signUp.path} color={color}>
-          Sign Up
+          {t('header.signup')}
         </MainLink>
       </VerticalSeparator>
       <MainLink to={route.signIn.path} color={color}>
-        Sign In
+        {t('header.signin')}
       </MainLink>
     </>
   );

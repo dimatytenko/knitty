@@ -10,6 +10,8 @@ import { Normalize } from 'styled-normalize';
 import { GlobalStyles } from './styles/index.ts';
 import { GlobalStroreProvider } from './context/GlobalStore/index.tsx';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import './locales/i18n';
+
 
 // fix height on mobile version
 // source https://denis-creative.com/zadaem-razmer-100vh-bez-prokrutki-dlya-mobilnyh-ustrojstv/

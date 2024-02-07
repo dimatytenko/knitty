@@ -26,6 +26,7 @@ export const StyledTitle = styled(Heading1)`
   margin-top: 30px;
   width: 750px;
   text-align: center;
+  text-transform: uppercase;
 
   ${Media.down.m} {
     width: 378px;
