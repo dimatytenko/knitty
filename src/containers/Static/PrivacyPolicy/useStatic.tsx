@@ -6,10 +6,6 @@ export default function useStatic() {
     title: t('privacyPolicy.title'),
     subtitle: t('privacyPolicy.subtitle'),
     info: [
-    //   {
-    //     titleBlock: t('privacyPolicy.titleBlock.???'),
-    //     text: [t('privacyPolicy.text.???.0')],
-    //   },
       {
         titleBlock: t(
           'privacyPolicy.titleBlock.PERSONAL INFORMATION WE COLLECT',
