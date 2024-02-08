@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { StyledLine, StyledTabs, StyledTabsWrapper } from './styles';
 import { tabs } from './assets/tabs';
 import gsap from 'gsap';
@@ -8,7 +8,6 @@ export const Tabs = () => {
   const { active, setActive } = useContext(SizeGuideContext)!;
   const refs = useRef([]);
   const refLine = useRef(null);
-
 
   useEffect(() => {
     gsap.to(refLine.current, {
@@ -21,7 +20,7 @@ export const Tabs = () => {
     <StyledTabsWrapper>
       {Object.keys(tabs).map((title, idx) => (
         <StyledTabs
-          $case="capitalize"
+          // $case="capitalize"
           key={title}
           ref={(el) => refs.current.push(el)}
           as="button"

@@ -91,6 +91,7 @@ export const StyledTabsWrapper = styled.div`
 
 export const StyledTabs = styled(StyledHeading2)`
   cursor: pointer;
+  text-transform: uppercase;
 `;
 
 export const StyledLine = styled.span`

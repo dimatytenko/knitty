@@ -14,7 +14,7 @@ export const SizeGuideButton = () => {
     <>
       <StyledSizeGuideButton as="button" type="button" onClick={onClick}>
         size guide
-        <ArrowIcon />
+        <ArrowIcon  />
       </StyledSizeGuideButton>
       <Portal visible={visible} setIsVisible={setIsVisible}>
         <SizeGuideModal setIsVisible={setIsVisible} />

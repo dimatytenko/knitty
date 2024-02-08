@@ -3,8 +3,6 @@ import { StyledWrapper } from './styles';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 import { IProps } from './types';
 import { useContext, useState } from 'react';
-import { useLocale } from 'antd/es/locale';
-import { useLocation } from 'react-router';
 import { GlobalStore } from '../../context/GlobalStore';
 
 export const TagsRowComponent = ({
