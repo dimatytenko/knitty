@@ -8,8 +8,8 @@ import {
   SocialWrapper,
   SocialBlockWrapper,
 } from './styles';
-import { socialLinks } from '../Layout/constants';
 import { FooterLink } from '../../ui-kit/Links';
+import useStatic from '../Layout/useStatic';
 
 const phones = [
   {
@@ -65,6 +65,7 @@ export const getLink: React.FC<ILink> = ({ title, body, path }) => {
 };
 
 export const Contacts = () => {
+  const { socialLinks } = useStatic();
   return (
     <ContactWrapper>
       <TextInfo color="background">

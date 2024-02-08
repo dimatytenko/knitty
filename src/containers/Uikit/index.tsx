@@ -30,7 +30,6 @@ import { HowItsMade } from '../HowItsMade';
 import CollapseComponent from '../../components/Collapse';
 import { faqList } from '../../constants/faq';
 import { ImageSkeleton } from '../../ui-kit/Loader/ImageSkeleton';
-import { NavLinkLoader } from '../../ui-kit/Loader/NavlLink';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
 
 const GreyText = styled(Text1Bold)`
@@ -136,7 +135,7 @@ export const Uikit = () => {
         <BurgerButton />
         <br />
         <div style={{ width: '700px' }}>
-          <Pagination total={40} defaultPageSize={8} />
+          <Pagination total={40} />
         </div>
         <br />
         <div>ProductCard</div>

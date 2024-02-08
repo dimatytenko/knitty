@@ -1,5 +1,4 @@
-import React, { useRef, Children, PropsWithChildren } from 'react';
-import { SwiperSlide } from 'swiper/react';
+import React, { useRef, PropsWithChildren } from 'react';
 import { Navigation } from 'swiper/modules';
 
 import { StyledSwiper, ArrowButton, PrevArrow, NextArrow } from './styles';
@@ -59,9 +58,7 @@ export const Slider: React.FC<PropsWithChildren & SliderProps> = ({
         }
       }}
     >
-      {/* {Children.map(arrayChildren, (child, i) => (
-        <SwiperSlide key={i}>{child}</SwiperSlide>
-      ))} */}
+   
       {children}
       <ArrowButton ref={prevRef} $position="left">
         <PrevArrow />

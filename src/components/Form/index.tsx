@@ -4,11 +4,11 @@ import { IProps } from './types';
 import gsap from 'gsap';
 
 export const Form = ({ children }: IProps) => {
-  const refForm = useRef();
+  const refForm = useRef<HTMLElement>(null!);
   useEffect(() => {
     gsap.fromTo(
       refForm.current.children,
-      { opacity: 0, x:-30 },
+      { opacity: 0, x: -30 },
       {
         x: 0,
         opacity: 1,

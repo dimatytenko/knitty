@@ -3,7 +3,6 @@ import { VerticalSeparator } from '../../../ui-kit/VerticalSeparator';
 import { LangSwitcherComponent } from '../../LangSwitcher';
 import { TextColor } from '../../../ui-kit/Typography/types';
 import { route } from '../../../constants/routes';
-import { useTransition } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface IProps {
