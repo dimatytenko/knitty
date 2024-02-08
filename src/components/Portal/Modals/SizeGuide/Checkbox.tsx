@@ -16,11 +16,14 @@ export const Checkbox = () => {
   const [radio, setRadio] = useState('sm');
 
   useEffect(() => {
-    const leftFirst: number = gsap.getProperty(refFirst.current, 'offsetLeft');
+    const leftFirst: number = gsap.getProperty(
+      refFirst.current,
+      'offsetLeft',
+    ) as number;
     const leftSecond: number = gsap.getProperty(
       refSecond.current,
       'offsetLeft',
-    );
+    ) as number;
 
     gsap.fromTo(
       refCircle.current,
