@@ -1,7 +1,8 @@
 import { Static } from '../../../components/Static';
-import { data } from './assets/data';
+import useStatic from './useStatic';
 
 const RefundPolicy = () => {
+  const { data } = useStatic();
   return <Static data={data} />;
 };
 
