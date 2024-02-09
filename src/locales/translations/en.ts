@@ -2,6 +2,9 @@ export const en = {
   translation: {
     common: {
       btn: 'see all knits',
+      btn_submit: 'submit',
+      'CREATE ACCOUNT': 'CREATE ACCOUNT',
+      google_btn: 'Sign in with Google',
     },
 
     header: {
@@ -230,6 +233,18 @@ For more detail, please review our Returns Policy.`,
         1: `If you want to return something, just drop us an email at info@knitty.com. Please include your order number and the reason for your return.We'll happily accept unworn, unwashed and unaltered merchandise in sellable condition with original tags attached for a full refund shipped out within 14 days of you receiving the item.`,
         2: `Please note that all sale and custom- sizing items are on final sale.`,
       },
+    },
+
+    auth: {
+      firstName: 'first name',
+      lastName: 'last name',
+      email: 'enter your email address',
+      password: 'enter your password',
+      login: 'Login',
+      forgot: 'Forgot your password?',
+      'RECOVER PASSWORD': 'RECOVER PASSWORD',
+      createAccount: 'create account',
+      google: 'Sign in with Google',
     },
   },
 };

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { route } from '../../constants/routes';
 import { useForm } from '../../hooks/useForm';
 import { MainButton } from '../../ui-kit/Buttons';
@@ -9,6 +10,7 @@ import { StyledPageTitleWrapper } from '../PageTitle/styles';
 import { StyledForgotLink, StyledInputWrapper } from './styles';
 
 export default function SignUp() {
+  const { t } = useTranslation();
   const { data, setData, isValidObject } = useForm({
     firstName: '',
     lastName: '',
@@ -20,7 +22,7 @@ export default function SignUp() {
     {
       inputKey: 'firstName',
       type: 'text',
-      label: 'First name',
+      label: t('auth.firstName'),
       value: data.firstName,
       onChange: (value: string) =>
         setData((prev: any) => ({ ...prev, firstName: value })),
@@ -28,7 +30,7 @@ export default function SignUp() {
     {
       inputKey: 'lastName',
       type: 'text',
-      label: 'Last name',
+      label: t('auth.lastName'),
       value: data.lastName,
       onChange: (value: string) =>
         setData((prev: any) => ({ ...prev, lastName: value })),
@@ -36,7 +38,7 @@ export default function SignUp() {
     {
       inputKey: 'email',
       type: 'email',
-      label: 'Enter your email address',
+      label: t('auth.email'),
       value: data.email,
       onChange: (value: string) =>
         setData((prev: any) => ({ ...prev, email: value })),
@@ -44,7 +46,7 @@ export default function SignUp() {
     {
       inputKey: 'password',
       type: 'password',
-      label: 'Enter your Password',
+      label: t('auth.password'),
       value: data.password,
       onChange: (value: string) =>
         setData((prev: any) => ({ ...prev, password: value })),
@@ -53,7 +55,7 @@ export default function SignUp() {
   return (
     <>
       <StyledPageTitleWrapper>
-        <Heading2>Sign up</Heading2>
+        <Heading2>{t(`header.signup`)}</Heading2>
       </StyledPageTitleWrapper>
       <Form>
         <>
@@ -65,9 +67,11 @@ export default function SignUp() {
           {items.slice(2).map((props) => (
             <InputField key={props.inputKey} {...props} />
           ))}
-          <StyledForgotLink to={route.signIn.path}>Login</StyledForgotLink>
+          <StyledForgotLink to={route.signIn.path}>
+            {t(`header.signin`)}
+          </StyledForgotLink>
           <MainButton
-            title="CREATE ACCOUNT"
+            title={t('common.CREATE ACCOUNT')}
             onClick={(e) => {
               e.preventDefault();
               console.log('CREATE ACCOUNT');
