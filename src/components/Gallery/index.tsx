@@ -1,5 +1,5 @@
+import { Empty } from '../../ui-kit/Loader/Empty/Empty';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
-import { NoItems } from './NoItems';
 import { IGalleryComponentProps } from './types';
 
 export const GalleryComponent = ({
@@ -9,7 +9,7 @@ export const GalleryComponent = ({
   loading,
 }: IGalleryComponentProps) => {
   if (loading) return <MainLoader />;
-  if (!data.length) return <NoItems />;
+  if (!data.length) return <Empty />;
 
   return (
     <Wrapper>

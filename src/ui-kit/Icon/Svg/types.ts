@@ -26,6 +26,7 @@ export const iconOptions = <const>[
   'waterproof',
   'warmth',
   'durability',
+  "knitting-needles"
 ];
 export type icon = (typeof iconOptions)[number];
 

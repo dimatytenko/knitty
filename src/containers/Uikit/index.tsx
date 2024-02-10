@@ -64,6 +64,13 @@ export const Uikit = () => {
           viewBox="0 0 77 30"
           fill="none"
         />
+        <IconSvg
+          type="knitting-needles"
+          width="438"
+          height="302"
+          viewBox="0 0 438 302"
+          fill="none"
+        />
         <br />
         <IconSvg
           type="logo"

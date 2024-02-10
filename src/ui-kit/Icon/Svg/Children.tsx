@@ -17,6 +17,7 @@ import {
   WaterProof,
   Warmth,
   Durability,
+  KnittingNeedles
 } from './Paths';
 import { StyledSvgIconProps } from './types';
 
@@ -54,6 +55,9 @@ export const SvgChildren: React.FC<StyledSvgIconProps> = ({ type }) => {
       return <Warmth />;
     case 'durability':
       return <Durability />;
+          case 'knitting-needles':
+      return <KnittingNeedles />;
+
 
     default:
       return null;
