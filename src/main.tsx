@@ -10,9 +10,8 @@ import { Normalize } from 'styled-normalize';
 import { GlobalStyles } from './styles/index.ts';
 import { GlobalStroreProvider } from './context/GlobalStore/index.tsx';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import './locales/i18n';
-
-
+import i18n from './locales/i18n';
+import { I18nextProvider } from 'react-i18next';
 // fix height on mobile version
 // source https://denis-creative.com/zadaem-razmer-100vh-bez-prokrutki-dlya-mobilnyh-ustrojstv/
 const vh = window.innerHeight * 0.01;
@@ -29,7 +28,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           }}
         > */}
         <GoogleOAuthProvider clientId="1001284759160-t08belp9vng164s2jm1o5balqdivvgfu.apps.googleusercontent.com">
+          <I18nextProvider i18n={i18n}>
             <App />
+          </I18nextProvider>
         </GoogleOAuthProvider>
         {/* </FpjsProvider> */}
       </GlobalStroreProvider>
