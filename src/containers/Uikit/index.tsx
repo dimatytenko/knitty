@@ -28,15 +28,16 @@ import { Sort } from '../../components/Sort';
 import { ScrollButton } from '../../ui-kit/ScrollButton';
 import { HowItsMade } from '../HowItsMade';
 import CollapseComponent from '../../components/Collapse';
-import { faqList } from '../../constants/faq';
 import { ImageSkeleton } from '../../ui-kit/Loader/ImageSkeleton';
 import { MainLoader } from '../../ui-kit/Loader/MainLoader';
+import useStatic from '../Static/FAQ/useStatic';
 
 const GreyText = styled(Text1Bold)`
   opacity: 0.4;
 `;
 
 export const Uikit = () => {
+  const { faqList } = useStatic();
   return (
     <div>
       <Container>
