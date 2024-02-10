@@ -1,4 +1,3 @@
-import { faqList } from '../../../constants/faq';
 import CollapseComponent from '../../../components/Collapse';
 import { Br } from '../../../ui-kit/Br';
 import { Heading2 } from '../../../ui-kit/Typography';
@@ -6,9 +5,13 @@ import { SubHeading, Text } from './Typografy';
 import { Container } from '../../../ui-kit/Container';
 import { POINTS } from '../../../ui-kit/Container/types';
 import { useMedia } from 'use-media';
+import { useTranslation } from 'react-i18next';
+import useStatic from './useStatic';
 
 const Faq = () => {
-    const isDesktop = useMedia({ minWidth: '900px' });
+  const { faqList }= useStatic();
+  const isDesktop = useMedia({ minWidth: '900px' });
+  const { t } = useTranslation();
 
   return (
     <Container
@@ -16,21 +19,22 @@ const Faq = () => {
       style={{ paddingTop: isDesktop ? '120px' : '30px' }}
     >
       <Br desktop={120} mobile={60} />
-      <Heading2 $justify="center">Frequently Asked Questions</Heading2>
+      <Heading2 $justify="center">
+        {t('faq.Frequently Asked Questions')}
+      </Heading2>
       <Text $case="uppercase" color="unfocus">
-        Easily find the answers to the most frequently asked questions about our
-        products, shipping, returns and everything in between.
+        {t('faq.text')}
       </Text>
       <Br desktop={120} mobile={60} />
-      <SubHeading>Orders & Payments</SubHeading>
+      <SubHeading>{t('faq.Orders & Payments.heading')}</SubHeading>
       <Br desktop={60} mobile={60} />
       <CollapseComponent list={faqList['Orders & Payments']} />
       <Br desktop={60} mobile={60} />
-      <SubHeading>Returns & refunds</SubHeading>
+      <SubHeading>{t('faq.Returns & refunds.heading')}</SubHeading>
       <Br desktop={60} mobile={60} />
       <CollapseComponent list={faqList['Returns & refunds']} />
       <Br desktop={60} mobile={60} />
-      <SubHeading>Shipping</SubHeading>
+      <SubHeading>{t('faq.Shipping.heading')}</SubHeading>
       <Br desktop={60} mobile={60} />
       <CollapseComponent list={faqList['Shipping']} />
       <Br desktop={120} mobile={60} />
