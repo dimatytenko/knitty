@@ -10,42 +10,10 @@ import {
 } from './styles';
 import { FooterLink } from '../../ui-kit/Links';
 import useStatic from '../Layout/useStatic';
+import { useTranslation } from 'react-i18next';
+import useStaticData from './useStaticData';
 
-const phones = [
-  {
-    title: 'Head Office',
-    body: '+ 1302-255-1030',
-    path: 'tel:+13022551030',
-  },
-  {
-    title: 'Sales Department',
-    body: '+ 1302-255-1031',
-    path: 'tel:+13022551031',
-  },
-  {
-    title: 'Press',
-    body: '+ 1302-255-1032',
-    path: 'tel:+13022551032',
-  },
-];
 
-const emails = [
-  {
-    title: 'Advertising & PR',
-    body: 'pr@knitty.com',
-    path: 'mailto:pr@knitty.com',
-  },
-  {
-    title: 'Common Question',
-    body: 'pr@knitty.com',
-    path: 'mailto:pr@knitty.com',
-  },
-  {
-    title: 'Press',
-    body: 'pr@knitty.com',
-    path: 'mailto:pr@knitty.com',
-  },
-];
 
 interface ILink {
   title: string;
@@ -65,19 +33,19 @@ export const getLink: React.FC<ILink> = ({ title, body, path }) => {
 };
 
 export const Contacts = () => {
+  const { phones, emails } = useStaticData();
+  const { t } = useTranslation();
   const { socialLinks } = useStatic();
   return (
     <ContactWrapper>
-      <TextInfo color="background">
-        Need help regarding your order or have a question on a specific product?
-      </TextInfo>
+      <TextInfo color="background">{t('contacts.text')}</TextInfo>
 
       <CenterBlock>
         <LinksWrapper>{phones.map((item) => getLink(item))}</LinksWrapper>
         <LinksWrapper>{emails.map((item) => getLink(item))}</LinksWrapper>
       </CenterBlock>
       <SocialBlockWrapper>
-        <TextHead color="background">Social</TextHead>
+        <TextHead color="background">{t('footer.SOCIAL')}</TextHead>
         <SocialWrapper>
           {socialLinks.map(({ title, path, ...rest }) => (
             <FooterLink color="background" key={title} to={path} {...rest}>

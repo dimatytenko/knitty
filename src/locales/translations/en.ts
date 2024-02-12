@@ -351,5 +351,14 @@ For more detail, please review our Returns Policy.`,
       'SHIPPING CALCULATED AT CHECKOUT': 'SHIPPING CALCULATED AT CHECKOUT',
       checkout: 'checkout',
     },
+
+    contacts: {
+      text: 'NEED HELP REGARDING YOUR ORDER OR HAVE A QUESTION ON A SPECIFIC PRODUCT?',
+      'Head Office': 'Head Office',
+      'Sales Department': 'Sales Department',
+      Press: 'Press',
+      'Advertising & PR': 'Advertising & PR',
+      "Common Question": "Common Question"
+    },
   },
 };
