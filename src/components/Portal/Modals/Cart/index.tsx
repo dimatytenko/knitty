@@ -9,8 +9,10 @@ import { StyledCartGalleryWrapper } from '../../../../styles/container';
 import { ModalHeader } from './ModalHeader';
 import { ButtonWithArrow } from '../../../../ui-kit/Buttons';
 import { Text2Bold } from '../../../../ui-kit/Typography';
+import { useTranslation } from 'react-i18next';
 
 export const ModalCart = ({ cartList, setIsVisible, setData }: IProps) => {
+  const { t } = useTranslation();
   const refModal = useRef(null);
 
   useEffect(() => {
@@ -25,10 +27,12 @@ export const ModalCart = ({ cartList, setIsVisible, setData }: IProps) => {
     );
   }, [cartList]);
 
-
   return (
     <StyledModalCart ref={refModal}>
-      <ModalHeader setIsVisible={setIsVisible} cartListLength={cartList.length} />
+      <ModalHeader
+        setIsVisible={setIsVisible}
+        cartListLength={cartList.length}
+      />
       <HorizontalSeparator />
       <GalleryComponent
         data={cartList}
@@ -38,14 +42,14 @@ export const ModalCart = ({ cartList, setIsVisible, setData }: IProps) => {
       <HorizontalSeparator />
 
       <StyledTextBlock>
-        <Text2Bold $case="uppercase">Add order note</Text2Bold>
+        <Text2Bold $case="uppercase">{t('cart.ADD ORDER NOTE')}</Text2Bold>
         <Text2Bold $case="uppercase" color="unfocus">
-          Shipping calculated at checkout
+          {t('cart.SHIPPING CALCULATED AT CHECKOUT')}
         </Text2Bold>
       </StyledTextBlock>
 
       <ButtonWithArrow
-        title="checkout"
+        title={t('cart.checkout')}
         onClick={() => {
           console.log('checkout');
         }}
