@@ -5,6 +5,9 @@ export const en = {
       btn_submit: 'submit',
       'CREATE ACCOUNT': 'CREATE ACCOUNT',
       google_btn: 'Sign in with Google',
+      btn_remove: 'remove',
+      cart: 'Cart',
+      favorites: 'Favorites',
     },
 
     header: {
@@ -340,6 +343,13 @@ For more detail, please review our Returns Policy.`,
           text: 'We accept debit/credit cards, ApplePay, ShopPay, GooglePay and PayPal. You can also pay by installments with Scalapay directly from our website. You can quickly create an account while checking out and pay your item in three monthly installments without interest.',
         },
       },
+    },
+
+    cart: {
+      title: '(0)[items];(1)[item];(2-inf)[items];',
+      'ADD ORDER NOTE': 'ADD ORDER NOTE',
+      'SHIPPING CALCULATED AT CHECKOUT': 'SHIPPING CALCULATED AT CHECKOUT',
+      checkout: 'checkout',
     },
   },
 };

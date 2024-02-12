@@ -3,6 +3,7 @@ import { IconSvg } from '../../Icon/Svg';
 import { Text2Bold } from '../../Typography';
 import { StyledButtonsWrapper, StyledIncrementButtons } from './styles';
 import { TypeButtonsProps } from './types';
+import { useTranslation } from 'react-i18next';
 
 export const Buttons = ({
   quantity,
@@ -10,6 +11,8 @@ export const Buttons = ({
   setData,
   refCard,
 }: TypeButtonsProps) => {
+  const { t } = useTranslation();
+
   const handleDecrement = (id: string | number) => {
     setData((prev) => {
       prev.cartList = prev.cartList.map((product) => {
@@ -62,7 +65,7 @@ export const Buttons = ({
       </StyledIncrementButtons>
       <button type="button" onClick={() => handleRemove(id)}>
         <Text2Bold $case="uppercase" $decor="underline">
-          Remove
+          {t('common.btn_remove')}
         </Text2Bold>
       </button>
     </StyledButtonsWrapper>

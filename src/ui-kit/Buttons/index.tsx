@@ -20,16 +20,22 @@ import { Portal } from '../../components/Portal';
 import { ModalCart } from '../../components/Portal/Modals/Cart';
 import { GlobalStore } from '../../context/GlobalStore';
 import { ModalBurger } from '../../components/Portal/Modals/Burger';
+import { useTranslation } from 'react-i18next';
 
 export const MainButton = ({
   title,
   onClick = () => {},
   type = 'button',
   isInCart,
-  disabled=false
+  disabled = false,
 }: IProps) => {
   return (
-    <StyledMainButton $isincart={isInCart} type={type} onClick={onClick} disabled={disabled}>
+    <StyledMainButton
+      $isincart={isInCart}
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+    >
       <Text2Bold $case="uppercase" color="primary">
         {title}
       </Text2Bold>
@@ -93,6 +99,7 @@ export const FavouriteButton = ({ onClick, isFavourite }: IPropsFavorites) => {
 };
 
 export const CartButton = ({ color = 'primary' }: IPropsCartButton) => {
+  const { t } = useTranslation();
   const [visible, setIsVisible] = useState<boolean>(false);
   const {
     globalState: { cartList },
@@ -107,7 +114,7 @@ export const CartButton = ({ color = 'primary' }: IPropsCartButton) => {
     <>
       <StyledCartBtn type="button" onClick={onClick}>
         <Text2Bold $case="uppercase" color={color}>
-          cart
+          {t('common.cart')}
         </Text2Bold>
         {!cartList.length ? null : <Span color={color}>{cartList.length}</Span>}
       </StyledCartBtn>
